@@ -8,7 +8,9 @@
         class="bg-gradient-to-r from-slate-100 via-slate-200 to-slate-300 py-6 mb-8"
     >
         <div class="container mx-auto text-center">
-            <h1 class="text-4xl font-bold mb-2">Ben Everly</h1>
+            <h1 class="text-4xl font-bold mb-2 font-[Montserrat]">
+                Ben Everly
+            </h1>
             <NuxtLink
                 to="https://github.com/ben-everly"
                 class="inline-flex items-center text-blue-500 hover:text-blue-700"
@@ -19,7 +21,9 @@
     </header>
     <section class="bg-white py-10">
         <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-semibold mb-4">About Me</h2>
+            <h2 class="text-3xl font-semibold mb-4 font-[Montserrat]">
+                About Me
+            </h2>
             <p class="text-lg leading-8 text-slate-700">
                 Hi, I'm Ben. Welcome to my personal website! I'm a software
                 engineer currently working at
@@ -36,7 +40,9 @@
     </section>
     <section class="bg-slate-50 py-10">
         <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-semibold mb-4">Projects</h2>
+            <h2 class="text-3xl font-semibold mb-4 font-[Montserrat]">
+                Projects
+            </h2>
             <p class="text-lg leading-8 text-slate-700 mb-6">
                 Here is some of the work I've found interesting recently.
             </p>
@@ -65,7 +71,9 @@
     </section>
     <section class="bg-white py-10">
         <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-semibold mb-4">Connect with Me</h2>
+            <h2 class="text-3xl font-semibold mb-4 font-[Montserrat]">
+                Connect with Me
+            </h2>
             <p class="text-lg leading-8 text-slate-700 mb-6">
                 I'm always open to connecting with fellow developers, tech
                 enthusiasts, or anyone interested in my work. Feel free to reach
