@@ -5,29 +5,28 @@
 </script>
 <template>
     <header
-        class="bg-gradient-to-r from-slate-100 via-slate-200 to-slate-300 py-6 mb-8"
+        class="bg-gradient-to-r from-neutral-100 via-neutral-200 to-neutral-300 py-4"
     >
         <div class="container mx-auto text-center">
             <h1 class="text-4xl font-bold mb-2 font-[Montserrat]">
                 Ben Everly
             </h1>
-            <NuxtLink
-                to="https://github.com/ben-everly"
-                class="inline-flex items-center text-blue-500 hover:text-blue-700"
-            >
+            <NuxtLink to="https://github.com/ben-everly">
                 <Icon name="uil:github" class="bg-black text-xl mr-2" />
             </NuxtLink>
         </div>
     </header>
-    <section class="bg-white py-10">
+    <section class="bg-primary-700 py-10 text-neutral-50">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-semibold mb-4 font-[Montserrat]">
                 About Me
             </h2>
-            <p class="text-lg leading-8 text-slate-700">
+            <p class="text-lg leading-8">
                 Hi, I'm Ben. Welcome to my personal website! I'm a software
                 engineer currently working at
-                <NuxtLink class="text-blue-500" to="https://oberd.com"
+                <NuxtLink
+                    class="text-secondary-300 hover:text-secondary-500"
+                    to="https://oberd.com"
                     >OBERD</NuxtLink
                 >, where we develop innovative medical software focused on
                 patient-reported outcomes data. This site is my space to share
@@ -38,12 +37,12 @@
             </p>
         </div>
     </section>
-    <section class="bg-slate-50 py-10">
+    <section class="py-10">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-semibold mb-4 font-[Montserrat]">
                 Projects
             </h2>
-            <p class="text-lg leading-8 text-slate-700 mb-6">
+            <p class="text-lg leading-8 text-secondary-900 mb-6">
                 Here is some of the work I've found interesting recently.
             </p>
             <ol
@@ -56,7 +55,7 @@
                 >
                     <NuxtLink :to="`${article.path}`" class="block">
                         <img
-                            class="bg-slate-200 w-full h-40 object-cover"
+                            class="bg-neutral-400 w-full h-40 object-cover"
                             alt="Placeholder image"
                         />
                         <div class="p-4">
@@ -69,12 +68,12 @@
             </ol>
         </div>
     </section>
-    <section class="bg-white py-10">
+    <footer class="pt-10 pb-4 border-t-10 border-primary-700">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-semibold mb-4 font-[Montserrat]">
                 Connect with Me
             </h2>
-            <p class="text-lg leading-8 text-slate-700 mb-6">
+            <p class="text-lg leading-8 mb-6">
                 I'm always open to connecting with fellow developers, tech
                 enthusiasts, or anyone interested in my work. Feel free to reach
                 out through my GitHub or connect with me on LinkedIn.
@@ -82,17 +81,17 @@
             <div class="flex justify-center gap-4">
                 <NuxtLink
                     to="https://github.com/ben-everly"
-                    class="text-blue-500 hover:text-blue-700 text-lg"
+                    class="text-secondary-600 hover:text-secondary-800 text-lg"
                 >
                     GitHub
                 </NuxtLink>
                 <NuxtLink
                     to="https://linkedin.com/in/ben-everly"
-                    class="text-blue-500 hover:text-blue-700 text-lg"
+                    class="text-secondary-600 hover:text-secondary-800 text-lg"
                 >
                     LinkedIn
                 </NuxtLink>
             </div>
         </div>
-    </section>
+    </footer>
 </template>
