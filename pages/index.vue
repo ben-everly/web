@@ -51,7 +51,7 @@
                 <li
                     v-for="article in articles"
                     :key="article.path"
-                    class="shadow-lg rounded-lg overflow-hidden"
+                    class="shadow-lg rounded-lg overflow-hidden duration-300 hover:scale-102 hover:shadow-xl"
                 >
                     <NuxtLink :to="`${article.path}`" class="block">
                         <img
