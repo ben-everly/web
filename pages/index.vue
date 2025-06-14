@@ -4,9 +4,7 @@
     );
 </script>
 <template>
-    <header
-        class="bg-gradient-to-r from-neutral-100 via-neutral-200 to-neutral-300 py-4"
-    >
+    <header class="bg-gradient-to-r from-neutral-100 to-neutral-300 py-8">
         <div class="container mx-auto text-center">
             <h1 class="text-4xl font-bold mb-2 font-[Montserrat]">
                 Ben Everly
@@ -37,21 +35,21 @@
             </p>
         </div>
     </section>
-    <section class="py-10">
+    <section class="py-18 bg-gradient-to-r from-neutral-100 to-neutral-300">
         <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-semibold mb-4 font-[Montserrat]">
-                Projects
+            <h2 class="text-3xl font-semibold font-[Montserrat]">
+                Explorations
             </h2>
-            <p class="text-lg leading-8 text-secondary-900 mb-6">
+            <p class="text-lg leading-8 text-secondary-900">
                 Here is some of the work I've found interesting recently.
             </p>
             <ol
-                class="list-none grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                class="list-none grid grid-cols-1 md:grid-cols-2 py-6 lg:grid-cols-3 gap-8"
             >
                 <li
                     v-for="article in articles"
                     :key="article.path"
-                    class="shadow-lg rounded-lg overflow-hidden duration-300 hover:scale-102 hover:shadow-xl"
+                    class="shadow-lg rounded-lg overflow-hidden duration-300 hover:scale-103 hover:shadow-xl"
                 >
                     <NuxtLink :to="`${article.path}`" class="block">
                         <img
@@ -68,30 +66,21 @@
             </ol>
         </div>
     </section>
-    <footer class="pt-10 pb-4 border-t-10 border-primary-700">
+    <footer class="pt-8 pb-4 bg-primary-700 text-neutral-50">
         <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-semibold mb-4 font-[Montserrat]">
+            <h2 class="mb-4 text-3xl font-semibold font-[Montserrat]">
                 Connect with Me
             </h2>
             <p class="text-lg leading-8 mb-6">
                 I'm always open to connecting with fellow developers, tech
                 enthusiasts, or anyone interested in my work. Feel free to reach
-                out through my GitHub or connect with me on LinkedIn.
-            </p>
-            <div class="flex justify-center gap-4">
+                out through my
                 <NuxtLink
                     to="https://github.com/ben-everly"
-                    class="text-secondary-600 hover:text-secondary-800 text-lg"
-                >
-                    GitHub
-                </NuxtLink>
-                <NuxtLink
-                    to="https://linkedin.com/in/ben-everly"
-                    class="text-secondary-600 hover:text-secondary-800 text-lg"
-                >
-                    LinkedIn
-                </NuxtLink>
-            </div>
+                    class="text-secondary-300 hover:text-secondary-500 text-lg"
+                    >GitHub</NuxtLink
+                >.
+            </p>
         </div>
     </footer>
 </template>
