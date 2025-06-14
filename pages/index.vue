@@ -4,7 +4,7 @@
     );
 </script>
 <template>
-    <header class="bg-gradient-to-r from-neutral-100 to-neutral-300 py-8">
+    <header class="py-8">
         <div class="container mx-auto text-center">
             <h1 class="text-4xl font-bold mb-2 font-[Montserrat]">
                 Ben Everly
@@ -14,7 +14,7 @@
             </NuxtLink>
         </div>
     </header>
-    <section class="bg-primary-700 py-10 text-neutral-50">
+    <section class="bg-primary-700 py-10 text-neutral-100">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-semibold mb-4 font-[Montserrat]">
                 About Me
@@ -23,7 +23,7 @@
                 Hi, I'm Ben. Welcome to my personal website! I'm a software
                 engineer currently working at
                 <NuxtLink
-                    class="text-secondary-300 hover:text-secondary-500"
+                    class="text-secondary-600 hover:text-secondary-500"
                     to="https://oberd.com"
                     >OBERD</NuxtLink
                 >, where we develop innovative medical software focused on
@@ -35,12 +35,12 @@
             </p>
         </div>
     </section>
-    <section class="py-18 bg-gradient-to-r from-neutral-100 to-neutral-300">
+    <section class="py-18">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-semibold font-[Montserrat]">
                 Explorations
             </h2>
-            <p class="text-lg leading-8 text-secondary-900">
+            <p class="text-lg leading-8">
                 Here is some of the work I've found interesting recently.
             </p>
             <ol
@@ -66,7 +66,7 @@
             </ol>
         </div>
     </section>
-    <footer class="pt-8 pb-4 bg-primary-700 text-neutral-50">
+    <footer class="pt-8 pb-4 bg-primary-700 text-neutral-100">
         <div class="container mx-auto text-center">
             <h2 class="mb-4 text-3xl font-semibold font-[Montserrat]">
                 Connect with Me
@@ -77,7 +77,7 @@
                 out through my
                 <NuxtLink
                     to="https://github.com/ben-everly"
-                    class="text-secondary-300 hover:text-secondary-500 text-lg"
+                    class="text-secondary-600 hover:text-secondary-500 text-lg"
                     >GitHub</NuxtLink
                 >.
             </p>
