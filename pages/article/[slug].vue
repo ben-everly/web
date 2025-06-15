@@ -5,15 +5,15 @@
     );
 </script>
 <template>
-    <header class="px-4 py-6 md:px-8 bg-primary-700 text-neutral-100">
-            <div class="container mx-auto flex justify-between items-center">
-                <NuxtLink
-                    to="/"
-                    class="inline-flex items-center text-lg hover:scale-105"
+    <header class="bg-primary-700 px-4 py-6 text-neutral-100 md:px-8">
+        <div class="container mx-auto flex items-center gap-10">
+            <NuxtLink
+                to="/"
+                class="inline-flex items-center text-lg hover:scale-105"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6 mr-2"
+                    class="mr-2 h-6 w-6"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -25,41 +25,23 @@
                 </svg>
                 Home
             </NuxtLink>
-                <div class="text-center flex flex-col items-center">
-                    <h1 class="text-3xl font-semibold mb-2">{{ article.title }}</h1>
-                    <h3 class="text-lg font-medium mb-2">Author: Ben Everly</h3>
-                    <p v-if="article.published_at" class="text-md">
-                        Published on
-                        <NuxtTime
-                            :datetime="article.published_at"
-                            year="numeric"
-                            month="long"
-                            day="numeric"
-                        />
-                    </p>
-                </div>
-        </div>
-    </header>
-    <section class="px-1 py-12 md:px-4 flex">
-        <div class="container mx-auto px-2">
-            <dl class="flex gap-2 text-lg mb-4">
-                <dt v-if="article.published_at" class="font-semibold">
-                    Published:
-                </dt>
-                <dd v-if="article.published_at">
+            <div class="flex flex-col">
+                <h1 class="mb-2 text-lg font-medium">Ben Everly</h1>
+                <h1 class="mb-2 text-3xl font-semibold">{{ article.title }}</h1>
+                <p v-if="article.published_at" class="text-md">
                     <NuxtTime
                         :datetime="article.published_at"
                         year="numeric"
                         month="long"
                         day="numeric"
                     />
-                </dd>
-            </dl>
-            <ContentRenderer
-                v-if="article"
-                :value="article"
-                class="prose"
-            />
+                </p>
+            </div>
+        </div>
+    </header>
+    <section class="flex px-1 py-12 md:px-4">
+        <div class="container mx-auto px-2">
+            <ContentRenderer v-if="article" :value="article" class="prose" />
             <div v-else class="text-lg">Article not found</div>
         </div>
     </section>
