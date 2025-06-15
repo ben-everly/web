@@ -6,11 +6,15 @@
 <template>
     <header class="px-1 py-8 md:px-4">
         <div class="container mx-auto text-center">
-            <h1 class="mb-2 font-[Montserrat] text-4xl font-bold">
-                Ben Everly
-            </h1>
-            <NuxtLink to="https://github.com/ben-everly">
-                <Icon name="uil:github" class="mr-2 bg-black text-xl" />
+            <h1 class="font-[Montserrat] text-4xl font-bold">Ben Everly</h1>
+            <NuxtLink
+                to="https://github.com/ben-everly"
+                class="inline-flex items-center text-lg hover:scale-105"
+            >
+                <Icon
+                    name="uil:github"
+                    class="size-6 bg-neutral-700"
+                />ben-everly
             </NuxtLink>
         </div>
     </header>
@@ -60,10 +64,10 @@
                         <NuxtImg
                             class="h-full w-full bg-neutral-400 object-cover"
                             :src="article.image"
-                            alt="{{ article.title }}"
+                            :alt="article.title"
                         />
                         <div
-                            class="opacity-80 absolute bottom-0 w-full bg-neutral-50 p-2"
+                            class="absolute bottom-0 w-full bg-neutral-50 p-2 opacity-80"
                         >
                             <h3 class="text-xl font-medium">
                                 {{ article.title }}
