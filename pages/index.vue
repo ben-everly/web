@@ -4,7 +4,7 @@
     );
 </script>
 <template>
-    <header class="py-8">
+    <header class="py-8 px-1 md:px-4 ">
         <div class="container mx-auto text-center">
             <h1 class="text-4xl font-bold mb-2 font-[Montserrat]">
                 Ben Everly
@@ -14,7 +14,7 @@
             </NuxtLink>
         </div>
     </header>
-    <section class="bg-primary-700 py-10 text-neutral-100 shadow-inner shadow-neutral-600/50">
+    <section class="bg-primary-700 py-10 px-1 md:px-4 text-neutral-100 shadow-inner shadow-neutral-600/50">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-semibold mb-4 font-[Montserrat]">
                 About Me
@@ -35,8 +35,8 @@
             </p>
         </div>
     </section>
-    <section class="py-18">
-        <div class="container mx-auto text-center">
+    <section class="py-18 px-1 md:px-4">
+        <div class="container px-2 mx-auto text-center">
             <h2 class="text-3xl font-semibold font-[Montserrat]">
                 Explorations
             </h2>
@@ -68,7 +68,7 @@
             </ol>
         </div>
     </section>
-    <footer class="pt-8 pb-4 bg-primary-700 text-neutral-100 shadow-inner shadow-neutral-600/50">
+    <footer class="pt-8 pb-4 px-1 md:px-4 bg-primary-700 text-neutral-100 shadow-inner shadow-neutral-600/50">
         <div class="container mx-auto text-center">
             <h2 class="mb-4 text-3xl font-semibold font-[Montserrat]">
                 Connect with Me
