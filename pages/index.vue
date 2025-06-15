@@ -57,12 +57,13 @@
                         :to="`${article.path}`"
                         class="relative block h-full"
                     >
-                        <img
+                        <NuxtImg
                             class="h-full w-full bg-neutral-400 object-cover"
-                            alt="Placeholder image"
+                            :src="article.image"
+                            alt="{{ article.title }}"
                         />
                         <div
-                            class="bg-opacity-80 absolute bottom-0 w-full bg-neutral-50 p-2"
+                            class="opacity-80 absolute bottom-0 w-full bg-neutral-50 p-2"
                         >
                             <h3 class="text-xl font-medium">
                                 {{ article.title }}
