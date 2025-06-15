@@ -44,19 +44,21 @@
                 Here is some of the work I've found interesting recently.
             </p>
             <ol
-                class="list-none grid grid-cols-1 md:grid-cols-2 py-6 lg:grid-cols-3 gap-8"
+                class="list-none grid grid-cols-1 md:grid-cols-2 py-6 lg:grid-cols-3 2xl:grid-cols-4 gap-6"
             >
                 <li
                     v-for="article in articles"
                     :key="article.path"
-                    class="shadow-lg rounded-lg overflow-hidden duration-300 hover:scale-103 hover:shadow-xl"
+                    class="shadow-lg rounded-lg overflow-hidden duration-300 hover:scale-103 hover:shadow-xl w-80 h-60 mx-auto"
                 >
-                    <NuxtLink :to="`${article.path}`" class="block">
+                    <NuxtLink :to="`${article.path}`" class="block relative h-full">
                         <img
-                            class="bg-neutral-400 w-full h-40 object-cover"
+                            class="bg-neutral-400 w-full h-full object-cover"
                             alt="Placeholder image"
                         />
-                        <div class="p-4">
+                        <div
+                            class="absolute bottom-0 w-full bg-neutral-50 bg-opacity-80 p-2"
+                        >
                             <h3 class="text-xl font-medium">
                                 {{ article.title }}
                             </h3>
