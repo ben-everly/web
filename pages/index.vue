@@ -14,7 +14,7 @@
             </NuxtLink>
         </div>
     </header>
-    <section class="bg-primary-700 py-10 text-neutral-100">
+    <section class="bg-primary-700 py-10 text-neutral-100 shadow-inner shadow-neutral-600/50">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-semibold mb-4 font-[Montserrat]">
                 About Me
@@ -68,7 +68,7 @@
             </ol>
         </div>
     </section>
-    <footer class="pt-8 pb-4 bg-primary-700 text-neutral-100">
+    <footer class="pt-8 pb-4 bg-primary-700 text-neutral-100 shadow-inner shadow-neutral-600/50">
         <div class="container mx-auto text-center">
             <h2 class="mb-4 text-3xl font-semibold font-[Montserrat]">
                 Connect with Me
