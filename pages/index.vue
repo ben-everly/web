@@ -5,22 +5,23 @@
 </script>
 <template>
     <header
-        class="from-primary-600 via-primary-600 to-primary-800 bg-gradient-to-br px-1 py-24 text-white md:px-4 md:py-32"
+        class="relative from-primary-600 via-primary-700 to-primary-800 bg-gradient-to-br px-1 py-24 text-white md:px-4 md:py-32 animated-gradient overflow-hidden"
     >
-        <div class="container mx-auto text-center">
+        <div class="absolute inset-0 grid-pattern"></div>
+        <div class="relative z-10 container mx-auto text-center">
             <h1
                 class="mb-8 text-5xl font-bold tracking-tight md:text-6xl lg:text-7xl"
             >
                 Ben Everly
             </h1>
             <p
-                class="mx-auto mb-12 max-w-3xl text-xl leading-relaxed font-light text-white/90 md:text-2xl"
+                class="mx-auto mb-12 max-w-3xl text-xl font-light leading-relaxed text-white/90 md:text-2xl"
             >
                 Software Engineer & Problem Solver
             </p>
             <NuxtLink
                 to="https://github.com/ben-everly"
-                class="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-8 py-4 text-lg font-medium backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/20"
+                class="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-8 py-4 text-lg font-medium backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/20 hover:shadow-[0_0_20px_theme(colors.secondary.400)]"
             >
                 <Icon name="uil:github" class="size-6" />
                 <span>ben-everly</span>
