@@ -28,7 +28,7 @@
         </div>
     </header>
 
-    <section class="bg-neutral-50 px-1 py-20 md:px-4 md:py-28">
+    <section class="px-1 py-20 md:px-4 md:py-28">
         <div class="container mx-auto max-w-4xl text-center">
             <h2
                 class="mb-10 text-3xl font-bold tracking-tight text-neutral-800 md:text-4xl lg:text-5xl"
@@ -54,7 +54,9 @@
         </div>
     </section>
 
-    <section class="px-1 py-20 md:px-4 md:py-28">
+    <section
+        class="bg-gradient-to-r from-neutral-50 to-neutral-100 px-1 py-20 md:px-4 md:py-28"
+    >
         <div class="container mx-auto px-2 text-center">
             <h2
                 class="mb-6 text-3xl font-bold tracking-tight text-neutral-800 md:text-4xl lg:text-5xl"
