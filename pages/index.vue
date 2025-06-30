@@ -4,17 +4,24 @@
     );
 </script>
 <template>
-    <header class="px-1 py-8 md:px-4">
+    <header
+        class="from-primary-600 via-primary-600 to-primary-800 bg-gradient-to-br px-1 py-20 text-white md:px-4 md:py-28"
+    >
         <div class="container mx-auto text-center">
-            <h1 class="font-[Montserrat] text-4xl font-bold">Ben Everly</h1>
+            <h1
+                class="mb-6 font-[Montserrat] text-5xl font-bold md:text-6xl lg:text-7xl"
+            >
+                Ben Everly
+            </h1>
+            <p class="mx-auto mb-8 max-w-2xl text-xl text-white/90 md:text-2xl">
+                Software Engineer & Problem Solver
+            </p>
             <NuxtLink
                 to="https://github.com/ben-everly"
-                class="inline-flex items-center text-lg hover:scale-105"
+                class="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-lg font-medium backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/20"
             >
-                <Icon
-                    name="uil:github"
-                    class="size-6 bg-neutral-700"
-                />ben-everly
+                <Icon name="uil:github" class="size-6" />
+                <span>ben-everly</span>
             </NuxtLink>
         </div>
     </header>
