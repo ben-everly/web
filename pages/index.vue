@@ -25,44 +25,44 @@
             </NuxtLink>
         </div>
     </header>
-    <section
-        class="bg-primary-700 px-1 py-10 text-neutral-100 shadow-inner shadow-neutral-600/50 md:px-4"
-    >
-        <div class="container mx-auto text-center">
-            <h2 class="mb-4 font-[Montserrat] text-3xl font-semibold">
+    
+    <section class="px-1 py-16 bg-neutral-50 md:px-4 md:py-24">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="mb-8 font-[Montserrat] text-3xl font-semibold text-neutral-800 md:text-4xl">
                 About Me
             </h2>
-            <p class="text-lg leading-8">
+            <p class="text-lg leading-relaxed text-neutral-700 md:text-xl">
                 Hi, I'm Ben. Welcome to my personal website! I'm a software
                 engineer currently working at
                 <NuxtLink
-                    class="text-secondary-600 hover:text-secondary-500"
+                    class="text-secondary-600 hover:text-secondary-500 font-medium transition-colors duration-200"
                     to="https://oberd.com"
                     >OBERD</NuxtLink
                 >, where we develop innovative medical software focused on
                 patient-reported outcomes data. This site is my space to share
                 my projects and professional journey. Whether you're here to
                 explore my work, learn more about me, or connect, you've come to
-                the right place. I hope you’ll discover something you find
+                the right place. I hope you'll discover something you find
                 interesting.
             </p>
         </div>
     </section>
-    <section class="px-1 py-18 md:px-4">
+    
+    <section class="px-1 py-16 md:px-4 md:py-24">
         <div class="container mx-auto px-2 text-center">
-            <h2 class="font-[Montserrat] text-3xl font-semibold">
+            <h2 class="mb-4 font-[Montserrat] text-3xl font-semibold text-neutral-800 md:text-4xl">
                 Explorations
             </h2>
-            <p class="text-lg leading-8">
+            <p class="mb-12 text-lg leading-relaxed text-neutral-700 md:text-xl">
                 Here is some of the work I've found interesting recently.
             </p>
             <ol
-                class="grid list-none grid-cols-1 gap-6 py-6 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
+                class="grid list-none grid-cols-1 gap-8 py-6 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
             >
                 <li
                     v-for="article in articles"
                     :key="article.path"
-                    class="mx-auto h-60 w-80 overflow-hidden rounded-lg shadow-lg duration-300 hover:scale-103 hover:shadow-xl"
+                    class="mx-auto h-64 w-80 overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl"
                 >
                     <NuxtLink
                         :to="`${article.path}`"
@@ -74,9 +74,9 @@
                             :alt="article.title"
                         />
                         <div
-                            class="absolute bottom-0 w-full bg-neutral-50 p-2 opacity-80"
+                            class="absolute bottom-0 w-full bg-white/95 backdrop-blur-sm p-4"
                         >
-                            <h3 class="text-xl font-medium">
+                            <h3 class="text-xl font-semibold text-neutral-800">
                                 {{ article.title }}
                             </h3>
                         </div>
@@ -85,20 +85,21 @@
             </ol>
         </div>
     </section>
+    
     <footer
-        class="bg-primary-700 px-1 pt-8 pb-4 text-neutral-100 shadow-inner shadow-neutral-600/50 md:px-4"
+        class="bg-primary-700 px-1 py-16 text-neutral-100 shadow-inner shadow-neutral-600/50 md:px-4 md:py-20"
     >
-        <div class="container mx-auto text-center">
-            <h2 class="mb-4 font-[Montserrat] text-3xl font-semibold">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="mb-6 font-[Montserrat] text-3xl font-semibold md:text-4xl">
                 Connect with Me
             </h2>
-            <p class="mb-6 text-lg leading-8">
+            <p class="mb-8 text-lg leading-relaxed text-neutral-200 md:text-xl">
                 I'm always open to connecting with fellow developers, tech
                 enthusiasts, or anyone interested in my work. Feel free to reach
                 out through my
                 <NuxtLink
                     to="https://github.com/ben-everly"
-                    class="text-secondary-600 hover:text-secondary-500 text-lg"
+                    class="text-secondary-400 hover:text-secondary-300 font-medium transition-colors duration-200"
                     >GitHub</NuxtLink
                 >.
             </p>
