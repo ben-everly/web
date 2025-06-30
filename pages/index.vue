@@ -74,22 +74,23 @@
                 <li
                     v-for="article in articles"
                     :key="article.path"
-                    class="mx-auto h-72 w-80 overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                    class="group mx-auto h-80 w-80 overflow-hidden rounded-2xl bg-neutral-800 shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
                 >
                     <NuxtLink
                         :to="`${article.path}`"
-                        class="relative block h-full"
+                        class="relative block h-full w-full"
                     >
                         <NuxtImg
-                            class="h-full w-full bg-neutral-400 object-cover"
+                            class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                             :src="article.image"
                             :alt="article.title"
                         />
                         <div
-                            class="absolute bottom-0 w-full bg-white/95 p-6 backdrop-blur-sm"
-                        >
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+                        ></div>
+                        <div class="absolute bottom-0 p-6">
                             <h3
-                                class="text-xl leading-tight font-bold text-neutral-800"
+                                class="text-2xl font-bold leading-tight text-white drop-shadow-md"
                             >
                                 {{ article.title }}
                             </h3>
