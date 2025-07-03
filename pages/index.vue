@@ -21,6 +21,8 @@
             </p>
             <NuxtLink
                 to="https://github.com/ben-everly"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="hover:shadow-[0_0_20px_theme(colors.secondary.400)] inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-8 py-4 text-lg font-medium backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white/20"
             >
                 <Icon name="uil:github" class="size-6" />
@@ -44,6 +46,8 @@
                 <NuxtLink
                     class="text-secondary-600 hover:text-secondary-500 font-semibold transition-colors duration-200"
                     to="https://oberd.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     >OBERD</NuxtLink
                 >, where we develop innovative medical software focused on
                 patient-reported outcomes data. This site is my space to share
@@ -109,6 +113,8 @@
             <div class="flex items-center gap-x-6">
                 <NuxtLink
                     to="https://github.com/ben-everly"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label="GitHub Profile"
                     class="hover:text-secondary-400 transition-colors"
                 >
@@ -116,6 +122,8 @@
                 </NuxtLink>
                 <NuxtLink
                     to="https://www.linkedin.com/in/ben-everly-950552101"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label="LinkedIn Profile"
                     class="hover:text-secondary-400 transition-colors"
                 >
