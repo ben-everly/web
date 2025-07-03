@@ -46,31 +46,81 @@
         </div>
     </header>
 
-    <section class="px-1 py-16 md:px-4 md:py-24">
-        <div class="container mx-auto max-w-4xl text-center">
-            <h2
-                class="mb-8 text-3xl font-bold tracking-tight text-neutral-800 md:text-4xl lg:text-5xl"
-            >
-                About Me
-            </h2>
-            <p
-                class="text-lg leading-relaxed text-neutral-700 md:text-xl lg:text-2xl"
-            >
-                Hi, I'm Ben. Welcome to my personal website! I'm a software
-                engineer currently working at
-                <NuxtLink
-                    class="text-secondary-600 hover:text-secondary-500 font-semibold transition-colors duration-200"
-                    to="https://oberd.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >OBERD</NuxtLink
-                >, where we develop innovative medical software focused on
-                patient-reported outcomes data. This site is my space to share
-                my projects and professional journey. Whether you're here to
-                explore my work, learn more about me, or connect, you've come to
-                the right place. I hope you'll discover something you find
-                interesting.
-            </p>
+    <section id="about" class="relative py-20 md:py-32">
+        <div class="absolute inset-0 bg-gradient-to-b from-white via-neutral-50/50 to-white"></div>
+        <div class="relative z-10 container mx-auto max-w-6xl px-4 md:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-secondary-100 text-secondary-800 rounded-full text-sm font-medium">
+                    <Icon name="uil:user" class="size-4" />
+                    <span>About Me</span>
+                </div>
+                <h2 class="mb-6 text-4xl font-bold tracking-tight text-neutral-900 md:text-5xl lg:text-6xl">
+                    <span class="bg-gradient-to-r from-neutral-900 to-neutral-700 bg-clip-text text-transparent">
+                        Building Solutions,
+                    </span>
+                    <br />
+                    <span class="bg-gradient-to-r from-secondary-600 to-secondary-700 bg-clip-text text-transparent">
+                        Solving Problems
+                    </span>
+                </h2>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="space-y-6">
+                    <div class="prose prose-lg prose-neutral max-w-none">
+                        <p class="text-xl leading-relaxed text-neutral-700 font-light">
+                            Hi, I'm Ben. Welcome to my personal website! I'm a software engineer currently working at
+                            <NuxtLink
+                                class="text-secondary-600 hover:text-secondary-500 font-semibold transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary-500 after:transition-all after:duration-300 hover:after:w-full"
+                                to="https://oberd.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >OBERD</NuxtLink>, where we develop innovative medical software focused on patient-reported outcomes data.
+                        </p>
+                        <p class="text-lg leading-relaxed text-neutral-600">
+                            This site is my space to share my projects and professional journey. Whether you're here to explore my work, learn more about me, or connect, you've come to the right place. I hope you'll discover something you find interesting.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-neutral-100 text-neutral-700 rounded-full text-sm font-medium">Software Engineering</span>
+                        <span class="px-4 py-2 bg-neutral-100 text-neutral-700 rounded-full text-sm font-medium">Medical Software</span>
+                        <span class="px-4 py-2 bg-neutral-100 text-neutral-700 rounded-full text-sm font-medium">Problem Solving</span>
+                        <span class="px-4 py-2 bg-neutral-100 text-neutral-700 rounded-full text-sm font-medium">Innovation</span>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="relative z-10 bg-white p-8 rounded-2xl shadow-xl border border-neutral-100">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 bg-secondary-100 rounded-full flex items-center justify-center">
+                                <Icon name="uil:briefcase" class="size-6 text-secondary-600" />
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-neutral-900">Current Role</h3>
+                                <p class="text-neutral-600 text-sm">Software Engineer</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <Icon name="uil:building" class="size-5 text-secondary-500 mt-0.5 flex-shrink-0" />
+                                <div>
+                                    <p class="font-medium text-neutral-900">OBERD</p>
+                                    <p class="text-sm text-neutral-600">Medical Software Development</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <Icon name="uil:focus-target" class="size-5 text-secondary-500 mt-0.5 flex-shrink-0" />
+                                <div>
+                                    <p class="font-medium text-neutral-900">Focus Area</p>
+                                    <p class="text-sm text-neutral-600">Patient-Reported Outcomes Data</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -inset-4 bg-gradient-to-r from-secondary-400/20 to-primary-400/20 rounded-3xl blur-xl opacity-30"></div>
+                </div>
+            </div>
         </div>
     </section>
 
