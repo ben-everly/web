@@ -15,7 +15,7 @@
         <div class="relative z-10 container mx-auto text-center">
             <div class="animate-fade-in-up">
                 <h1
-                    class="mb-6 bg-gradient-to-r from-white to-white/80 bg-clip-text text-6xl font-bold tracking-tight text-transparent md:text-7xl lg:text-8xl xl:text-9xl"
+                    class="mb-6 bg-gradient-to-r from-white to-white/80 bg-clip-text pb-2 text-6xl leading-tight font-bold tracking-tight text-transparent md:text-7xl lg:text-8xl xl:text-9xl"
                 >
                     Ben Everly
                 </h1>
