@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@layer base {
+    html {
+        @apply scroll-smooth;
+    }
+}
+
 @layer utilities {
     .animated-gradient {
         background-size: 200% 200%;
