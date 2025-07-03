@@ -124,50 +124,63 @@
         </div>
     </section>
 
-    <section
-        class="bg-gradient-to-r from-neutral-50 to-neutral-100 px-1 py-16 md:px-4 md:py-24"
-    >
-        <div class="container mx-auto px-2 text-center">
-            <h2
-                class="mb-6 text-3xl font-bold tracking-tight text-neutral-800 md:text-4xl lg:text-5xl"
-            >
-                Explorations
-            </h2>
-            <p
-                class="mb-12 text-lg leading-relaxed text-neutral-700 md:text-xl lg:text-2xl"
-            >
-                Here is some of the work I've found interesting recently.
-            </p>
-            <ol
-                class="grid list-none grid-cols-1 gap-10 py-6 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
-            >
-                <li
+    <section class="relative py-20 md:py-32 bg-gradient-to-br from-neutral-50 via-white to-neutral-100">
+        <div class="absolute inset-0 bg-gradient-to-r from-neutral-50/80 to-neutral-100/80"></div>
+        <div class="relative z-10 container mx-auto max-w-7xl px-4 md:px-8">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-primary-100 text-primary-800 rounded-full text-sm font-medium">
+                    <Icon name="uil:lightbulb-alt" class="size-4" />
+                    <span>Recent Work</span>
+                </div>
+                <h2 class="mb-6 text-4xl font-bold tracking-tight text-neutral-900 md:text-5xl lg:text-6xl">
+                    <span class="bg-gradient-to-r from-neutral-900 to-neutral-700 bg-clip-text text-transparent">
+                        Creative
+                    </span>
+                    <span class="bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent">
+                        Explorations
+                    </span>
+                </h2>
+                <p class="mx-auto max-w-3xl text-lg leading-relaxed text-neutral-600 md:text-xl">
+                    A collection of projects and experiments that showcase my passion for innovation and problem-solving.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                <article
                     v-for="article in articles"
                     :key="article.path"
-                    class="group mx-auto h-80 w-80 overflow-hidden rounded-2xl bg-neutral-800 shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+                    class="group relative overflow-hidden rounded-3xl bg-white shadow-lg transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:shadow-primary-500/10"
                 >
-                    <NuxtLink
-                        :to="`${article.path}`"
-                        class="relative block h-full w-full"
-                    >
-                        <NuxtImg
-                            class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                            :src="article.image"
-                            :alt="article.title"
-                        />
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
-                        ></div>
-                        <div class="absolute bottom-0 p-6">
-                            <h3
-                                class="text-2xl leading-tight font-bold text-white drop-shadow-md"
-                            >
+                    <NuxtLink :to="article.path" class="block">
+                        <div class="relative aspect-[4/3] overflow-hidden">
+                            <NuxtImg
+                                class="h-full w-full object-cover transition-all duration-500 group-hover:scale-110"
+                                :src="article.image"
+                                :alt="article.title"
+                            />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-40"></div>
+                            <div class="absolute top-4 right-4 rounded-full bg-white/20 p-2 backdrop-blur-sm transition-all duration-300 group-hover:bg-white/30">
+                                <Icon name="uil:external-link-alt" class="size-4 text-white" />
+                            </div>
+                        </div>
+                        
+                        <div class="p-6">
+                            <h3 class="mb-3 text-xl font-bold text-neutral-900 transition-colors duration-300 group-hover:text-primary-600">
                                 {{ article.title }}
                             </h3>
+                            <p v-if="article.description" class="text-sm leading-relaxed text-neutral-600 line-clamp-3">
+                                {{ article.description }}
+                            </p>
+                            <div class="mt-4 flex items-center gap-2 text-sm font-medium text-primary-600">
+                                <span>Read more</span>
+                                <Icon name="uil:arrow-right" class="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                            </div>
                         </div>
+                        
+                        <div class="absolute inset-0 rounded-3xl border border-neutral-200/50 transition-all duration-300 group-hover:border-primary-200"></div>
                     </NuxtLink>
-                </li>
-            </ol>
+                </article>
+            </div>
         </div>
     </section>
 
