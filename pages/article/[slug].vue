@@ -322,7 +322,7 @@
                             </div>
                         </div>
                         <div
-                            class="from-secondary-400/20 to-primary-400/20 absolute -inset-4 rounded-3xl bg-gradient-to-r opacity-30 blur-xl"
+                            class="from-secondary-400/20 to-primary-400/20 pointer-events-none absolute -inset-4 rounded-3xl bg-gradient-to-r opacity-30 blur-xl"
                         ></div>
                     </div>
                 </div>
