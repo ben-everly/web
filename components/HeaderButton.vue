@@ -11,11 +11,11 @@
 
 <script setup lang="ts">
     interface Props {
-        to: string
-        external?: boolean
+        to: string;
+        external?: boolean;
     }
 
     withDefaults(defineProps<Props>(), {
-        external: false
-    })
+        external: false,
+    });
 </script>

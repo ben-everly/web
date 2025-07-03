@@ -20,8 +20,11 @@
             <div
                 class="flex flex-col items-center justify-center gap-4 sm:flex-row"
             >
-                <HeaderButton to="https://github.com/ben-everly" :external="true">
-                    <div class="px-8 py-4 flex items-center gap-3">
+                <HeaderButton
+                    to="https://github.com/ben-everly"
+                    :external="true"
+                >
+                    <div class="flex items-center gap-3 px-8 py-4">
                         <Icon
                             name="uil:github"
                             class="size-6 transition-transform duration-300 group-hover:rotate-12"

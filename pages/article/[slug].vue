@@ -16,7 +16,7 @@
             <!-- Navigation -->
             <div class="mb-8">
                 <HeaderButton to="/">
-                    <div class="px-6 py-3 flex items-center gap-3">
+                    <div class="flex items-center gap-3 px-6 py-3">
                         <Icon
                             name="uil:arrow-left"
                             class="size-5 transition-transform duration-300 group-hover:-translate-x-1"
@@ -96,7 +96,7 @@
                 <!-- Navigation -->
                 <div class="mb-8">
                     <HeaderButton to="/">
-                        <div class="px-6 py-3 flex items-center gap-3">
+                        <div class="flex items-center gap-3 px-6 py-3">
                             <Icon
                                 name="uil:arrow-left"
                                 class="size-5 transition-transform duration-300 group-hover:-translate-x-1"
