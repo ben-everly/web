@@ -15,7 +15,7 @@
         <div class="relative z-10 container mx-auto text-center">
             <div class="animate-fade-in-up">
                 <h1
-                    class="mb-6 bg-gradient-to-r from-white to-white/80 bg-clip-text pb-2 text-6xl leading-tight font-bold tracking-tight text-transparent md:text-7xl lg:text-8xl xl:text-9xl"
+                    class="mb-2 bg-gradient-to-r from-white to-white/80 bg-clip-text pb-2 text-6xl leading-tight font-bold tracking-tight text-transparent md:text-7xl lg:text-8xl xl:text-9xl"
                 >
                     Ben Everly
                 </h1>
@@ -117,7 +117,9 @@
                     </div>
 
                     <div class="space-y-4">
-                        <p class="text-sm font-medium text-neutral-700">Currently working with:</p>
+                        <p class="text-sm font-medium text-neutral-700">
+                            Currently working with:
+                        </p>
                         <div class="flex flex-wrap gap-3">
                             <span
                                 class="inline-flex items-center rounded-lg border border-blue-200 bg-gradient-to-r from-blue-50 to-blue-100 px-3 py-1.5 text-sm font-medium text-blue-800 shadow-sm transition-all duration-200"
@@ -147,6 +149,10 @@
                                 class="inline-flex items-center rounded-lg border border-sky-200 bg-gradient-to-r from-sky-50 to-sky-100 px-3 py-1.5 text-sm font-medium text-sky-800 shadow-sm transition-all duration-200"
                                 >Docker</span
                             >
+                            <span
+                                class="inline-flex items-center rounded-lg border border-yellow-200 bg-gradient-to-r from-yellow-50 to-yellow-100 px-3 py-1.5 text-sm font-medium text-yellow-800 shadow-sm transition-all duration-200"
+                                >AWS</span
+                            >
                         </div>
                     </div>
                 </div>
@@ -155,25 +161,21 @@
                     <div
                         class="relative z-10 rounded-2xl border border-neutral-100 bg-white p-8 shadow-xl"
                     >
-                        <div class="mb-6 flex items-center gap-4">
-                            <div
-                                class="bg-secondary-100 flex h-12 w-12 items-center justify-center rounded-full"
-                            >
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
                                 <Icon
                                     name="uil:briefcase"
-                                    class="text-secondary-600 size-6"
+                                    class="text-secondary-500 mt-0.5 size-5 flex-shrink-0"
                                 />
+                                <div>
+                                    <p class="font-medium text-neutral-900">
+                                        Current Role
+                                    </p>
+                                    <p class="text-sm text-neutral-600">
+                                        Senior Software Engineer
+                                    </p>
+                                </div>
                             </div>
-                            <div>
-                                <h3 class="font-semibold text-neutral-900">
-                                    Current Role
-                                </h3>
-                                <p class="text-sm text-neutral-600">
-                                    Software Engineer
-                                </p>
-                            </div>
-                        </div>
-                        <div class="space-y-4">
                             <div class="flex items-start gap-3">
                                 <Icon
                                     name="uil:building"
@@ -181,10 +183,10 @@
                                 />
                                 <div>
                                     <p class="font-medium text-neutral-900">
-                                        OBERD
+                                        Company
                                     </p>
                                     <p class="text-sm text-neutral-600">
-                                        Medical Software Development
+                                        OBERD - Medical Software Development
                                     </p>
                                 </div>
                             </div>
@@ -235,7 +237,7 @@
                         Creative
                     </span>
                     <span
-                        class="from-primary-600 to-primary-700 bg-gradient-to-r bg-clip-text text-transparent"
+                        class="from-primary-500 to-primary-600 bg-gradient-to-r bg-clip-text text-transparent"
                     >
                         Explorations
                     </span>
@@ -278,7 +280,7 @@
 
                         <div class="p-6">
                             <h3
-                                class="group-hover:text-primary-600 mb-3 text-xl font-bold text-neutral-900 transition-colors duration-300"
+                                class="group-hover:text-primary-500 mb-3 text-xl font-bold text-neutral-900 transition-colors duration-300"
                             >
                                 {{ article.title }}
                             </h3>
@@ -289,7 +291,7 @@
                                 {{ article.description }}
                             </p>
                             <div
-                                class="text-primary-600 mt-4 flex items-center gap-2 text-sm font-medium"
+                                class="text-primary-500 mt-4 flex items-center gap-2 text-sm font-medium"
                             >
                                 <span>Read more</span>
                                 <Icon
