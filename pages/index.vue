@@ -116,23 +116,38 @@
                         </p>
                     </div>
 
-                    <div class="flex flex-wrap gap-3">
-                        <span
-                            class="rounded-full bg-neutral-100 px-4 py-2 text-sm font-medium text-neutral-700"
-                            >Software Engineering</span
-                        >
-                        <span
-                            class="rounded-full bg-neutral-100 px-4 py-2 text-sm font-medium text-neutral-700"
-                            >Medical Software</span
-                        >
-                        <span
-                            class="rounded-full bg-neutral-100 px-4 py-2 text-sm font-medium text-neutral-700"
-                            >Problem Solving</span
-                        >
-                        <span
-                            class="rounded-full bg-neutral-100 px-4 py-2 text-sm font-medium text-neutral-700"
-                            >Innovation</span
-                        >
+                    <div class="space-y-4">
+                        <p class="text-sm font-medium text-neutral-700">Currently working with:</p>
+                        <div class="flex flex-wrap gap-3">
+                            <span
+                                class="inline-flex items-center rounded-lg border border-blue-200 bg-gradient-to-r from-blue-50 to-blue-100 px-3 py-1.5 text-sm font-medium text-blue-800 shadow-sm transition-all duration-200"
+                                >PHP</span
+                            >
+                            <span
+                                class="inline-flex items-center rounded-lg border border-red-200 bg-gradient-to-r from-red-50 to-red-100 px-3 py-1.5 text-sm font-medium text-red-800 shadow-sm transition-all duration-200"
+                                >Laravel</span
+                            >
+                            <span
+                                class="inline-flex items-center rounded-lg border border-purple-200 bg-gradient-to-r from-purple-50 to-purple-100 px-3 py-1.5 text-sm font-medium text-purple-800 shadow-sm transition-all duration-200"
+                                >Livewire</span
+                            >
+                            <span
+                                class="inline-flex items-center rounded-lg border border-emerald-200 bg-gradient-to-r from-emerald-50 to-emerald-100 px-3 py-1.5 text-sm font-medium text-emerald-800 shadow-sm transition-all duration-200"
+                                >AlpineJS</span
+                            >
+                            <span
+                                class="inline-flex items-center rounded-lg border border-cyan-200 bg-gradient-to-r from-cyan-50 to-cyan-100 px-3 py-1.5 text-sm font-medium text-cyan-800 shadow-sm transition-all duration-200"
+                                >TailwindCSS</span
+                            >
+                            <span
+                                class="inline-flex items-center rounded-lg border border-orange-200 bg-gradient-to-r from-orange-50 to-orange-100 px-3 py-1.5 text-sm font-medium text-orange-800 shadow-sm transition-all duration-200"
+                                >MySQL</span
+                            >
+                            <span
+                                class="inline-flex items-center rounded-lg border border-sky-200 bg-gradient-to-r from-sky-50 to-sky-100 px-3 py-1.5 text-sm font-medium text-sky-800 shadow-sm transition-all duration-200"
+                                >Docker</span
+                            >
+                        </div>
                     </div>
                 </div>
 
