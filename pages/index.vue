@@ -11,9 +11,7 @@
             >
                 Ben Everly
             </h1>
-            <div
-                class="from-secondary-400 to-secondary-600 mx-auto mb-8 h-1 w-24 rounded-full bg-gradient-to-r"
-            ></div>
+            <Divider class="mx-auto mb-8" />
             <p
                 class="mx-auto mb-16 max-w-4xl text-xl leading-relaxed font-light text-white/90 md:text-2xl lg:text-3xl"
             >

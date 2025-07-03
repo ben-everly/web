@@ -66,10 +66,7 @@
                 />
             </div>
 
-            <!-- Decorative line -->
-            <div
-                class="from-secondary-400 to-secondary-600 mt-8 h-1 w-24 rounded-full bg-gradient-to-r"
-            ></div>
+            <Divider class="mt-8" />
         </template>
 
         <!-- Article Not Found State -->
@@ -95,10 +92,7 @@
                     been moved.
                 </p>
 
-                <!-- Decorative line -->
-                <div
-                    class="from-secondary-400 to-secondary-600 m-auto mt-8 mb-8 h-1 w-24 rounded-full bg-gradient-to-r"
-                ></div>
+                <Divider class="m-auto mt-8 mb-8" />
 
                 <!-- Navigation -->
                 <div class="mb-8">
