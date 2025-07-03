@@ -10,123 +10,112 @@
     );
 </script>
 <template>
-    <header
-        class="from-primary-600 via-primary-700 to-primary-800 animated-gradient relative overflow-hidden bg-gradient-to-br px-4 py-16 text-white md:px-8 md:py-20"
-    >
-        <div class="grid-pattern absolute inset-0 opacity-20"></div>
-        <div
-            class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/10"
-        ></div>
-
-        <div class="relative z-10 container mx-auto">
-            <div class="animate-fade-in-up">
-                <!-- Article Found State -->
-                <template v-if="article">
-                    <!-- Navigation -->
-                    <div class="mb-8">
-                        <NuxtLink
-                            to="/"
-                            class="group inline-flex items-center gap-3 rounded-full border border-white/30 bg-white/10 px-6 py-3 text-lg font-medium backdrop-blur-lg transition-all duration-300 hover:scale-105 hover:border-white/50 hover:bg-white/20 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
-                        >
-                            <Icon
-                                name="uil:arrow-left"
-                                class="size-5 transition-transform duration-300 group-hover:-translate-x-1"
-                            />
-                            <span>Back to Home</span>
-                        </NuxtLink>
-                    </div>
-                    <!-- Author -->
-                    <div class="mb-4">
-                        <div
-                            class="bg-secondary-100 text-secondary-800 mb-4 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium"
-                        >
-                            <Icon name="uil:user" class="size-4" />
-                            <span>Ben Everly</span>
-                        </div>
-                    </div>
-
-                    <!-- Article Title -->
-                    <h1
-                        class="mb-4 bg-gradient-to-r from-white to-white/80 bg-clip-text text-4xl leading-tight font-bold tracking-tight text-transparent md:text-5xl lg:text-6xl"
-                    >
-                        {{ article.title }}
-                    </h1>
-
-                    <!-- Article Description -->
-                    <p
-                        v-if="article.description"
-                        class="mb-6 max-w-4xl text-xl leading-relaxed font-light text-white/90 md:text-2xl"
-                    >
-                        {{ article.description }}
-                    </p>
-
-                    <!-- Published Date -->
-                    <div
-                        v-if="article.published_at"
-                        class="flex items-center gap-2 text-white/80"
-                    >
-                        <Icon name="uil:calendar-alt" class="size-5" />
-                        <NuxtTime
-                            :datetime="article.published_at"
-                            year="numeric"
-                            month="long"
-                            day="numeric"
-                            class="text-lg"
-                        />
-                    </div>
-
-                    <!-- Decorative line -->
-                    <div
-                        class="from-secondary-400 to-secondary-600 mt-8 h-1 w-24 rounded-full bg-gradient-to-r"
-                    ></div>
-                </template>
-
-                <!-- Article Not Found State -->
-                <template v-else>
-                    <div class="text-center">
-                        <div class="mb-6">
-                            <Icon
-                                name="uil:exclamation-triangle"
-                                class="mx-auto mb-4 size-16 text-white/70"
-                            />
-                        </div>
-
-                        <h1
-                            class="mb-4 bg-gradient-to-r from-white to-white/80 bg-clip-text text-3xl leading-tight font-bold tracking-tight text-transparent md:text-4xl"
-                        >
-                            Article Not Found
-                        </h1>
-
-                        <p
-                            class="mx-auto mb-6 max-w-2xl text-lg leading-relaxed font-light text-white/80"
-                        >
-                            The article you're looking for doesn't exist or may
-                            have been moved.
-                        </p>
-
-                        <!-- Decorative line -->
-                        <div
-                            class="from-secondary-400 to-secondary-600 m-auto mt-8 mb-8 h-1 w-24 rounded-full bg-gradient-to-r"
-                        ></div>
-
-                        <!-- Navigation -->
-                        <div class="mb-8">
-                            <NuxtLink
-                                to="/"
-                                class="group inline-flex items-center gap-3 rounded-full border border-white/30 bg-white/10 px-6 py-3 text-lg font-medium backdrop-blur-lg transition-all duration-300 hover:scale-105 hover:border-white/50 hover:bg-white/20 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
-                            >
-                                <Icon
-                                    name="uil:arrow-left"
-                                    class="size-5 transition-transform duration-300 group-hover:-translate-x-1"
-                                />
-                                <span>Back to Home</span>
-                            </NuxtLink>
-                        </div>
-                    </div>
-                </template>
+    <Hero>
+        <!-- Article Found State -->
+        <template v-if="article">
+            <!-- Navigation -->
+            <div class="mb-8">
+                <NuxtLink
+                    to="/"
+                    class="group inline-flex items-center gap-3 rounded-full border border-white/30 bg-white/10 px-6 py-3 text-lg font-medium backdrop-blur-lg transition-all duration-300 hover:scale-105 hover:border-white/50 hover:bg-white/20 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
+                >
+                    <Icon
+                        name="uil:arrow-left"
+                        class="size-5 transition-transform duration-300 group-hover:-translate-x-1"
+                    />
+                    <span>Back to Home</span>
+                </NuxtLink>
             </div>
-        </div>
-    </header>
+            <!-- Author -->
+            <div class="mb-4">
+                <div
+                    class="bg-secondary-100 text-secondary-800 mb-4 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium"
+                >
+                    <Icon name="uil:user" class="size-4" />
+                    <span>Ben Everly</span>
+                </div>
+            </div>
+
+            <!-- Article Title -->
+            <h1
+                class="mb-4 bg-gradient-to-r from-white to-white/80 bg-clip-text text-4xl leading-tight font-bold tracking-tight text-transparent md:text-5xl lg:text-6xl"
+            >
+                {{ article.title }}
+            </h1>
+
+            <!-- Article Description -->
+            <p
+                v-if="article.description"
+                class="mb-6 max-w-4xl text-xl leading-relaxed font-light text-white/90 md:text-2xl"
+            >
+                {{ article.description }}
+            </p>
+
+            <!-- Published Date -->
+            <div
+                v-if="article.published_at"
+                class="flex items-center gap-2 text-white/80"
+            >
+                <Icon name="uil:calendar-alt" class="size-5" />
+                <NuxtTime
+                    :datetime="article.published_at"
+                    year="numeric"
+                    month="long"
+                    day="numeric"
+                    class="text-lg"
+                />
+            </div>
+
+            <!-- Decorative line -->
+            <div
+                class="from-secondary-400 to-secondary-600 mt-8 h-1 w-24 rounded-full bg-gradient-to-r"
+            ></div>
+        </template>
+
+        <!-- Article Not Found State -->
+        <template v-else>
+            <div class="text-center">
+                <div class="mb-6">
+                    <Icon
+                        name="uil:exclamation-triangle"
+                        class="mx-auto mb-4 size-16 text-white/70"
+                    />
+                </div>
+
+                <h1
+                    class="mb-4 bg-gradient-to-r from-white to-white/80 bg-clip-text text-3xl leading-tight font-bold tracking-tight text-transparent md:text-4xl"
+                >
+                    Article Not Found
+                </h1>
+
+                <p
+                    class="mx-auto mb-6 max-w-2xl text-lg leading-relaxed font-light text-white/80"
+                >
+                    The article you're looking for doesn't exist or may have
+                    been moved.
+                </p>
+
+                <!-- Decorative line -->
+                <div
+                    class="from-secondary-400 to-secondary-600 m-auto mt-8 mb-8 h-1 w-24 rounded-full bg-gradient-to-r"
+                ></div>
+
+                <!-- Navigation -->
+                <div class="mb-8">
+                    <NuxtLink
+                        to="/"
+                        class="group inline-flex items-center gap-3 rounded-full border border-white/30 bg-white/10 px-6 py-3 text-lg font-medium backdrop-blur-lg transition-all duration-300 hover:scale-105 hover:border-white/50 hover:bg-white/20 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
+                    >
+                        <Icon
+                            name="uil:arrow-left"
+                            class="size-5 transition-transform duration-300 group-hover:-translate-x-1"
+                        />
+                        <span>Back to Home</span>
+                    </NuxtLink>
+                </div>
+            </div>
+        </template>
+    </Hero>
 
     <!-- Article Content -->
     <section class="relative py-20 md:py-32">
