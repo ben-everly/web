@@ -30,7 +30,7 @@
                 </div>
 
                 <!-- Author -->
-                <div class="mb-4">
+                <div class="mb-4" v-if="article">
                     <div
                         class="bg-secondary-100 text-secondary-800 mb-4 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium"
                     >
@@ -43,7 +43,7 @@
                 <h1
                     class="mb-4 bg-gradient-to-r from-white to-white/80 bg-clip-text text-4xl leading-tight font-bold tracking-tight text-transparent md:text-5xl lg:text-6xl"
                 >
-                    {{ article?.title }}
+                    {{ article?.title || "Not Found" }}
                 </h1>
 
                 <!-- Article Description -->
@@ -61,7 +61,7 @@
                 >
                     <Icon name="uil:calendar-alt" class="size-5" />
                     <NuxtTime
-                        :datetime="article?.published_at"
+                        :datetime="article.published_at"
                         year="numeric"
                         month="long"
                         day="numeric"
@@ -79,17 +79,11 @@
 
     <!-- Article Content -->
     <section class="relative py-20 md:py-32">
-        <div
-            class="absolute inset-0 bg-gradient-to-b from-white via-neutral-50/50 to-white"
-        ></div>
-        <div class="relative z-10 container mx-auto max-w-4xl px-4 md:px-8">
-            <div
-                v-if="article"
-                class="relative rounded-2xl border border-neutral-100 bg-white p-8 shadow-xl md:p-12"
-            >
+        <div class="relative z-10 container mx-auto px-4 md:px-8">
+            <div v-if="article" class="relative p-8 md:p-12">
                 <ContentRenderer
                     :value="article"
-                    class="prose prose-lg prose-neutral max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-h4:text-xl prose-p:leading-relaxed prose-p:text-neutral-700 prose-a:text-secondary-600 hover:prose-a:text-secondary-500 prose-a:font-semibold prose-a:no-underline hover:prose-a:underline prose-code:rounded-md prose-code:bg-neutral-100 prose-code:px-2 prose-code:py-1 prose-code:text-sm prose-code:font-medium prose-code:text-neutral-800 prose-blockquote:border-l-4 prose-blockquote:border-secondary-500 prose-blockquote:bg-secondary-50 prose-blockquote:pl-6 prose-blockquote:italic prose-img:rounded-xl prose-img:shadow-lg"
+                    class="prose prose-lg prose-neutral prose-headings:font-bold prose-headings:tracking-tight prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-h4:text-xl prose-p:leading-relaxed prose-p:text-neutral-700 prose-a:text-secondary-600 hover:prose-a:text-secondary-500 prose-a:font-semibold prose-a:no-underline hover:prose-a:underline prose-code:rounded-md prose-code:bg-neutral-100 prose-code:px-2 prose-code:py-1 prose-code:text-sm prose-code:font-medium prose-code:text-neutral-800 prose-blockquote:border-l-4 prose-blockquote:border-secondary-500 prose-blockquote:bg-secondary-50 prose-blockquote:pl-6 prose-blockquote:italic prose-img:rounded-xl prose-img:shadow-lg max-w-none"
                 />
                 <div
                     class="from-secondary-400/20 to-primary-400/20 absolute -inset-4 rounded-3xl bg-gradient-to-r opacity-30 blur-xl"
@@ -111,7 +105,7 @@
                 </p>
                 <NuxtLink
                     to="/"
-                    class="mt-6 inline-flex items-center gap-2 rounded-full bg-primary-600 px-6 py-3 text-white transition-colors hover:bg-primary-700"
+                    class="bg-primary-600 hover:bg-primary-700 mt-6 inline-flex items-center gap-2 rounded-full px-6 py-3 text-white transition-colors"
                 >
                     <Icon name="uil:arrow-left" class="size-4" />
                     <span>Back to Home</span>
