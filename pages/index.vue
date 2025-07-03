@@ -190,10 +190,10 @@
     </section>
 
     <section
-        class="relative bg-gradient-to-br from-neutral-50 via-white to-neutral-100 py-20 md:py-32"
+        class="relative border-t border-neutral-200/60 bg-gradient-to-br from-neutral-100 via-neutral-50 to-neutral-200 py-24 shadow-inner md:py-36"
     >
         <div
-            class="absolute inset-0 bg-gradient-to-r from-neutral-50/80 to-neutral-100/80"
+            class="absolute inset-0 bg-gradient-to-r from-neutral-100/90 to-neutral-200/90"
         ></div>
         <div class="relative z-10 container mx-auto max-w-7xl px-4 md:px-8">
             <div class="mb-16 text-center">

@@ -2,6 +2,7 @@
     <footer
         class="relative bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 px-4 py-16 md:py-20"
     >
+        <div class="grid-pattern absolute inset-0 opacity-[3%]"></div>
         <div
             class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
         ></div>
@@ -69,4 +70,3 @@
         </div>
     </footer>
 </template>
-
