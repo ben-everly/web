@@ -20,22 +20,19 @@
             <div
                 class="flex flex-col items-center justify-center gap-4 sm:flex-row"
             >
-                <NuxtLink
-                    to="https://github.com/ben-everly"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="group inline-flex items-center gap-3 rounded-full border border-white/30 bg-white/10 px-8 py-4 text-lg font-medium backdrop-blur-lg transition-all duration-300 hover:scale-105 hover:border-white/50 hover:bg-white/20 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
-                >
-                    <Icon
-                        name="uil:github"
-                        class="size-6 transition-transform duration-300 group-hover:rotate-12"
-                    />
-                    <span>View GitHub</span>
-                    <Icon
-                        name="uil:external-link-alt"
-                        class="size-4 opacity-70"
-                    />
-                </NuxtLink>
+                <HeaderButton to="https://github.com/ben-everly" :external="true">
+                    <div class="px-8 py-4 flex items-center gap-3">
+                        <Icon
+                            name="uil:github"
+                            class="size-6 transition-transform duration-300 group-hover:rotate-12"
+                        />
+                        <span>View GitHub</span>
+                        <Icon
+                            name="uil:external-link-alt"
+                            class="size-4 opacity-70"
+                        />
+                    </div>
+                </HeaderButton>
                 <NuxtLink
                     to="#about"
                     class="inline-flex items-center gap-2 px-6 py-4 text-white/80 transition-colors duration-300 hover:text-white"

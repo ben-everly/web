@@ -15,16 +15,15 @@
         <template v-if="article">
             <!-- Navigation -->
             <div class="mb-8">
-                <NuxtLink
-                    to="/"
-                    class="group inline-flex items-center gap-3 rounded-full border border-white/30 bg-white/10 px-6 py-3 text-lg font-medium backdrop-blur-lg transition-all duration-300 hover:scale-105 hover:border-white/50 hover:bg-white/20 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
-                >
-                    <Icon
-                        name="uil:arrow-left"
-                        class="size-5 transition-transform duration-300 group-hover:-translate-x-1"
-                    />
-                    <span>Back to Home</span>
-                </NuxtLink>
+                <HeaderButton to="/">
+                    <div class="px-6 py-3 flex items-center gap-3">
+                        <Icon
+                            name="uil:arrow-left"
+                            class="size-5 transition-transform duration-300 group-hover:-translate-x-1"
+                        />
+                        <span>Back to Home</span>
+                    </div>
+                </HeaderButton>
             </div>
             <!-- Author -->
             <div class="mb-4">
@@ -96,16 +95,15 @@
 
                 <!-- Navigation -->
                 <div class="mb-8">
-                    <NuxtLink
-                        to="/"
-                        class="group inline-flex items-center gap-3 rounded-full border border-white/30 bg-white/10 px-6 py-3 text-lg font-medium backdrop-blur-lg transition-all duration-300 hover:scale-105 hover:border-white/50 hover:bg-white/20 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
-                    >
-                        <Icon
-                            name="uil:arrow-left"
-                            class="size-5 transition-transform duration-300 group-hover:-translate-x-1"
-                        />
-                        <span>Back to Home</span>
-                    </NuxtLink>
+                    <HeaderButton to="/">
+                        <div class="px-6 py-3 flex items-center gap-3">
+                            <Icon
+                                name="uil:arrow-left"
+                                class="size-5 transition-transform duration-300 group-hover:-translate-x-1"
+                            />
+                            <span>Back to Home</span>
+                        </div>
+                    </HeaderButton>
                 </div>
             </div>
         </template>
