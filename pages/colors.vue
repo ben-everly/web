@@ -136,22 +136,22 @@
             <div class="grid grid-cols-3 gap-4 md:grid-cols-5 lg:grid-cols-9">
                 <div class="text-center">
                     <div class="mb-2 h-20 w-full rounded bg-neutral-100"></div>
-                    <p class="font-mono text-sm">#fafaf9</p>
+                    <p class="font-mono text-sm">#f5f5f4</p>
                     <p class="text-xs text-neutral-600">bg-neutral-100</p>
                 </div>
                 <div class="text-center">
                     <div class="mb-2 h-20 w-full rounded bg-neutral-200"></div>
-                    <p class="font-mono text-sm">#f5f5f4</p>
+                    <p class="font-mono text-sm">#e7e5e4</p>
                     <p class="text-xs text-neutral-600">bg-neutral-200</p>
                 </div>
                 <div class="text-center">
                     <div class="mb-2 h-20 w-full rounded bg-neutral-300"></div>
-                    <p class="font-mono text-sm">#e7e5e4</p>
+                    <p class="font-mono text-sm">#d6d3d1</p>
                     <p class="text-xs text-neutral-600">bg-neutral-300</p>
                 </div>
                 <div class="text-center">
                     <div class="mb-2 h-20 w-full rounded bg-neutral-400"></div>
-                    <p class="font-mono text-sm">#d6d3d1</p>
+                    <p class="font-mono text-sm">#a8a29e</p>
                     <p class="text-xs text-neutral-600">bg-neutral-400</p>
                 </div>
                 <div class="text-center">
@@ -171,12 +171,12 @@
                 </div>
                 <div class="text-center">
                     <div class="mb-2 h-20 w-full rounded bg-neutral-800"></div>
-                    <p class="font-mono text-sm">#292524</p>
+                    <p class="font-mono text-sm">#3c3835</p>
                     <p class="text-xs text-neutral-600">bg-neutral-800</p>
                 </div>
                 <div class="text-center">
                     <div class="mb-2 h-20 w-full rounded bg-neutral-900"></div>
-                    <p class="font-mono text-sm">#1c1917</p>
+                    <p class="font-mono text-sm">#292524</p>
                     <p class="text-xs text-neutral-600">bg-neutral-900</p>
                 </div>
             </div>

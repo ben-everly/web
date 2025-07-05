@@ -16,7 +16,7 @@
             </div>
             <Divider class="mx-auto mb-8" />
             <p
-                class="mx-auto mb-16 max-w-4xl text-xl leading-relaxed font-light text-white/90 md:text-2xl lg:text-3xl"
+                class="mx-auto mb-16 max-w-4xl text-xl leading-relaxed text-white/90 md:text-2xl lg:text-3xl"
             >
                 Software Engineer & Problem Solver
             </p>
@@ -82,9 +82,7 @@
             <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
                 <div class="space-y-6">
                     <div class="prose prose-lg prose-neutral max-w-none">
-                        <p
-                            class="text-xl leading-relaxed font-light text-neutral-700"
-                        >
+                        <p class="text-xl leading-relaxed">
                             Hi, I'm Ben. Welcome to my personal website! I'm a
                             software engineer currently working at
                             <NuxtLink
@@ -96,7 +94,7 @@
                             >, where we develop innovative medical software
                             focused on patient-reported outcomes data.
                         </p>
-                        <p class="text-lg leading-relaxed text-neutral-600">
+                        <p class="text-xl leading-relaxed">
                             This site is my space to share my projects and
                             professional journey. Whether you're here to explore
                             my work, learn more about me, or connect, you've
@@ -107,7 +105,7 @@
 
                     <div class="space-y-6">
                         <div class="space-y-4">
-                            <p class="text-sm font-medium text-neutral-700">
+                            <p class="text-sm font-medium">
                                 Currently working with:
                             </p>
                             <div class="flex flex-wrap gap-3">
@@ -124,7 +122,7 @@
                         </div>
 
                         <div class="space-y-4">
-                            <p class="text-sm font-medium text-neutral-700">
+                            <p class="text-sm font-medium">
                                 Currently exploring:
                             </p>
                             <div class="flex flex-wrap gap-3">

@@ -41,7 +41,7 @@
             <!-- Article Description -->
             <p
                 v-if="article.description"
-                class="mb-6 max-w-4xl text-xl leading-relaxed font-light text-white/90 md:text-2xl"
+                class="mb-6 max-w-4xl text-xl leading-relaxed text-white/90 md:text-2xl"
             >
                 {{ article.description }}
             </p>
@@ -80,7 +80,7 @@
                 </h1>
 
                 <p
-                    class="mx-auto mb-6 max-w-2xl text-lg leading-relaxed font-light text-white/80"
+                    class="mx-auto mb-6 max-w-2xl text-lg leading-relaxed text-white/80"
                 >
                     The article you're looking for doesn't exist or may have
                     been moved.
@@ -110,7 +110,7 @@
             <div v-if="article" class="relative p-8 md:p-12">
                 <ContentRenderer
                     :value="article"
-                    class="prose prose-lg prose-neutral prose-headings:font-bold prose-headings:tracking-tight prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-h4:text-xl prose-p:leading-relaxed prose-p:text-neutral-700 prose-a:text-secondary-600 hover:prose-a:text-secondary-500 prose-a:font-semibold prose-a:no-underline hover:prose-a:underline prose-code:rounded-md prose-code:bg-neutral-100 prose-code:px-2 prose-code:py-1 prose-code:text-sm prose-code:font-medium prose-code:text-neutral-800 prose-blockquote:border-l-4 prose-blockquote:border-secondary-500 prose-blockquote:bg-secondary-50 prose-blockquote:pl-6 prose-blockquote:italic prose-img:rounded-xl prose-img:shadow-lg max-w-none"
+                    class="prose prose-lg prose-neutral prose-headings:font-bold prose-headings:tracking-tight prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-h4:text-xl prose-p:leading-relaxed prose-a:text-secondary-600 hover:prose-a:text-secondary-500 prose-a:font-semibold prose-a:no-underline hover:prose-a:underline prose-code:rounded-md prose-code:bg-neutral-100 prose-code:px-2 prose-code:py-1 prose-code:text-sm prose-code:font-medium prose-blockquote:border-l-4 prose-blockquote:border-secondary-500 prose-blockquote:bg-secondary-50 prose-blockquote:pl-6 prose-blockquote:italic prose-img:rounded-xl prose-img:shadow-lg max-w-none"
                 />
                 <div
                     class="from-secondary-400/20 to-primary-400/20 absolute -inset-4 rounded-3xl bg-gradient-to-r opacity-30 blur-xl"
@@ -182,9 +182,7 @@
                         class="relative rounded-2xl border border-neutral-100 bg-white p-8 shadow-xl md:p-12"
                     >
                         <div class="space-y-6">
-                            <p
-                                class="text-xl leading-relaxed font-light text-neutral-700"
-                            >
+                            <p class="text-xl leading-relaxed">
                                 Hi, I'm Ben. I'm a software engineer currently
                                 working at
                                 <NuxtLink
@@ -196,7 +194,7 @@
                                 >, where we develop innovative medical software
                                 focused on patient-reported outcomes data.
                             </p>
-                            <p class="text-lg leading-relaxed text-neutral-600">
+                            <p class="text-xl leading-relaxed">
                                 This site is my space to share projects and
                                 insights from my professional journey. Whether
                                 you're here to explore my work, learn more about
@@ -209,7 +207,7 @@
                             >
                                 <NuxtLink
                                     to="/"
-                                    class="bg-primary-700 hover:bg-primary-800 inline-flex items-center gap-2 rounded-full px-6 py-3 text-white transition-colors"
+                                    class="bg-primary-600 hover:bg-primary-700 inline-flex items-center gap-2 rounded-full px-6 py-3 text-white transition-colors"
                                 >
                                     <Icon name="uil:home" class="size-4" />
                                     <span>Visit Homepage</span>
@@ -218,7 +216,7 @@
                                     to="https://github.com/ben-everly"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    class="inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-white px-6 py-3 text-neutral-700 transition-all hover:border-neutral-400 hover:bg-neutral-50"
+                                    class="inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-white px-6 py-3 transition-all hover:border-neutral-400 hover:bg-neutral-50"
                                 >
                                     <Icon name="uil:github" class="size-4" />
                                     <span>View GitHub</span>
