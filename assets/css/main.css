@@ -3,14 +3,12 @@
 @layer base {
     html {
         @apply scroll-smooth;
+        @apply font-[Inter];
+        @apply text-neutral-700;
     }
 }
 
 @layer utilities {
-    .animated-gradient {
-        background-size: 200% 200%;
-        animation: gradient-animation 15s ease infinite;
-    }
     .grid-pattern {
         background-image:
             linear-gradient(
@@ -31,16 +29,11 @@
             transparent 100%
         );
     }
+
     .animate-fade-in-up {
         animation: fade-in-up 1s ease-out forwards;
         opacity: 0;
         transform: translateY(30px);
-    }
-    .line-clamp-3 {
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
     }
 }
 
@@ -48,9 +41,11 @@
     0% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%;
     }
+
     100% {
         background-position: 0% 50%;
     }
@@ -61,6 +56,7 @@
         opacity: 0;
         transform: translateY(30px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
