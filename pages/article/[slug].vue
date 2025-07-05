@@ -209,7 +209,7 @@
                             >
                                 <NuxtLink
                                     to="/"
-                                    class="bg-primary-600 hover:bg-primary-700 inline-flex items-center gap-2 rounded-full px-6 py-3 text-white transition-colors"
+                                    class="bg-primary-700 hover:bg-primary-800 inline-flex items-center gap-2 rounded-full px-6 py-3 text-white transition-colors"
                                 >
                                     <Icon name="uil:home" class="size-4" />
                                     <span>Visit Homepage</span>

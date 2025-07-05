@@ -6,7 +6,7 @@
                     class="h-px flex-1 bg-gradient-to-r from-transparent to-white/40"
                 ></div>
                 <h1
-                    class="text-shadow-[0_0_40px_rgb(255_255_255_/_0.2)] mb-2 bg-gradient-to-r from-white to-white/80 bg-clip-text pb-2 text-6xl leading-tight font-bold tracking-tight text-transparent md:text-7xl lg:text-8xl xl:text-9xl"
+                    class="mb-2 bg-gradient-to-r from-white to-white/80 bg-clip-text pb-2 text-6xl leading-tight font-bold tracking-tight text-transparent text-shadow-[0_0_40px_rgb(255_255_255_/_0.2)] md:text-7xl lg:text-8xl xl:text-9xl"
                 >
                     Ben Everly
                 </h1>
@@ -50,11 +50,11 @@
         </div>
     </Hero>
 
-    <section id="about" class="relative py-20 md:py-32">
-        <div
-            class="absolute inset-0 bg-gradient-to-b from-white via-neutral-50/50 to-white"
-        ></div>
-        <div class="relative z-10 container mx-auto max-w-6xl px-4 md:px-8">
+    <section
+        id="about"
+        class="relative bg-gradient-to-b from-white via-neutral-50/50 to-white py-20 md:py-32"
+    >
+        <div class="relative container mx-auto max-w-6xl px-4 md:px-8">
             <div class="mb-16 text-center">
                 <div
                     class="bg-secondary-100 text-secondary-800 mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium"
@@ -140,7 +140,10 @@
 
                 <div class="relative">
                     <div
-                        class="relative z-10 rounded-2xl border border-neutral-100 bg-white p-8 shadow-xl"
+                        class="from-secondary-400 to-primary-400 absolute -inset-4 rounded-3xl bg-gradient-to-r opacity-10 blur-xl"
+                    ></div>
+                    <div
+                        class="relative rounded-2xl border border-neutral-100 bg-white p-8 shadow-xl"
                     >
                         <div class="space-y-4">
                             <div class="flex items-start gap-3">
@@ -187,9 +190,6 @@
                             </div>
                         </div>
                     </div>
-                    <div
-                        class="from-secondary-400/20 to-primary-400/20 absolute -inset-4 rounded-3xl bg-gradient-to-r opacity-30 blur-xl"
-                    ></div>
                 </div>
             </div>
         </div>
@@ -198,10 +198,7 @@
     <section
         class="relative border-t border-neutral-200/60 bg-gradient-to-br from-neutral-100 via-neutral-50 to-neutral-200 py-24 shadow-inner md:py-36"
     >
-        <div
-            class="absolute inset-0 bg-gradient-to-r from-neutral-100/90 to-neutral-200/90"
-        ></div>
-        <div class="relative z-10 container mx-auto max-w-7xl px-4 md:px-8">
+        <div class="relative container mx-auto max-w-7xl px-4 md:px-8">
             <div class="mb-16 text-center">
                 <div
                     class="bg-primary-100 text-primary-800 mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium"
@@ -218,7 +215,7 @@
                         Creative
                     </span>
                     <span
-                        class="from-primary-500 to-primary-600 bg-gradient-to-r bg-clip-text text-transparent"
+                        class="from-primary-700 to-primary-800 bg-gradient-to-r bg-clip-text text-transparent"
                     >
                         Explorations
                     </span>
