@@ -1,8 +1,3 @@
-<script setup>
-    const { data: articles } = await useAsyncData(() =>
-        queryCollection("articles").all(),
-    );
-</script>
 <template>
     <Hero>
         <div class="py-16 text-center md:py-20 lg:py-28">
@@ -228,63 +223,7 @@
                 </p>
             </div>
 
-            <div
-                class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
-            >
-                <article
-                    v-for="article in articles"
-                    :key="article.path"
-                    class="group hover:shadow-primary-500/10 relative overflow-hidden rounded-3xl bg-white shadow-lg transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl"
-                >
-                    <NuxtLink :to="article.path" class="block">
-                        <div class="relative aspect-[4/3] overflow-hidden">
-                            <NuxtImg
-                                class="h-full w-full object-cover transition-all duration-500 group-hover:scale-110"
-                                :src="article.image"
-                                :alt="article.title"
-                            />
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-40"
-                            ></div>
-                            <div
-                                class="absolute top-4 right-4 rounded-full bg-white/20 p-2 backdrop-blur-sm transition-all duration-300 group-hover:bg-white/30"
-                            >
-                                <Icon
-                                    name="uil:external-link-alt"
-                                    class="size-4 text-white"
-                                />
-                            </div>
-                        </div>
-
-                        <div class="p-6">
-                            <h3
-                                class="group-hover:text-primary-500 mb-3 text-xl font-bold text-neutral-900 transition-colors duration-300"
-                            >
-                                {{ article.title }}
-                            </h3>
-                            <p
-                                v-if="article.description"
-                                class="line-clamp-3 text-sm leading-relaxed text-neutral-600"
-                            >
-                                {{ article.description }}
-                            </p>
-                            <div
-                                class="text-primary-500 mt-4 flex items-center gap-2 text-sm font-medium"
-                            >
-                                <span>Read more</span>
-                                <Icon
-                                    name="uil:arrow-right"
-                                    class="size-4 transition-transform duration-300 group-hover:translate-x-1"
-                                />
-                            </div>
-                        </div>
-
-                        <div
-                            class="group-hover:border-primary-200 absolute inset-0 rounded-3xl border border-neutral-200/50 transition-all duration-300"
-                        ></div>
-                    </NuxtLink>
-                </article>
-            </div>
+            <ArticleGrid />
         </div>
     </section>
 

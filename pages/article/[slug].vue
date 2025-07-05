@@ -3,12 +3,8 @@
     const { data: article } = await useAsyncData(path, () =>
         queryCollection("articles").path(path).first(),
     );
-
-    // Fetch recent articles for the not found state
-    const { data: recentArticles } = await useAsyncData("recent-articles", () =>
-        queryCollection("articles").limit(3).all(),
-    );
 </script>
+
 <template>
     <Hero>
         <template v-if="article">
@@ -120,12 +116,9 @@
                     class="from-secondary-400/20 to-primary-400/20 absolute -inset-4 rounded-3xl bg-gradient-to-r opacity-30 blur-xl"
                 ></div>
             </div>
-            <div v-else class="mx-auto max-w-6xl space-y-16">
+            <div v-else class="mx-auto mb-16 max-w-6xl space-y-16">
                 <!-- Recent Articles Section -->
-                <div
-                    v-if="recentArticles && recentArticles.length > 0"
-                    class="text-center"
-                >
+                <div class="text-center">
                     <div class="mb-12">
                         <div
                             class="bg-primary-100 text-primary-800 mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium"
@@ -155,75 +148,7 @@
                         </p>
                     </div>
 
-                    <div
-                        class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
-                    >
-                        <article
-                            v-for="recentArticle in recentArticles"
-                            :key="recentArticle.path"
-                            class="group hover:shadow-primary-500/10 relative overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
-                        >
-                            <NuxtLink :to="recentArticle.path" class="block">
-                                <div
-                                    class="relative aspect-[4/3] overflow-hidden"
-                                >
-                                    <NuxtImg
-                                        v-if="recentArticle.image"
-                                        class="h-full w-full object-cover transition-all duration-500 group-hover:scale-110"
-                                        :src="recentArticle.image"
-                                        :alt="recentArticle.title"
-                                    />
-                                    <div
-                                        v-else
-                                        class="from-primary-500 to-primary-600 flex h-full w-full items-center justify-center bg-gradient-to-br"
-                                    >
-                                        <Icon
-                                            name="uil:document-layout-left"
-                                            class="size-12 text-white/80"
-                                        />
-                                    </div>
-                                    <div
-                                        class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-40"
-                                    ></div>
-                                    <div
-                                        class="absolute top-4 right-4 rounded-full bg-white/20 p-2 backdrop-blur-sm transition-all duration-300 group-hover:bg-white/30"
-                                    >
-                                        <Icon
-                                            name="uil:external-link-alt"
-                                            class="size-4 text-white"
-                                        />
-                                    </div>
-                                </div>
-
-                                <div class="p-6">
-                                    <h3
-                                        class="group-hover:text-primary-500 mb-3 text-xl font-bold text-neutral-900 transition-colors duration-300"
-                                    >
-                                        {{ recentArticle.title }}
-                                    </h3>
-                                    <p
-                                        v-if="recentArticle.description"
-                                        class="line-clamp-3 text-sm leading-relaxed text-neutral-600"
-                                    >
-                                        {{ recentArticle.description }}
-                                    </p>
-                                    <div
-                                        class="text-primary-500 mt-4 flex items-center gap-2 text-sm font-medium"
-                                    >
-                                        <span>Read article</span>
-                                        <Icon
-                                            name="uil:arrow-right"
-                                            class="size-4 transition-transform duration-300 group-hover:translate-x-1"
-                                        />
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="group-hover:border-primary-200 absolute inset-0 rounded-2xl border border-neutral-200/50 transition-all duration-300"
-                                ></div>
-                            </NuxtLink>
-                        </article>
-                    </div>
+                    <ArticleGrid :limit="3" />
                 </div>
             </div>
 
