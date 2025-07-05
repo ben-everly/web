@@ -104,20 +104,18 @@
         </template>
     </Hero>
 
-    <!-- Article Content -->
     <section class="relative py-20 md:py-32">
         <div class="relative z-10 container mx-auto px-4 md:px-8">
+            <!-- Article Content -->
             <div v-if="article" class="relative p-8 md:p-12">
                 <ContentRenderer
                     :value="article"
-                    class="prose prose-lg prose-neutral prose-headings:font-bold prose-headings:tracking-tight prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-h4:text-xl prose-p:leading-relaxed prose-a:text-secondary-600 hover:prose-a:text-secondary-500 prose-a:font-semibold prose-a:no-underline hover:prose-a:underline prose-code:rounded-md prose-code:bg-neutral-100 prose-code:px-2 prose-code:py-1 prose-code:text-sm prose-code:font-medium prose-blockquote:border-l-4 prose-blockquote:border-secondary-500 prose-blockquote:bg-secondary-50 prose-blockquote:pl-6 prose-blockquote:italic prose-img:rounded-xl prose-img:shadow-lg max-w-none"
+                    class="prose-custom max-w-none"
                 />
-                <div
-                    class="from-secondary-400/20 to-primary-400/20 absolute -inset-4 rounded-3xl bg-gradient-to-r opacity-30 blur-xl"
-                ></div>
             </div>
+
+            <!-- Recent Articles Section -->
             <div v-else class="mx-auto mb-16 max-w-6xl space-y-16">
-                <!-- Recent Articles Section -->
                 <div class="text-center">
                     <div class="mb-12">
                         <div
@@ -223,9 +221,6 @@
                                 </NuxtLink>
                             </div>
                         </div>
-                        <div
-                            class="from-secondary-400/20 to-primary-400/20 pointer-events-none absolute -inset-4 rounded-3xl bg-gradient-to-r opacity-30 blur-xl"
-                        ></div>
                     </div>
                 </div>
             </div>

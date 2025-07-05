@@ -81,14 +81,11 @@
 
             <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
                 <div class="space-y-6">
-                    <div
-                        class="prose prose-xl prose-neutral prose-a:no-underline max-w-none"
-                    >
+                    <div class="prose-custom">
                         <p>
                             Hi, I'm Ben. Welcome to my personal website! I'm a
                             software engineer currently working at
                             <NuxtLink
-                                class="text-secondary-600 hover:text-secondary-500 after:bg-secondary-500 relative font-semibold transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:transition-all after:duration-300 hover:after:w-full"
                                 to="https://oberd.com"
                                 target="_blank"
                                 rel="noopener noreferrer"
