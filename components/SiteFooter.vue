@@ -48,7 +48,7 @@
                     </NuxtLink>
                 </div>
 
-                <div class="border-t border-white/10 pt-8">
+                <div class="pt-8">
                     <p class="text-sm text-neutral-500">
                         © {{ new Date().getFullYear() }} Ben Everly. Built with
                         <NuxtLink

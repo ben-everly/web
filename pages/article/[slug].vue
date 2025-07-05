@@ -11,7 +11,6 @@
 </script>
 <template>
     <Hero>
-        <!-- Article Found State -->
         <template v-if="article">
             <!-- Navigation -->
             <div class="mb-8">
@@ -25,6 +24,14 @@
                     </div>
                 </HeaderButton>
             </div>
+
+            <!-- Article Title -->
+            <h1
+                class="mb-4 bg-gradient-to-r from-white to-white/80 bg-clip-text text-4xl leading-tight font-bold tracking-tight text-transparent md:text-5xl lg:text-6xl"
+            >
+                {{ article.title }}
+            </h1>
+
             <!-- Author -->
             <div class="mb-4">
                 <div
@@ -34,13 +41,6 @@
                     <span>Ben Everly</span>
                 </div>
             </div>
-
-            <!-- Article Title -->
-            <h1
-                class="mb-4 bg-gradient-to-r from-white to-white/80 bg-clip-text text-4xl leading-tight font-bold tracking-tight text-transparent md:text-5xl lg:text-6xl"
-            >
-                {{ article.title }}
-            </h1>
 
             <!-- Article Description -->
             <p
@@ -68,7 +68,6 @@
             <Divider class="mt-8" />
         </template>
 
-        <!-- Article Not Found State -->
         <template v-else>
             <div class="text-center">
                 <div class="mb-6">
@@ -121,7 +120,6 @@
                     class="from-secondary-400/20 to-primary-400/20 absolute -inset-4 rounded-3xl bg-gradient-to-r opacity-30 blur-xl"
                 ></div>
             </div>
-            <!-- Alternative Content for Not Found State -->
             <div v-else class="mx-auto max-w-6xl space-y-16">
                 <!-- Recent Articles Section -->
                 <div
