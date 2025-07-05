@@ -1,14 +1,3 @@
-<template>
-    <span
-        :class="[
-            'inline-flex items-center rounded-lg border px-3 py-1.5 text-sm font-medium shadow-sm transition-all duration-200',
-            colorClasses,
-        ]"
-    >
-        {{ name }}
-    </span>
-</template>
-
 <script setup lang="ts">
     interface Props {
         name: string;
@@ -45,3 +34,14 @@
         return colorMap[props.color];
     });
 </script>
+
+<template>
+    <span
+        :class="[
+            'inline-flex items-center rounded-lg border px-3 py-1.5 text-sm font-medium shadow-sm transition-all duration-200',
+            colorClasses,
+        ]"
+    >
+        {{ name }}
+    </span>
+</template>
