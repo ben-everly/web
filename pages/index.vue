@@ -81,8 +81,10 @@
 
             <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
                 <div class="space-y-6">
-                    <div class="prose prose-lg prose-neutral max-w-none">
-                        <p class="text-xl leading-relaxed">
+                    <div
+                        class="prose prose-xl prose-neutral prose-a:no-underline max-w-none"
+                    >
+                        <p>
                             Hi, I'm Ben. Welcome to my personal website! I'm a
                             software engineer currently working at
                             <NuxtLink
@@ -94,7 +96,7 @@
                             >, where we develop innovative medical software
                             focused on patient-reported outcomes data.
                         </p>
-                        <p class="text-xl leading-relaxed">
+                        <p>
                             This site is my space to share my projects and
                             professional journey. Whether you're here to explore
                             my work, learn more about me, or connect, you've
