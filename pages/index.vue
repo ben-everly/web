@@ -1,11 +1,19 @@
 <template>
     <Hero>
         <div class="py-16 text-center md:py-20 lg:py-28">
-            <h1
-                class="mb-2 bg-gradient-to-r from-white to-white/80 bg-clip-text pb-2 text-6xl leading-tight font-bold tracking-tight text-transparent md:text-7xl lg:text-8xl xl:text-9xl"
-            >
-                Ben Everly
-            </h1>
+            <div class="flex items-center gap-8">
+                <div
+                    class="h-px flex-1 bg-gradient-to-r from-transparent to-white/40"
+                ></div>
+                <h1
+                    class="text-shadow-[0_0_40px_rgb(255_255_255_/_0.2)] mb-2 bg-gradient-to-r from-white to-white/80 bg-clip-text pb-2 text-6xl leading-tight font-bold tracking-tight text-transparent md:text-7xl lg:text-8xl xl:text-9xl"
+                >
+                    Ben Everly
+                </h1>
+                <div
+                    class="h-px flex-1 bg-gradient-to-l from-transparent to-white/40"
+                ></div>
+            </div>
             <Divider class="mx-auto mb-8" />
             <p
                 class="mx-auto mb-16 max-w-4xl text-xl leading-relaxed font-light text-white/90 md:text-2xl lg:text-3xl"
