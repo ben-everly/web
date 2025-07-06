@@ -51,7 +51,7 @@
             <span v-if="codeCopied" class="opacity-50">
                 <Icon
                     name="uil:check"
-                    class="transtion-opacity size-6 p-2 align-middle"
+                    class="size-6 bg-green-300 p-2 align-middle"
                 />
             </span>
             <button v-if="!codeCopied" @click="copyCode">
