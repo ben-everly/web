@@ -101,47 +101,10 @@
                             something you find interesting.
                         </p>
                     </div>
-
-                    <div class="space-y-6">
-                        <div class="space-y-4">
-                            <p class="text-sm font-medium">
-                                Currently working with:
-                            </p>
-                            <div class="flex flex-wrap gap-3">
-                                <TechTag name="PHP" color="blue" />
-                                <TechTag name="Laravel" color="red" />
-                                <TechTag name="Livewire" color="purple" />
-                                <TechTag name="AlpineJS" color="emerald" />
-                                <TechTag name="TailwindCSS" color="cyan" />
-                                <TechTag name="MySQL" color="orange" />
-                                <TechTag name="Docker" color="green" />
-                                <TechTag name="AWS" color="yellow" />
-                                <TechTag name="Neovim" color="sky" />
-                            </div>
-                        </div>
-
-                        <div class="space-y-4">
-                            <p class="text-sm font-medium">
-                                Currently exploring:
-                            </p>
-                            <div class="flex flex-wrap gap-3">
-                                <TechTag name="ML Engineering" color="purple" />
-                                <TechTag name="AI Tools" color="blue" />
-                                <TechTag name="Google Cloud" color="yellow" />
-                                <TechTag name="WASM" color="emerald" />
-                                <TechTag name="Rust" color="orange" />
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
-                <div class="relative">
-                    <div
-                        class="from-secondary-400 to-primary-400 absolute -inset-4 rounded-3xl bg-gradient-to-r opacity-10 blur-xl"
-                    ></div>
-                    <div
-                        class="relative rounded-2xl border border-neutral-100 bg-white p-8 shadow-xl"
-                    >
+                <div class="relative space-y-6">
+                    <div class="glow relative rounded-2xl p-8">
                         <div class="space-y-4">
                             <div class="flex items-start gap-3">
                                 <Icon
@@ -184,6 +147,37 @@
                                         Patient-Reported Outcomes Data
                                     </p>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="space-y-4">
+                            <p class="text-sm font-medium">
+                                Currently working with:
+                            </p>
+                            <div class="flex flex-wrap gap-3">
+                                <TechTag name="PHP" color="blue" />
+                                <TechTag name="Laravel" color="red" />
+                                <TechTag name="Livewire" color="purple" />
+                                <TechTag name="AlpineJS" color="emerald" />
+                                <TechTag name="TailwindCSS" color="cyan" />
+                                <TechTag name="MySQL" color="orange" />
+                                <TechTag name="Docker" color="green" />
+                                <TechTag name="AWS" color="yellow" />
+                                <TechTag name="Neovim" color="sky" />
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <p class="text-sm font-medium">
+                                Currently exploring:
+                            </p>
+                            <div class="flex flex-wrap gap-3">
+                                <TechTag name="ML Engineering" color="purple" />
+                                <TechTag name="AI Tools" color="blue" />
+                                <TechTag name="Google Cloud" color="yellow" />
+                                <TechTag name="WASM" color="emerald" />
+                                <TechTag name="Rust" color="orange" />
                             </div>
                         </div>
                     </div>

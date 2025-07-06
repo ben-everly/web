@@ -176,9 +176,7 @@
                 </div>
 
                 <div class="mx-auto max-w-4xl">
-                    <div
-                        class="relative rounded-2xl border border-neutral-100 bg-white p-8 shadow-xl md:p-12"
-                    >
+                    <div class="glow relative rounded-2xl p-8 md:p-12">
                         <div class="space-y-6">
                             <p class="text-xl leading-relaxed">
                                 Hi, I'm Ben. I'm a software engineer currently
