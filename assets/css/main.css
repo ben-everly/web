@@ -3,9 +3,7 @@
 
 @layer base {
     html {
-        @apply scroll-smooth;
-        @apply font-[Inter];
-        @apply text-neutral-800;
+        @apply scroll-smooth font-[Inter] text-neutral-800;
     }
 }
 
@@ -34,23 +32,17 @@
 @layer utilities {
     .grid-pattern {
         background-image:
-            linear-gradient(
-                to right,
+            linear-gradient(to right,
                 rgba(255, 255, 255, 1) 1px,
-                transparent 1px
-            ),
-            linear-gradient(
-                to bottom,
+                transparent 1px),
+            linear-gradient(to bottom,
                 rgba(255, 255, 255, 1) 1px,
-                transparent 1px
-            );
+                transparent 1px);
         background-size: 3rem 3rem;
         mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
-        -webkit-mask-image: linear-gradient(
-            to bottom,
-            black 85%,
-            transparent 100%
-        );
+        -webkit-mask-image: linear-gradient(to bottom,
+                black 85%,
+                transparent 100%);
     }
 
     .animate-fade-in-up {

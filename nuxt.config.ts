@@ -8,4 +8,14 @@ export default defineNuxtConfig({
         plugins: [tailwindcss()],
     },
     css: ["@/assets/css/main.css"],
+    content: {
+        build: {
+            markdown: {
+                highlight: {
+                    theme: "gruvbox-dark-soft",
+                    langs: ["php"],
+                },
+            },
+        },
+    },
 });
