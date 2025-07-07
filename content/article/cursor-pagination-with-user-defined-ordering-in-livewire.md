@@ -1,26 +1,41 @@
 ---
-published_at: 2023-10-01
+published_at:
 image: /images/cursor-pagination-with-user-defined-ordering-in-livewire.png
 title: Cursor Pagination with User-Defined Ordering in Livewire
 ---
 
-## second heading
+## Introduce the problem
 
-### third heading
+### Why cursor pagination?
 
-#### fourth heading
+### What complications arise with user-defined ordering?
 
-##### fifth heading
+## Setup test project
 
-This is my first article. I am excited to share my thoughts and experiences with you all.
+### Blank livewire project
 
-[A link](https://example.com) to an external resource.
+### 'item' model
 
-```php [test.php]{2} meta-info=val
-$a_variable = new ClassName();
-if ($condition) {
-    // Do something
-} else {
-    // Do something else
-}
-```
+### implement display page
+
+### factory some data
+
+## Cursor pagination - nieve implementation
+
+### componentize pages
+
+### update display page
+
+## implement user defined ordering
+
+### add user order column to model
+
+### add move up/down actions
+
+### show the problem when moving an item between pages
+
+### possible solutions
+
+### final solutions
+
+## Conclusion
