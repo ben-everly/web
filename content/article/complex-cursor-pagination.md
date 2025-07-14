@@ -24,7 +24,7 @@ the internet.
 
 ### Blank livewire project
 
-```sh
+```bash
 composer create-project livewire/livewire complex-cursor-pagination
 cd complex-cursor-pagination
 composer require livewire/livewire
@@ -32,7 +32,7 @@ composer require livewire/livewire
 
 ### 'node' model
 
-```sh
+```bash
 php artisan make:model Node -mf
 php artisan migrate
 
@@ -61,7 +61,7 @@ use Illuminate\Database\Eloquent\Collection;
 use Livewire\Attributes\Computed;
 use Livewire\Component;
 
-class Nodes extends Component
+final class Nodes extends Component
 {
     public function addNode(): void
     {
@@ -87,35 +87,137 @@ class Nodes extends Component
 </div>
 ```
 
+```bash
+php artisan serve
+```
+
 ### factory some data
 
-```sh
+```bash
 php artisan tinker
 > App\Models\Node::factory()->count(5000)->create();
 ```
 
 ```php[app/Livewire/Nodes.php]
-    #[Computed]
-    public function nodes(): Collection
-    {
-        return Node::all()->each(function (Node $node) {
-            // sleep for 1 milliseconds to simulate processing delay
-            usleep(1000);
-        });
-    }
+#[Computed]
+public function nodes(): Collection
+{
+    return Node::all()->each(function (Node $node) {
+        // sleep for 1 milliseconds to simulate processing delay
+        usleep(1000);
+    });
+}
 ```
 
 ## Cursor pagination - internet implementation
 
-### update display page
+### "cursor pagination" options from internet
 
 ### why its not the best solution
 
-## Cursor pagination - simple implementation
+## Offset pagination - simple implementation
 
 ### componentize pages with id cursor
 
+```bash
+php artisan make:livewire NodesPage
+```
+
+```php[app/Livewire/NodesPage.php]
+<?php
+
+namespace App\Livewire;
+
+use App\Models\Node;
+use Illuminate\Database\Eloquent\Collection;
+use Livewire\Attributes\Computed;
+use Livewire\Attributes\On;
+use Livewire\Component;
+
+#[On('refresh-nodes-page-{offset}')]
+final class NodesPage extends Component
+{
+    public int $perPage;
+
+    public int $offset;
+
+    public function mount(int $offset): void
+    {
+        $this->offset = $offset;
+    }
+
+    #[Computed]
+    public function nodes(): Collection
+    {
+        return Node::query()
+            ->offset($this->offset)
+            ->limit($this->perPage)
+            ->get();
+    }
+}
+```
+
+```php[resources/views/livewire/nodes-page.blade.php]
+<div>
+    @foreach ($this->nodes as $node)
+        <li>
+            Node {{ $node->id }}
+        </li>
+    @endforeach
+</div>
+```
+
 ### update display page
+
+```php[app/Livewire/Nodes.php]
+<?php
+
+namespace App\Livewire;
+
+use App\Models\Node;
+use Livewire\Attributes\Computed;
+use Livewire\Component;
+
+final class Nodes extends Component
+{
+    public const PER_PAGE = 10;
+
+    public int $offset = 0;
+
+    public function addNode(): void
+    {
+        Node::create();
+        if (! $this->hasMorePages()) {
+            $this->dispatch('refresh-nodes-page-'.$this->offset);
+        }
+    }
+
+    public function addPage(): void
+    {
+        $this->offset += self::PER_PAGE;
+    }
+
+    #[Computed()]
+    public function hasMorePages(): bool
+    {
+        return Node::count() > $this->offset + self::PER_PAGE;
+    }
+}
+```
+
+```php[resources/views/livewire/nodes.blade.php]
+<div>
+    <button wire:click="addNode">Add Node</button>
+    <ol>
+        @for ($i = 0; $i <= $this->offset; $i += self::PER_PAGE)
+            <livewire:nodes-page wire:key="nodes-page-{{ $i }}" :offset="$i" :perPage="self::PER_PAGE" />
+        @endfor
+    </ol>
+    @if ($this->hasMorePages())
+        <button wire:click="addPage">Load More</button>
+    @endif
+</div>
+```
 
 ## implement user defined ordering
 
