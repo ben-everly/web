@@ -487,7 +487,58 @@ ok, we can create child nodes now, but we have some problems:
 
 - we want the child nodes to be sorted under their parent nodes, and we want them to be indented.
 - we want to disable the move up/down buttons for the first and last nodes in their parent.
-- we need to update the refresh event logic to handle moving nodes with children.
+- we need to update logic for refreshing pages when nodes are created or moved.
+
+- when we create a node, we need to figure out what page its on and refresh that page. but then that pushes everything down, so we have to refresh everything below it.
+- when we move nodes, their children move with it, so we have to figure out how to refresh the pages correctly.
+
+```php [app/Jobs/SortNodes.php]
+<?php
+
+namespace App\Jobs;
+
+use App\Models\Node;
+use Illuminate\Foundation\Bus\Dispatchable;
+
+class SortNodes
+{
+    use Dispatchable;
+
+    public function handle(): void
+    {
+        $nodes = Node::query()->orderBy('sort_index')->get();
+
+        $stack = $nodes->where('parent_node_id', null);
+
+        $sortIndex = 1;
+        while ($stack->isNotEmpty()) {
+            $node = $stack->shift();
+            $node->sort_index = $sortIndex++;
+            $node->save();
+
+            $children = $nodes->where('parent_node_id', $node->id)
+                ->map(fn ($child) => $child->setAttribute('depth', $node->depth + 1));
+            $stack->unshift(...$children);
+        }
+    }
+}
+```
+
+```php [app/Models/Node.php]
+protected static function booted(): void
+{
+    static::creating(function (self $node) {
+        self::$maxNodeSortIndex = self::getMaxSortIndex() + 1;
+        $node->sort_index = self::$maxNodeSortIndex;
+    });
+
+    static::created(fn () => SortNodes::dispatch());
+}
+```
+
+```php [resources/views/livewire/nodes-page.blade.php]
+<li style="margin-left: {{ $node->depth * 20 }}px;">
+```
 
 ### implement variable length pages
 
