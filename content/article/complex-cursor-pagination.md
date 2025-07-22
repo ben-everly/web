@@ -540,6 +540,109 @@ protected static function booted(): void
 <li style="margin-left: {{ $node->depth * 20 }}px;">
 ```
 
+### move restrictions
+
+```php [app/Livewire/NodesPage.php]
+<?php
+
+namespace App\Livewire;
+
+use App\Jobs\SortNodes;
+use App\Models\Node;
+use Illuminate\Database\Eloquent\Collection;
+use Livewire\Attributes\Computed;
+use Livewire\Attributes\On;
+use Livewire\Component;
+
+#[On('refresh-nodes-page-{offset}')]
+final class NodesPage extends Component
+{
+    public int $perPage;
+
+    public int $offset;
+
+    public function mount(int $offset): void
+    {
+        $this->offset = $offset;
+    }
+
+    public function move(int $sortIndex, string $direction): void
+    {
+        $node1 = Node::where('sort_index', $sortIndex)->firstOrFail();
+        $node2 = Node::where(
+            'sort_index',
+            $direction === 'up' ? '<' : '>',
+            $sortIndex
+        )
+            ->where('parent_node_id', $node1->parent_node_id)
+            ->orderBy('sort_index', $direction === 'up' ? 'desc' : 'asc')
+            ->first();
+
+        $temp = $node1->sort_index;
+        $node1->sort_index = $node2->sort_index;
+        $node1->save();
+        $node2->sort_index = $temp;
+        $node2->save();
+
+        SortNodes::dispatch();
+
+        collect([$node1, $node2])
+            ->map(fn ($node) => intdiv($node->sort_index - 1, $this->perPage) * $this->perPage)
+            ->unique()
+            ->filter(fn ($pageOffset) => $pageOffset !== $this->offset)
+            ->each(fn ($pageOffset) => $this->dispatch('refresh-nodes-page-'.$pageOffset));
+    }
+
+    #[Computed]
+    public function nodes(): Collection
+    {
+        return Node::query()
+            ->offset($this->offset)
+            ->limit($this->perPage)
+            ->orderBy('sort_index')
+            ->get();
+    }
+
+    #[Computed]
+    public function moveRestrictedNodes(): Collection
+    {
+        return Node::query()
+            ->selectRaw('MIN(sort_index) as min_sort_index, MAX(sort_index) as max_sort_index')
+            ->groupBy('parent_node_id')
+            ->get();
+    }
+
+    public function addChildNode(int $parentNodeId): void
+    {
+        Node::create([
+            'parent_node_id' => $parentNodeId,
+        ]);
+    }
+}
+```
+
+```php [resources/views/livewire/nodes-page.blade.php]
+@php
+    use App\Models\Node;
+    $cantMoveUp = $this->moveRestrictedNodes->pluck('min_sort_index');
+    $cantMoveDown = $this->moveRestrictedNodes->pluck('max_sort_index');
+@endphp
+<div>
+    @foreach ($this->nodes as $index => $node)
+        <li style="margin-left: {{ $node->depth * 20 }}px;">
+            Node {{ $node->id }}
+            @if ($cantMoveUp->doesntContain($node->sort_index))
+                <button wire:click="move({{ $node->sort_index }}, 'up')">Move Up</button>
+            @endif
+            @if ($cantMoveDown->doesntContain($node->sort_index))
+                <button wire:click="move({{ $node->sort_index }}, 'down')">Move Down</button>
+            @endif
+            <button wire:click="addChildNode({{ $node->id }})">Add Child</button>
+        </li>
+    @endforeach
+</div>
+```
+
 ### implement variable length pages
 
 ## Conclusion
