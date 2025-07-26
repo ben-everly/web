@@ -10,7 +10,8 @@
             | "orange"
             | "sky"
             | "yellow"
-            | "green";
+            | "green"
+            | "gray";
     }
 
     const props = withDefaults(defineProps<Props>(), {
@@ -29,6 +30,7 @@
             sky: "border-sky-200 bg-gradient-to-r from-sky-50 to-sky-100 text-sky-800",
             yellow: "border-yellow-200 bg-gradient-to-r from-yellow-50 to-yellow-100 text-yellow-800",
             green: "border-green-200 bg-gradient-to-r from-green-50 to-green-100 text-green-800",
+            gray: "border-gray-200 bg-gradient-to-r from-gray-50 to-gray-100 text-gray-800",
         };
 
         return colorMap[props.color];

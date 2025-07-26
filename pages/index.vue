@@ -164,6 +164,7 @@
                                 <TechTag name="MySQL" color="orange" />
                                 <TechTag name="Docker" color="green" />
                                 <TechTag name="AWS" color="yellow" />
+                                <TechTag name="Github" color="gray" />
                                 <TechTag name="Neovim" color="sky" />
                             </div>
                         </div>
@@ -176,8 +177,8 @@
                                 <TechTag name="ML Engineering" color="purple" />
                                 <TechTag name="AI Tools" color="blue" />
                                 <TechTag name="Google Cloud" color="yellow" />
-                                <TechTag name="WASM" color="emerald" />
                                 <TechTag name="Rust" color="orange" />
+                                <TechTag name="WASM" color="emerald" />
                             </div>
                         </div>
                     </div>
