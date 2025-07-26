@@ -207,7 +207,7 @@
                         Creative
                     </span>
                     <span
-                        class="from-primary-700 to-primary-800 bg-gradient-to-r bg-clip-text text-transparent"
+                        class="from-primary-600 to-primary-700 bg-gradient-to-r bg-clip-text text-transparent"
                     >
                         Explorations
                     </span>
