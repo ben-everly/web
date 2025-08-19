@@ -1,150 +1,429 @@
 ---
 published_at:
-image: /images/complex-cursor-pagination.png
+image: /images/infinite-scroll-with-tree-structures-in-livewire.png
 title: Infinite Scroll with Tree Structures in Livewire
 ---
 
 ## The Challenge
 
-Recently at work, we faced a challenge with implementing pagination on a database table that had a self reference,
-creating a tree structure. The requirement was to show the tree in depth first order, paginate the results with
-an infinite scroll so the parent child relationships could easily be visualized, and allow inserts at any level of
-the tree, rendering the new nodes efficiently.
+Recently at work, we faced a challenge with implementing pagination on a mysql
+database table that had a self reference, creating a tree structure. The
+requirement was to show the tree in depth first order, paginate the results with
+an infinite scroll so the parent child relationships could easily be visualized
+across pages, and allow inserts at any level of the tree, rendering the new
+nodes efficiently.
 
-## Understanding Tree Structures in Databases
+For purposes of this writeup, I'm using php 8.4 and composer 2.8 and laravel
+installer 5.16. If you'd like to follow along or implement this for yourself,
+here was the quick setup I used.
 
-### Self-Referencing Tables
+```bash
+composer require -g livewire/installer
+laravel new infinite-paginate-tree --livewire
+cd infinite-paginate-tree
+php artisan make:model Node -m
+php artisan make:livewire Nodes
+php artisan make:livewire NodesPage
+```
 
-- Basic concept of parent_id foreign key pointing to the same table
-- Challenges with traditional pagination approaches
-- Why depth-first ordering matters for user experience
+I modified the app layout to be something simple, that doesn't require a logged
+in user. And I modified the routes to provide a single route to the nodes
+component.
 
-### Depth-First Traversal Fundamentals
+```php [resources/views/components/layouts/app.blade.php]
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark">
 
-- How depth-first search works in tree structures
-- Converting recursive tree traversal to flat, paginated results
-- Maintaining hierarchical context in a linear view
+<head>
+    @include('partials.head')
+</head>
 
-## The Pagination Problem
+<body class="min-h-screen bg-white antialiased dark:bg-linear-to-b dark:from-neutral-950 dark:to-neutral-900">
+    {{ $slot }}
+</body>
 
-### Traditional Pagination Limitations
+</html>
+```
 
-- Why LIMIT/OFFSET fails with tree structures
-- Performance issues with deep hierarchies
-- Loss of context when jumping between pages
+```php [routes/web.php]
+<?php
 
-### Cursor-Based Pagination for Trees
+use App\Livewire\Nodes;
+use Illuminate\Support\Facades\Route;
 
-- Designing effective cursor strategies for hierarchical data
-- Encoding tree position in pagination cursors
-- Handling edge cases (deleted nodes, reordering)
+Route::get('/', Nodes::class)->name('home');
+```
 
-## Livewire Implementation Strategy
+You can also find the complete code for this example on
+[Github](https://github.com/ben-everly/infinite-paginate-tree)
 
-### Component Architecture
+## Understanding Tree Structures in Relational Databases
 
-- Designing the main tree component structure
-- Managing state for infinite scroll
-- Handling nested component relationships
+Representing a tree in a relational database is straightforward enough. The
+nodes are represented by rows in a `nodes` table. The edges are represented by a
+(not so) foreign key, `parent_id`, that references the `id` of another row in
+the same table. You could also represent edges using another table with columns
+for `parent_node_id` and `child_node_id`, but for our purposes, the former
+solution is less complex and more efficient.
 
-### Database Query Optimization
+One of the main challenges is ordering the nodes correctly so we can paginate
+the results. Specifically, we want to order depth first so we can visually nest
+the nodes under their parent. Some databases have support for this process, like
+Postgres, which offers the `ltree` type, or MongoDb, which natively supports
+trees. If you are starting from scratch, I would start there. Unfortunately, in
+my case, we were using MySQL, which as of version 8 does not have the same
+support. But instead of migrating to a new database, we decided to work around
+the limitations.
 
-- Using recursive CTEs (Common Table Expressions)
-- Efficient depth-first ordering queries
-- Indexing strategies for performance
+Perhaps your first thought, as was mine, might be to sort the nodes, and set an
+integer column to index the data. However, This approach will become a major
+bottleneck since it will need to re-index all the nodes on every insert, causing
+slow writes and potentially locking issues. A better approach is to index with a
+string, `path`, which will contain sort indexes for the node and each of its
+parents, separated by a slash. This way, nodes can by indexed relative to their
+siblings. For our feature set, that means a nodes path can be set when it is
+created and will not need to be updated again.
 
-### Frontend Considerations
+But there is still an issue. Since the path is a string, integers of different
+lengths will not sort correctly. For example, `/1/2` will sort before `/1/10`,
+even though it should. To work around this, we can use zero-padded integers for
+each part of the path. If each part of the path is a fixed length, then a string
+comparison will yield the same result as an integer comparison. Of course, if
+you have enough nodes in a group to overflow the padding, sorting would break
+down. For this example, I will assume that the number of nodes in a group will
+be less than 10,000. If you need more than that, you can increase the padding,
+but at some point, you will want to consider alternatives.
 
-- Managing scroll position and loading states
-- Rendering tree indentation and visual hierarchy
-- Handling dynamic content height changes
+## Handling Inserts and Ininite Pagination in Livewire
 
-## Building the Solution
+Another challenge is handling inserts in the tree structure while maintaining
+the infinite scroll pagination. We want to show new nodes, in the correct order,
+without having to refresh the entire page. To solve this problem, we will ditch
+fixed size pages. Specifically, we used cursor pagination with start and end
+cursors for each page.
 
-### Step 1: Database Schema and Queries
+When a new node is created, we need to determine where it fits in the existing
+pages. If it is within the range of a page, simply refresh that page. If it is
+between pages, then update a cursor so that the new node is included one one of
+the existing pages.
 
-- Table structure for self-referencing data
-- Recursive CTE implementation for depth-first ordering
-- Cursor-based pagination query logic
+## Implementing the Solution
 
-### Step 2: Livewire Component Development
+The first step is to create the database table. Given the previous explanation,
+this should be straightforward if you are familiar with laravel. We create a
+`nodes` table with the `parent_id` foreign key and an indexed `path` column.
 
-- Creating the main tree component
-- Implementing infinite scroll triggers
-- Managing loading states and user feedback
+```php [database/migrations/xxxx_xx_xx_xxxxxx_create_nodes_table.php]
+<?php
 
-### Step 3: Tree Rendering Logic
+use App\Models\Node;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-- Displaying hierarchical indentation
-- Maintaining visual parent-child relationships
-- Optimizing DOM updates for performance
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('nodes', function (Blueprint $table) {
+            $table->id();
+            $table->foreignIdFor(Node::class, 'parent_id')->nullable()->constrained();
+            $table->string('path')->index();
+            $table->timestamps();
+        });
+    }
 
-## Handling Dynamic Insertions
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('nodes');
+    }
+};
+```
 
-### Real-Time Updates
+To initially set the `path` we will use the eloquent event `creating`. All that
+needs to be done is to find the last node in the same group and increment the
+last part of the path. Other than that, the model will also make `parent_id`
+fillable and implement eloquent relationships.
 
-- Inserting new nodes at arbitrary tree positions
-- Maintaining sort order after insertions
-- Efficient re-rendering strategies
+```php [app/Models/Node.php]
+<?php
 
-### State Management Challenges
+namespace App\Models;
 
-- Keeping track of expanded/collapsed states
-- Handling cursor invalidation after insertions
-- Synchronizing multiple user sessions
+use Illuminate\Database\Eloquent\Model;
 
-## Performance Optimizations
+class Node extends Model
+{
+    protected $fillable = ['parent_id'];
 
-### Database Level
+    public static function boot()
+    {
+        parent::boot();
 
-- Query optimization techniques
-- Proper indexing for tree traversal
-- Caching strategies for frequently accessed paths
+        static::creating(function (self $node) {
+            $pathIndex = $node->parent
+                ? $node->parent->children()->max('path')
+                : Node::whereNull('parent_id')->max('path');
+            $pathIndex = collect(explode('/', $pathIndex))
+                ->filter()
+                ->last() + 1;
+            $node->path = ($node->parent?->path ?? '/')
+        });
+    }
 
-### Frontend Level
+    public function parent()
+    {
+        return $this->belongsTo(Node::class, 'parent_id');
+    }
 
-- Virtual scrolling considerations
-- Lazy loading of tree branches
-- Debouncing scroll events
+    public function children()
+    {
+        return $this->hasMany(Node::class, 'parent_id');
+    }
+}
+```
 
-## Testing and Edge Cases
+For the UI, we need one component to display all the nodes in a range, and a
+second component to manage infinite pagination and mount all the page
+components. We will also use a wireable data class to help the two components
+communicate.
 
-### Common Pitfalls
+The wireable `NodesPageData` classes primary responsiblity is to persist the
+cursors through requests. It will also allow us to pass a collection of nodes,
+but those will only be used when mounting the page so we don't have to query the
+database again. On subsequent requests, we want to use a custom query to pull
+the nodes in case nodes are added into the middle of a page. We will also set a
+`key` property to uniquely identify the page based on its cursors.
 
-- Circular references and data validation
-- Handling orphaned nodes
-- Deep nesting performance limits
+```php [app/Livewire/NodesPageData.php]
+<?php
 
-### Testing Strategies
+namespace App\Livewire;
 
-- Unit testing tree traversal logic
-- Integration testing with Livewire
-- Load testing with large datasets
+use Illuminate\Support\Collection;
+use Livewire\Wireable;
 
-## Alternative Approaches
+class NodesPageData implements Wireable
+{
+    public string $key;
 
-### Materialized Path Pattern
+    public function __construct(
+        public string $start_cursor,
+        public string $end_cursor,
+        public ?Collection $nodes = null
+    ) {
+        $this->key = $this->start_cursor.'-'.$this->end_cursor;
+    }
 
-- When to consider path-based hierarchies
-- Trade-offs compared to adjacency list model
-- Implementation differences
+    public function toLivewire(): array
+    {
+        return [
+            'start_cursor' => $this->start_cursor,
+            'end_cursor' => $this->end_cursor,
+        ];
+    }
 
-### Nested Set Model
+    public static function fromLivewire($value): static
+    {
+        return new self($value['start_cursor'], $value['end_cursor']);
+    }
 
-- Benefits for read-heavy workloads
-- Complexity of maintaining left/right values
-- When it might be more appropriate
+    public static function fromNodes(Collection $nodes): static
+    {
+        if ($nodes->isEmpty()) {
+            throw new \InvalidArgumentException(
+                'Cannot create from an empty collection of nodes.'
+            );
+        }
 
-## Conclusion
+        $startCursor = $nodes->first()->path;
+        $endCursor = $nodes->last()->path;
 
-### Key Takeaways
+        return new self($startCursor, $endCursor, $nodes);
+    }
+}
+```
 
-- Summary of implementation challenges solved
-- Performance considerations learned
-- When this approach is most suitable
+The `NodesPage` component will be responsible for displaying the nodes in a
+single page. It will access `NodesPageData` to check if nodes have been passed,
+and if not it will use the cursors to query the database for the nodes. The left
+margin of each node will be determined based on the 'depth' of the node in the
+tree, which we can figure out by counting the number of delimiters in the path.
+Finally, a button to create a child node will be displayed, and when clicked,
+creation will be delegated to the parent component by dispatching an event.
 
-### Future Improvements
+```php [app/Livewire/NodesPage.php]
+<?php
 
-- Potential enhancements to the solution
-- Scalability considerations
-- Integration with other Laravel features
+namespace App\Livewire;
+
+use App\Models\Node;
+use Illuminate\Support\Collection;
+use Livewire\Attributes\Computed;
+use Livewire\Attributes\On;
+use Livewire\Component;
+
+#[On(NodesPage::REFRESH_EVENT.'{pageData.key}')]
+class NodesPage extends Component
+{
+    public const REFRESH_EVENT = 'nodes_page.refresh.';
+
+    public NodesPageData $pageData;
+
+    #[Computed]
+    public function nodes(): Collection
+    {
+        if ($this->pageData->nodes !== null) {
+            return $this->pageData->nodes;
+        }
+
+        return Node::query()
+            ->orderBy('path')
+            ->where('path', '>=', $this->pageData->start_cursor)
+            ->where('path', '<=', $this->pageData->end_cursor)
+            ->get();
+    }
+
+    public function createChild(int $parentId)
+    {
+        $this->dispatch(Nodes::CREATE_NODE_EVENT, $parentId);
+    }
+}
+```
+
+```php [resources/views/livewire/nodes-page.blade.php]
+@php
+    use App\Livewire\Nodes;
+@endphp
+<div>
+    @foreach ($this->nodes as $node)
+        @php
+            $depth = substr_count($node->path, '/') - 2;
+        @endphp
+        <div class="p-2 my-2 flex gap-2" style="margin-left: {{ $depth * 20 }}px;">
+            <h3>Node {{ $node->id }}</h3>
+            <button class="border" wire:click="createChild({{ $node->id }})">
+                Create Child
+            </button>
+        </div>
+    @endforeach
+</div>
+```
+
+The final piece is the `Nodes` component, which will track the pages using an
+array of `NodesPageData`. When a page is added, it will keep the next cursor as
+well as a flag to indicate if there are more pages to reduce database calls.
+
+The create node method will create nodes, obviously, and then determine how it
+fits into the existing pages, updating cursors if needed. It will also handle
+displaying the first page or displaying nodes at the end of all pages if there
+are no pages left to display.
+
+```php [app/Livewire/Nodes.php]
+<?php
+
+namespace App\Livewire;
+
+use App\Models\Node;
+use Illuminate\Pagination\Cursor;
+use Illuminate\Support\Collection;
+use Livewire\Attributes\On;
+use Livewire\Component;
+
+class Nodes extends Component
+{
+    public const CREATE_NODE_EVENT = 'node.create';
+
+    /** @var array<int, NodesPageData> */
+    public array $pages = [];
+
+    public string $nextCursor = '';
+
+    public bool $morePages = true;
+
+    public function mount()
+    {
+        $this->addPage();
+    }
+
+    public function addPage()
+    {
+        if (! $this->morePages) {
+            return;
+        }
+        $nodes = Node::orderBy('path')->cursorPaginate(
+            20, ['*'], 'path',
+            Cursor::fromEncoded($this->nextCursor)
+        );
+        if ($this->morePages = $nodes->hasMorePages()) {
+            $this->nextCursor = $nodes->nextCursor()->encode();
+        }
+
+        collect($nodes->items())
+            ->whenNotEmpty(fn (Collection $items) => (
+                $this->pages[] = NodesPageData::fromNodes($items)
+            ));
+    }
+
+    #[On(self::CREATE_NODE_EVENT)]
+    public function createNode(?int $parentId = null)
+    {
+        $node = Node::create(['parent_id' => $parentId]);
+
+        foreach ($this->pages as $index => $page) {
+            $nextPage = $this->pages[$index + 1] ?? null;
+            if (
+                $node->path >= $page->start_cursor
+                    && $node->path <= $page->end_cursor
+            ) {
+                $this->dispatch(NodesPage::REFRESH_EVENT.$page->key);
+
+                return;
+            } elseif (
+                $node->path < $nextPage?->start_cursor
+                    || (! $nextPage && ! $this->morePages)
+            ) {
+                $this->pages[$index] = new NodesPageData(
+                    $this->pages[$index]->start_cursor,
+                    $node->path
+                );
+
+                return;
+            }
+        }
+        if (! $this->pages) {
+            $this->pages[] = NodesPageData::fromNodes(collect([$node]));
+        }
+    }
+}
+```
+
+```php [resources/views/livewire/nodes.blade.php]
+<div>
+    <button class="border" wire:click="createNode">Add Node</button>
+    @foreach ($this->pages as $index => $page)
+        <livewire:nodes-page :wire:key="$page->key" :pageIndex="$index" :pageData="$page" />
+    @endforeach
+    @if ($this->morePages)
+        <button class="border" wire:click="addPage">Load More</button>
+    @endif
+</div>
+```
+
+## That's It
+
+Well, kind of. Of course some improvements could be made. For example, we could
+make sure the padding on `path` couldn't get exceeded so that sorting doesn't
+break down. We could also create split pages into two if too many nodes are
+added without a page refresh. Of course this is just a demonstration, so we'll
+leave it there.
+
+I hope you found this helpful. I certainly learned a lot about tree structures
+in relational databases and handling inserts in paginated data in livewire.
+Until next time, happy coding!
