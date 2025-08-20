@@ -46,9 +46,7 @@
     }
 
     .animate-fade-in-up {
-        animation: fade-in-up 1s ease-out forwards;
-        opacity: 0;
-        transform: translateY(30px);
+        @apply animate-fade-in-up translate-y-8 opacity-0;
     }
 
     .glow {
@@ -89,6 +87,7 @@
 }
 
 @theme {
+    --animate-fade-in-up: fade-in-up 1s ease-out forwards;
     --color-primary-100: #f0f7f4;
     --color-primary-200: #d9ede6;
     --color-primary-300: #b3d9cc;
