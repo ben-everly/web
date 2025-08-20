@@ -50,13 +50,13 @@
     }
 
     .glow {
-        @apply border border-neutral-100 bg-white shadow-xl;
+        @apply border border-neutral-100 bg-white shadow-md;
     }
 
     .glow::before {
         @apply from-secondary-400 to-primary-400 absolute -inset-4 z-[-1];
-        @apply rounded-3xl bg-gradient-to-r opacity-10 blur-xl;
-        content: "";
+        @apply rounded-3xl bg-gradient-to-r opacity-20 blur-xl;
+        @apply content-[''];
     }
 }
 
