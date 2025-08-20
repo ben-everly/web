@@ -104,7 +104,7 @@
         </template>
     </Hero>
 
-    <section class="relative py-20 md:py-32">
+    <section class="relative pb-20 md:pb-32">
         <div class="relative z-10 container mx-auto px-4 md:px-8">
             <!-- Article Content -->
             <div v-if="article" class="relative p-8 md:p-12">

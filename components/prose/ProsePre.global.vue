@@ -43,7 +43,7 @@
 </script>
 
 <template>
-    <div class="rounded-md bg-neutral-900 p-1 text-neutral-100">
+    <div class="my-8 rounded-md bg-neutral-900 p-1 text-neutral-100 md:my-6">
         <div class="jusify-end flex items-center px-3 py-1">
             <div v-if="props.filename" class="mr-auto ml-0 text-sm opacity-50">
                 <i>{{ filename }}</i>
