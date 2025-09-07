@@ -8,14 +8,13 @@ title: Infinite Scroll with Tree Structures in Livewire
 
 Recently at work, we faced a challenge with implementing pagination on a mysql
 database table that had a self reference, creating a tree structure. The
-requirement was to show the tree in depth first order, paginate the results with
-an infinite scroll so the parent child relationships could easily be visualized
-across pages, and allow inserts at any level of the tree, rendering the new
-nodes efficiently.
+requirements were to show the tree in depth first order, paginate the results
+with an infinite scroll so the parent child relationships could easily be
+visualized across pages, and allow inserts at any level of the tree, rendering
+the new nodes efficiently.
 
-For purposes of this writeup, I'm using php 8.4 and composer 2.8 and laravel
-installer 5.16. If you'd like to follow along or implement this for yourself,
-here was the quick setup I used.
+If you'd like to follow along or implement this for yourself, here was the quick
+setup I used. I'm using php 8.4, composer and laravel installer.
 
 ```bash
 composer require -g livewire/installer
@@ -59,53 +58,52 @@ You can also find the complete code for this example on
 
 ## Understanding Tree Structures in Relational Databases
 
-Representing a tree in a relational database is straightforward enough. The
+Representing a tree in a relational database is easy enough. In our example, the
 nodes are represented by rows in a `nodes` table. The edges are represented by a
-(not so) foreign key, `parent_id`, that references the `id` of another row in
-the same table. You could also represent edges using another table with columns
-for `parent_node_id` and `child_node_id`, but for our purposes, the former
-solution is less complex and more efficient.
+(not so) foreign key, `parent_id`, that references another row in the same
+table. You could also represent edges using another table with columns for
+`parent_node_id` and `child_node_id`, but for our purposes, the former solution
+is less complex and more efficient.
 
-One of the main challenges is ordering the nodes correctly so we can paginate
-the results. Specifically, we want to order depth first so we can visually nest
-the nodes under their parent. Some databases have support for this process, like
-Postgres, which offers the `ltree` type, or MongoDb, which natively supports
-trees. If you are starting from scratch, I would start there. Unfortunately, in
-my case, we were using MySQL, which as of version 8 does not have the same
-support. But instead of migrating to a new database, we decided to work around
+A bigger challenge is ordering the nodes correctly so we can paginate the
+results. Some databases have support for this process, like Postgres, which
+offers the `ltree` type, or MongoDb, which natively supports trees. If you are
+starting from scratch, you might want to start there. Unfortunately, in my case,
+the data already existed in MySQL, which as of version 8 does not have support
+for trees. But instead of migrating to a new database, we decided to work around
 the limitations.
 
 Perhaps your first thought, as was mine, might be to sort the nodes, and set an
-integer column to index the data. However, This approach will become a major
-bottleneck since it will need to re-index all the nodes on every insert, causing
-slow writes and potentially locking issues. A better approach is to index with a
-string, `path`, which will contain sort indexes for the node and each of its
-parents, separated by a slash. This way, nodes can by indexed relative to their
-siblings. For our feature set, that means a nodes path can be set when it is
-created and will not need to be updated again.
+integer column to index the data. However, since we allow nodes to be inserted
+at any point in the tree, we would have to re-index after every insert. This
+will become a major bottleneck, causing slow writes and potentially locking
+issues. A better approach is to index with a string, which will contain a "path"
+to the node, So each node will be indexed realative to its siblings, and then we
+will prefix the path with the indexes of each of its parents. Since we aren't
+reordering, that means a nodes path can be set when it is created and will not
+need to be updated again.
 
 But there is still an issue. Since the path is a string, integers of different
-lengths will not sort correctly. For example, `/1/2` will sort before `/1/10`,
-even though it should. To work around this, we can use zero-padded integers for
-each part of the path. If each part of the path is a fixed length, then a string
-comparison will yield the same result as an integer comparison. Of course, if
-you have enough nodes in a group to overflow the padding, sorting would break
-down. For this example, I will assume that the number of nodes in a group will
-be less than 10,000. If you need more than that, you can increase the padding,
-but at some point, you will want to consider alternatives.
+lengths will not sort correctly. For example, `/1/2/` will sort before `/1/10/`,
+even though it should. To work around this, we can pad each part of the path
+with zeros so they are the same length, then a string comparison will yield the
+same result as an integer comparison. Of course, if you have enough nodes in a
+group to overflow the padding, sorting would break down. For this example, I
+will assume that the number of nodes in a group will be less than 100,000, and
+pad so each part so it is 5 digits.
 
 ## Handling Inserts and Ininite Pagination in Livewire
 
 Another challenge is handling inserts in the tree structure while maintaining
-the infinite scroll pagination. We want to show new nodes, in the correct order,
-without having to refresh the entire page. To solve this problem, we will ditch
-fixed size pages. Specifically, we used cursor pagination with start and end
-cursors for each page.
+the infinite scroll pagination. We want to show new nodes, in the correct order
+as the user creates them, without having to refresh the entire page. To solve
+this problem, we will ditch fixed size pages. Specifically, we used cursor
+pagination with start and end cursors for each page.
 
 When a new node is created, we need to determine where it fits in the existing
 pages. If it is within the range of a page, simply refresh that page. If it is
-between pages, then update a cursor so that the new node is included one one of
-the existing pages.
+between pages, then we can update a cursor so that the new node is included in
+one of the existing pages.
 
 ## Implementing the Solution
 
@@ -146,10 +144,10 @@ return new class extends Migration
 };
 ```
 
-To initially set the `path` we will use the eloquent event `creating`. All that
-needs to be done is to find the last node in the same group and increment the
-last part of the path. Other than that, the model will also make `parent_id`
-fillable and implement eloquent relationships.
+To initially set the `path` we will use the eloquent `creating` event. For that
+we will find the last node in the same group and increment the last part of the
+path. Other than that, the model will also make `parent_id` fillable and
+implement eloquent relationships.
 
 ```php [app/Models/Node.php]
 <?php
@@ -174,6 +172,7 @@ class Node extends Model
                 ->filter()
                 ->last() + 1;
             $node->path = ($node->parent?->path ?? '/')
+                .str_pad($pathIndex, 5, '0', STR_PAD_LEFT).'/';
         });
     }
 
@@ -189,17 +188,17 @@ class Node extends Model
 }
 ```
 
-For the UI, we need one component to display all the nodes in a range, and a
-second component to manage infinite pagination and mount all the page
-components. We will also use a wireable data class to help the two components
-communicate.
+For the UI, we need one component to display a page of nodes, and a second
+component to manage infinite pagination and mount all the page components. We
+will also use a wireable data class to help the two components communicate.
 
-The wireable `NodesPageData` classes primary responsiblity is to persist the
-cursors through requests. It will also allow us to pass a collection of nodes,
-but those will only be used when mounting the page so we don't have to query the
-database again. On subsequent requests, we want to use a custom query to pull
-the nodes in case nodes are added into the middle of a page. We will also set a
-`key` property to uniquely identify the page based on its cursors.
+The `NodesPageData` classes primary responsiblity is to persist the cursors
+through requests. It will also allow us to pass a collection of nodes when
+initially mounting the component so we don't have to query the databaswe twice
+when initially mounting the component so we don't have to query the databaswe
+twice. On subsequent requests, page components will query all the nodes between
+its cursors in case nodes are added into the middle of a page. And finally, a
+`key` property based on the cursors will help uniquely identify each page.
 
 ```php [app/Livewire/NodesPageData.php]
 <?php
@@ -252,11 +251,11 @@ class NodesPageData implements Wireable
 
 The `NodesPage` component will be responsible for displaying the nodes in a
 single page. It will access `NodesPageData` to check if nodes have been passed,
-and if not it will use the cursors to query the database for the nodes. The left
-margin of each node will be determined based on the 'depth' of the node in the
-tree, which we can figure out by counting the number of delimiters in the path.
-Finally, a button to create a child node will be displayed, and when clicked,
-creation will be delegated to the parent component by dispatching an event.
+and if not it will use the cursors to query the database. The left margin of
+each node will be determined based on the 'depth' of the node in the tree, which
+is computed by counting the delimiters in the path. Lastly, it will display a
+button to create a child node, which when clicked, will be delegate creation to
+the parent component by dispatching an event.
 
 ```php [app/Livewire/NodesPage.php]
 <?php
@@ -322,8 +321,7 @@ well as a flag to indicate if there are more pages to reduce database calls.
 
 The create node method will create nodes, obviously, and then determine how it
 fits into the existing pages, updating cursors if needed. It will also handle
-displaying the first page or displaying nodes at the end of all pages if there
-are no pages left to display.
+displaying the first page.
 
 ```php [app/Livewire/Nodes.php]
 <?php
@@ -418,12 +416,12 @@ class Nodes extends Component
 
 ## That's It
 
-Well, kind of. Of course some improvements could be made. For example, we could
-make sure the padding on `path` couldn't get exceeded so that sorting doesn't
-break down. We could also create split pages into two if too many nodes are
-added without a page refresh. Of course this is just a demonstration, so we'll
-leave it there.
+Of course there are improvements that could be made. For example, we could make
+sure the padding on `path` couldn't get exceeded so that sorting doesn't break
+down. We could also create split pages into two if too many nodes are added
+without a page refresh. Of course this is just a demonstration, so we'll leave
+it there.
 
-I hope you found this helpful. I certainly learned a lot about tree structures
-in relational databases and handling inserts in paginated data in livewire.
-Until next time, happy coding!
+Hopefully you found this helpful. I certainly learned a lot about tree
+structures in relational databases and handling inserts in paginated data in
+livewire.
