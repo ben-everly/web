@@ -6,12 +6,12 @@ title: Infinite Scroll with Tree Structures in Livewire
 
 ## The Challenge
 
-Recently at work, we faced a challenge with implementing pagination on a mysql
+Recently at work, a feature was requested that involved paginating a mysql
 database table that had a self reference, creating a tree structure. The
-requirements were to show the tree in depth first order, paginate the results
-with an infinite scroll so the parent child relationships could easily be
-visualized across pages, and allow inserts at any level of the tree, rendering
-the new nodes efficiently.
+requirements were to show trees in depth first order, paginate the results with
+an infinite scroll so the parent child relationships could easily be displayed
+and visualized across pages, and allow inserts at any level of the tree,
+rendering the new nodes efficiently.
 
 If you'd like to follow along or implement this for yourself, here was the quick
 setup I used. I'm using php 8.4, composer and laravel installer.
@@ -56,7 +56,7 @@ Route::get('/', Nodes::class)->name('home');
 You can also find the complete code for this example on
 [Github](https://github.com/ben-everly/infinite-paginate-tree)
 
-## Understanding Tree Structures in Relational Databases
+## Why MySQL Trees Are Tricky
 
 Representing a tree in a relational database is easy enough. In our example, the
 nodes are represented by rows in a `nodes` table. The edges are represented by a
