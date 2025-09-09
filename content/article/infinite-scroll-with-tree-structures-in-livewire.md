@@ -6,15 +6,16 @@ title: Infinite Scroll with Tree Structures in Livewire
 
 ## The Challenge
 
-My team recently tackled the challenge of paginating a MySQL database table with
+My team recently had the task of paginating a MySQL database table with
 self-references, resulting in a tree structure. The requirements included
 displaying trees in depth-first order, paginating results with infinite scroll
-to allow visual representations of parent-child relationships, and allowing
-efficient node insertion at any level of the tree while rendering new nodes
-instantly.
+so visual representations of parent-child relationships aren't interrupted, and
+allowing efficient node insertion at any level of the tree while rendering new
+nodes instantly.
 
-To follow along, ensure you have PHP 8.4, Composer, and Laravel Installer and
-follow this quick setup.
+To follow along, ensure that PHP 8.4, Composer, and Laravel Installer installed.
+Then, run the following commands to create a new Laravel project and initialize
+the necessary components:
 
 ```bash
 composer require -g livewire/installer
@@ -53,50 +54,50 @@ Route::get('/', Nodes::class)->name('home');
 ```
 
 You can also find the complete code for this example on
-[Github](https://github.com/ben-everly/infinite-paginate-tree)
+[GitHub](https://github.com/ben-everly/infinite-paginate-tree)
 
 ## Why MySQL Trees Are Tricky
 
-Representing a tree in a relational database is relatively straightforward. In
-this example, nodes are stored as rows in a `nodes` table. The edges are
-represented by a (not so) foreign key, `parent_id`, that references another row
-in the same table. You could also represent edges using another table with
-columns for `parent_node_id` and `child_node_id`, but for our purposes, the
-former solution is less complex and more efficient.
+Modeling a tree structure in a relational database is relatively simple. In this
+example, nodes are stored as rows in a `nodes` table. The edges are represented
+by a (not so) foreign key, `parent_id`, that references another row in the same
+table. You could also represent edges using another table with columns for
+`parent_node_id` and `child_node_id`, but for our purposes, the former solution
+is less complex and more efficient.
 
-The bigger challenge lies in ordering the nodes correctly to enable seamless
-pagination. Some databases have support for this process, like Postgres, which
-offers the `ltree` type, or MongoDb, which natively supports trees. If you are
-starting from scratch, you might want to start there. Unfortunately, in my case,
-the data already existed in MySQL, which as of version 8 does not have support
-for trees. But instead of migrating to a new database, we decided to work around
-the limitations.
+A significant obstacle, however, lies in ordering the nodes correctly to enable
+seamless pagination. Some databases have support for this process, like
+Postgres, which offers the `ltree` type, or MongoDB, which natively supports
+trees. If you are starting from scratch, you might want to start there.
+Unfortunately, the data in my case was already in MySQL, which as of version 8
+does not have support for trees. But instead of migrating to a new database, we
+decided to work around the limitations.
 
-Perhaps your first thought, as was mine, might be to sort the nodes, and set an
-integer column to index the data. However, since we allow nodes to be inserted
-at any point in the tree, we would have to re-index after every insert. This
-will become a major bottleneck, causing slow writes and potentially locking
-issues. A better approach is to index with a string, which will contain a "path"
-to the node, So each node will be indexed relative to its siblings, and then we
-will prefix the path with the indexes of each of its parents. Since we aren't
-reordering, that means a nodes path can be set when it is created and will not
-need to be updated again.
+Your first instinct, as mine was, might be to sort the nodes in application code
+and generate an integer column to index the data. However, since we allow nodes
+to be inserted at any point in the tree, we would have to re-index after every
+insert. This will become a major bottleneck, causing slow writes and potentially
+locking issues. A better approach is to index with a string, which will contain
+a "path" to the node, So each node will be indexed relative to its siblings, and
+then we will prefix the path with the indexes of each of its parents. Since we
+aren't reordering, that means a nodes path can be set when it is created and
+will not need to be updated again.
 
-However, there is still a challenge: string-based paths do not sort integers of
+However, there is still a problem: string-based paths fail to sort integers with
 varying lengths correctly. For example, `/1/2/` will sort before `/1/10/`, even
 though it should. To address this, we can pad each part of the path with zeros
 to ensure equal lengths, enabling string comparisons to correctly mimic integer
-sorting. Of course, if you have enough nodes in a group to overflow the padding,
-sorting would break down. For this example, we'll assume each group contains
+sorting. However, if the number of nodes in a group exceeds the padding limit,
+sorting breaks down. For this example we'll just assume each group contains
 fewer than 100,000 nodes and pad each part to 5 digits.
 
-## Handling Inserts and Ininite Pagination in Livewire
+## Handling Inserts and Infinite Pagination in Livewire
 
-Managing and displaying inserts into the tree structure while preserving
-infinite scroll presents another challenge. The goal is to display new nodes in
-the correct order as the user creates them, without needing a full page refresh.
-To solve this problem, we will ditch fixed size pages. Specifically, we used
-cursor pagination with start and end cursors for each page.
+Managing and displaying node inserts while preserving infinite scroll
+functionality presents another hurdle. The goal is to display new nodes in the
+correct order as the user creates them, without needing a full page refresh. To
+achieve this, we can use variable-sized pages. Specifically, we can use cursor
+pagination with start and end cursors for each page.
 
 When a new node is created, we need to determine where it fits in the existing
 pages. If it is within the range of a page, simply refresh that page. If it is
@@ -105,9 +106,10 @@ one of the existing pages.
 
 ## Implementing the Solution
 
-The first step is to create the database table. Given the previous explanation,
-this should be straightforward if you are familiar with laravel. We create a
-`nodes` table with the `parent_id` foreign key and an indexed `path` column.
+The first step is to create the database table. With previous explanation,
+implementing the migration should be straightforward for those familiar with
+Laravel. We create a `nodes` table with the `parent_id` foreign key and an
+indexed `path` column.
 
 ```php [database/migrations/xxxx_xx_xx_xxxxxx_create_nodes_table.php]
 <?php
@@ -191,11 +193,11 @@ component to manage infinite pagination and mount all the page components. We
 will also use a wireable data class to help the two components communicate.
 
 The primary responsibility of the `NodesPageData` class is to persist the
-cursors across requests. It also can store a collection of nodes, but they do
-not get persisted across requests. Those are only used when initially mounting a
-page to pass the nodes between components to avoid querying the database twice.
-Finally, a `key` property based on the cursors will help uniquely identify each
-page for dispatching events.
+cursors across requests. It will also store a collection of nodes, but they do
+not get persisted across requests. Instead, the collection is only used when
+initially mounting a page. It allows us to pass the nodes between components to
+avoid querying the database twice. Finally, a `key` property based on the
+cursors will help uniquely identify each page for dispatching events.
 
 ```php [app/Livewire/NodesPageData.php]
 <?php
@@ -246,13 +248,12 @@ class NodesPageData implements Wireable
 }
 ```
 
-The `NodesPage` component will be responsible for displaying the nodes in a
-single page. It will access `NodesPageData` to check if nodes have been passed,
-and if not it will use the cursors to query the database. The left margin of
-each node will be determined based on the 'depth' of the node in the tree, which
-is computed by counting the delimiters in the path. Lastly, it will display a
-button to create a child node, which when clicked, will be delegate creation to
-the parent component by dispatching an event.
+The `NodesPage` component renders a single page of nodes and handles child
+creation. It will access `NodesPageData` to check if nodes have been passed, and
+if not it will use the cursors to query the database. It renders the nodes with
+a left margin determined by the nodes 'depth', which is computed by counting the
+delimiters in its `path`. Lastly, a button will allow node creation, which will
+be delegated to the parent component by dispatching an event.
 
 ```php [app/Livewire/NodesPage.php]
 <?php
@@ -417,11 +418,9 @@ While this implementation serves as a robust starting point, there are
 opportunities for further refinement. For instance, we could implement
 safeguards to prevent `path` parts from exceeding the padding limit, ensuring
 accurate sorting. We could also split pages into two if too many nodes are added
-without a page refresh. Of course this is just a demonstration, so we'll leave
-it there.
+without a page refresh. This is intended as a demonstration, and therefore we
+will leave it at that.
 
-I hope this guide has been insightful and serves as a valuable reference for
-implementing tree structures with infinite scrolling in Livewire. By addressing
-real-world challenges, such as efficient pagination and dynamic insertion, this
-project demonstrates the versatility of Laravel and Livewire. Until next time,
-keep scrolling (infinitely)!
+I hope this guide has provided you with a clear and practical approach to
+implementing MySQL tree structures with infinite scrolling in Livewire. I
+learned quite a lot working on this project, and I hope you did too!
