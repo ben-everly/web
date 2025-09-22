@@ -16,8 +16,9 @@
                     class="flex flex-wrap justify-center gap-4 text-sm text-gray-600 print:gap-2"
                 >
                     <span>
-                        github.com/ben-everly • beneverly.com •
-                        benjamin.g.everly@gmail.com
+                        Saint Charles, MO • benjamin.g.everly@gmail.com • (636)
+                        xxx-xxxx <br />
+                        github.com/ben-everly • beneverly.com
                     </span>
                 </div>
             </header>
