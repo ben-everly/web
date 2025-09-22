@@ -117,75 +117,68 @@
                 <div
                     class="grid grid-cols-1 gap-6 md:grid-cols-2 print:grid-cols-2 print:gap-4"
                 >
-                    <!-- Programming & Frameworks -->
+                    <!-- Languages -->
                     <div>
-                        <h3 class="mb-3 text-lg font-semibold text-gray-900">
-                            Programming & Frameworks
+                        <h3 class="mb-2 text-lg font-semibold text-gray-900">
+                            Languages
                         </h3>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="inline-flex items-center rounded-lg border border-blue-200 bg-gradient-to-r from-blue-50 to-blue-100 px-3 py-1.5 text-sm font-medium text-blue-800 print:px-2 print:py-1"
-                                >PHP</span
-                            >
-                            <span
-                                class="inline-flex items-center rounded-lg border border-red-200 bg-gradient-to-r from-red-50 to-red-100 px-3 py-1.5 text-sm font-medium text-red-800 print:px-2 print:py-1"
-                                >Laravel</span
-                            >
-                            <span
-                                class="inline-flex items-center rounded-lg border border-purple-200 bg-gradient-to-r from-purple-50 to-purple-100 px-3 py-1.5 text-sm font-medium text-purple-800 print:px-2 print:py-1"
-                                >Livewire</span
-                            >
-                            <span
-                                class="inline-flex items-center rounded-lg border border-emerald-200 bg-gradient-to-r from-emerald-50 to-emerald-100 px-3 py-1.5 text-sm font-medium text-emerald-800 print:px-2 print:py-1"
-                                >AlpineJS</span
-                            >
-                            <span
-                                class="inline-flex items-center rounded-lg border border-cyan-200 bg-gradient-to-r from-cyan-50 to-cyan-100 px-3 py-1.5 text-sm font-medium text-cyan-800 print:px-2 print:py-1"
-                                >TailwindCSS</span
-                            >
-                        </div>
+                        <p class="text-gray-700">
+                            PHP, JavaScript, TypeScript, SQL, Bash
+                        </p>
+                    </div>
+
+                    <!-- Frameworks -->
+                    <div>
+                        <h3 class="mb-2 text-lg font-semibold text-gray-900">
+                            Frameworks
+                        </h3>
+                        <p class="text-gray-700">
+                            Laravel, Livewire, PHPUnit, Alpine
+                        </p>
+                        <p class="mt-1 text-gray-600">
+                            Also familiar with: Vue, Nuxt, React, Next
+                        </p>
+                    </div>
+
+                    <!-- Frontend & Styling -->
+                    <div>
+                        <h3 class="mb-2 text-lg font-semibold text-gray-900">
+                            Frontend & Styling
+                        </h3>
+                        <p class="text-gray-700">
+                            HTML5, CSS3, TailwindCSS, Responsive Design
+                        </p>
                     </div>
 
                     <!-- Database & Infrastructure -->
                     <div>
-                        <h3 class="mb-3 text-lg font-semibold text-gray-900">
+                        <h3 class="mb-2 text-lg font-semibold text-gray-900">
                             Database & Infrastructure
                         </h3>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="inline-flex items-center rounded-lg border border-orange-200 bg-gradient-to-r from-orange-50 to-orange-100 px-3 py-1.5 text-sm font-medium text-orange-800 print:px-2 print:py-1"
-                                >MySQL</span
-                            >
-                            <span
-                                class="inline-flex items-center rounded-lg border border-green-200 bg-gradient-to-r from-green-50 to-green-100 px-3 py-1.5 text-sm font-medium text-green-800 print:px-2 print:py-1"
-                                >Docker</span
-                            >
-                            <span
-                                class="inline-flex items-center rounded-lg border border-yellow-200 bg-gradient-to-r from-yellow-50 to-yellow-100 px-3 py-1.5 text-sm font-medium text-yellow-800 print:px-2 print:py-1"
-                                >AWS</span
-                            >
-                            <span
-                                class="inline-flex items-center rounded-lg border border-gray-200 bg-gradient-to-r from-gray-50 to-gray-100 px-3 py-1.5 text-sm font-medium text-gray-800 print:px-2 print:py-1"
-                                >Github Actions</span
-                            >
-                        </div>
+                        <p class="text-gray-700">
+                            Linux, MySQL, Redis, Meilisearch, Docker, AWS,
+                            Github Actions, Ansible, Pulumi
+                        </p>
                     </div>
 
-                    <!-- Tools & Emerging Tech -->
+                    <!-- Compliance & Standards -->
                     <div>
-                        <h3 class="mb-3 text-lg font-semibold text-gray-900">
-                            Interests
+                        <h3 class="mb-2 text-lg font-semibold text-gray-900">
+                            Compliance & Standards
                         </h3>
-                        <div class="flex flex-wrap gap-2">
-                            <span
-                                class="inline-flex items-center rounded-lg border border-sky-200 bg-gradient-to-r from-sky-50 to-sky-100 px-3 py-1.5 text-sm font-medium text-sky-800 print:px-2 print:py-1"
-                                >Neovim</span
-                            >
-                            <span
-                                class="inline-flex items-center rounded-lg border border-purple-200 bg-gradient-to-r from-purple-50 to-purple-100 px-3 py-1.5 text-sm font-medium text-purple-800 print:px-2 print:py-1"
-                                >ML Engineering</span
-                            >
-                        </div>
+                        <p class="text-gray-700">
+                            HIPAA, FDA 21 CFR Part 11, HL7, FHIR
+                        </p>
+                    </div>
+
+                    <!-- Tools -->
+                    <div>
+                        <h3 class="mb-2 text-lg font-semibold text-gray-900">
+                            Tools
+                        </h3>
+                        <p class="text-gray-700">
+                            Neovim, Git, GitHub, Jira, Linear, Composer, npm
+                        </p>
                     </div>
                 </div>
             </section>
