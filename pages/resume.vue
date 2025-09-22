@@ -140,25 +140,8 @@
                                 >AlpineJS</span
                             >
                             <span
-                                class="inline-flex items-center rounded-lg border border-orange-200 bg-gradient-to-r from-orange-50 to-orange-100 px-3 py-1.5 text-sm font-medium text-orange-800 print:px-2 print:py-1"
-                                >Rust</span
-                            >
-                        </div>
-                    </div>
-
-                    <!-- Frontend & Styling -->
-                    <div>
-                        <h3 class="mb-3 text-lg font-semibold text-gray-900">
-                            Frontend & Styling
-                        </h3>
-                        <div class="flex flex-wrap gap-2">
-                            <span
                                 class="inline-flex items-center rounded-lg border border-cyan-200 bg-gradient-to-r from-cyan-50 to-cyan-100 px-3 py-1.5 text-sm font-medium text-cyan-800 print:px-2 print:py-1"
                                 >TailwindCSS</span
-                            >
-                            <span
-                                class="inline-flex items-center rounded-lg border border-emerald-200 bg-gradient-to-r from-emerald-50 to-emerald-100 px-3 py-1.5 text-sm font-medium text-emerald-800 print:px-2 print:py-1"
-                                >WASM</span
                             >
                         </div>
                     </div>
@@ -182,8 +165,8 @@
                                 >AWS</span
                             >
                             <span
-                                class="inline-flex items-center rounded-lg border border-yellow-200 bg-gradient-to-r from-yellow-50 to-yellow-100 px-3 py-1.5 text-sm font-medium text-yellow-800 print:px-2 print:py-1"
-                                >Google Cloud</span
+                                class="inline-flex items-center rounded-lg border border-gray-200 bg-gradient-to-r from-gray-50 to-gray-100 px-3 py-1.5 text-sm font-medium text-gray-800 print:px-2 print:py-1"
+                                >Github Actions</span
                             >
                         </div>
                     </div>
@@ -191,13 +174,9 @@
                     <!-- Tools & Emerging Tech -->
                     <div>
                         <h3 class="mb-3 text-lg font-semibold text-gray-900">
-                            Tools & Emerging Technologies
+                            Interests
                         </h3>
                         <div class="flex flex-wrap gap-2">
-                            <span
-                                class="inline-flex items-center rounded-lg border border-gray-200 bg-gradient-to-r from-gray-50 to-gray-100 px-3 py-1.5 text-sm font-medium text-gray-800 print:px-2 print:py-1"
-                                >Github</span
-                            >
                             <span
                                 class="inline-flex items-center rounded-lg border border-sky-200 bg-gradient-to-r from-sky-50 to-sky-100 px-3 py-1.5 text-sm font-medium text-sky-800 print:px-2 print:py-1"
                                 >Neovim</span
@@ -205,10 +184,6 @@
                             <span
                                 class="inline-flex items-center rounded-lg border border-purple-200 bg-gradient-to-r from-purple-50 to-purple-100 px-3 py-1.5 text-sm font-medium text-purple-800 print:px-2 print:py-1"
                                 >ML Engineering</span
-                            >
-                            <span
-                                class="inline-flex items-center rounded-lg border border-blue-200 bg-gradient-to-r from-blue-50 to-blue-100 px-3 py-1.5 text-sm font-medium text-blue-800 print:px-2 print:py-1"
-                                >AI Tools</span
                             >
                         </div>
                     </div>
