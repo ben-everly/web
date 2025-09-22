@@ -30,12 +30,13 @@
                     Professional Summary
                 </h2>
                 <p class="leading-relaxed text-gray-700">
-                    Experienced software engineer with over 15 years of
-                    expertise in developing innovative solutions and solving
-                    complex problems. Currently specializing in medical software
+                    Adaptable software engineer with over 15 years of expertise
+                    in developing innovative solutions and solving complex
+                    problems. Currently specializing in medical software
                     development with a focus on patient-reported outcomes data.
                     Passionate about building scalable applications and
-                    exploring emerging technologies.
+                    exploring emerging technologies while thriving in dynamic,
+                    fast-paced settings.
                 </p>
             </section>
 
