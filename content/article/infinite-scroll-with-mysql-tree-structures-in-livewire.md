@@ -1,7 +1,7 @@
 ---
 published_at:
-image: /images/infinite-scroll-with-tree-structures-in-livewire.png
-title: Infinite Scroll with Tree Structures in Livewire
+image: /images/infinite-scroll-with-mysql-tree-structures-in-livewire.png
+title: Infinite Scroll with MySql Tree Structures in Livewire
 ---
 
 ## The Challenge
