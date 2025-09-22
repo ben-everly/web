@@ -58,7 +58,10 @@
                                 Universal Research Solutions
                             </p>
                         </div>
-                        <span class="text-sm font-medium text-gray-500">
+                        <span
+                            class="text-right text-sm font-medium text-gray-500"
+                        >
+                            Columbia, MO <br />
                             July 2010 - Present
                         </span>
                     </div>
@@ -101,9 +104,14 @@
                             </h3>
                             <p class="text-gray-600">B.S. Computer Science</p>
                         </div>
-                        <span class="text-sm font-medium text-gray-500">
-                            2010 • Rolla, MO
-                        </span>
+                        <div>
+                            <div
+                                class="text-right text-sm font-medium text-gray-500"
+                            >
+                                Rolla, MO <br />
+                                2010
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -137,9 +145,7 @@
                         <p class="text-gray-700">
                             Laravel, Livewire, PHPUnit, Alpine
                         </p>
-                        <p class="mt-1 text-gray-600">
-                            Also familiar with: Vue, Nuxt, React, Next
-                        </p>
+                        <p class="mt-1 text-gray-600">Vue, Nuxt, React, Next</p>
                     </div>
 
                     <!-- Frontend & Styling -->
@@ -158,8 +164,8 @@
                             Database & Infrastructure
                         </h3>
                         <p class="text-gray-700">
-                            Linux, MySQL, Redis, Meilisearch, Docker, AWS,
-                            Github Actions, Ansible, Pulumi
+                            MySQL, Redis, Meilisearch, RabbitMQ, Linux, Docker,
+                            AWS, Github Actions, Codeship, Ansible, Pulumi
                         </p>
                     </div>
 
