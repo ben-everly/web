@@ -15,21 +15,21 @@
                 <div
                     class="flex flex-wrap justify-center gap-4 text-sm text-gray-600 print:gap-2"
                 >
-                    <span>GitHub: github.com/ben-everly</span>
-                    <span class="print:hidden">•</span>
-                    <span>Email: benjamin.g.everly@gmail.com</span>
+                    <span>
+                        github.com/ben-everly • benjamin.g.everly@gmail.com
+                    </span>
                 </div>
             </header>
 
             <!-- Professional Summary -->
-            <section class="mb-8 print:mb-6">
+            <section class="mb-8 break-inside-avoid print:mb-6">
                 <h2
                     class="mb-4 border-b-2 border-gray-200 pb-2 text-2xl font-bold text-gray-900 print:text-xl"
                 >
                     Professional Summary
                 </h2>
                 <p class="leading-relaxed text-gray-700">
-                    Experienced software engineer with over 14 years of
+                    Experienced software engineer with over 15 years of
                     expertise in developing innovative solutions and solving
                     complex problems. Currently specializing in medical software
                     development with a focus on patient-reported outcomes data.
@@ -39,7 +39,7 @@
             </section>
 
             <!-- Experience -->
-            <section class="mb-8 print:mb-6">
+            <section class="mb-8 break-inside-avoid print:mb-6">
                 <h2
                     class="mb-4 border-b-2 border-gray-200 pb-2 text-2xl font-bold text-gray-900 print:text-xl"
                 >
@@ -56,9 +56,9 @@
                                 Universal Research Solutions
                             </p>
                         </div>
-                        <span class="text-sm font-medium text-gray-500"
-                            >July 2010 - Present</span
-                        >
+                        <span class="text-sm font-medium text-gray-500">
+                            July 2010 - Present
+                        </span>
                     </div>
                     <ul
                         class="ml-4 list-inside list-disc space-y-1 text-gray-700"
@@ -84,7 +84,7 @@
             </section>
 
             <!-- Education -->
-            <section class="mb-8 print:mb-6">
+            <section class="mb-8 break-inside-avoid print:mb-6">
                 <h2
                     class="mb-4 border-b-2 border-gray-200 pb-2 text-2xl font-bold text-gray-900 print:text-xl"
                 >
@@ -99,15 +99,15 @@
                             </h3>
                             <p class="text-gray-600">Computer Science</p>
                         </div>
-                        <span class="text-sm font-medium text-gray-500"
-                            >Rolla, MO</span
-                        >
+                        <span class="text-sm font-medium text-gray-500">
+                            Rolla, MO
+                        </span>
                     </div>
                 </div>
             </section>
 
             <!-- Technical Skills -->
-            <section class="mb-8 print:mb-6">
+            <section class="mb-8 break-inside-avoid print:mb-6">
                 <h2
                     class="mb-4 border-b-2 border-gray-200 pb-2 text-2xl font-bold text-gray-900 print:text-xl"
                 >
@@ -182,23 +182,11 @@
                     </div>
                 </div>
             </section>
-
-            <!-- Print button (hidden when printing) -->
-            <div class="text-center print:hidden">
-                <button
-                    @click="printResume"
-                    class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-medium text-white transition-colors duration-200 hover:bg-blue-700"
-                >
-                    <Icon name="uil:print" class="size-5" />
-                    Print Resume
-                </button>
-            </div>
         </div>
     </div>
 </template>
 
 <script setup>
-    // Page metadata
     useHead({
         title: "Resume - Ben Everly",
         meta: [
@@ -208,76 +196,4 @@
             },
         ],
     });
-
-    // Print functionality
-    const printResume = () => {
-        window.print();
-    };
 </script>
-
-<style>
-    /* Print-specific styles */
-    @media print {
-        body {
-            font-size: 12pt;
-            line-height: 1.4;
-        }
-
-        .print\:hidden {
-            display: none !important;
-        }
-
-        .print\:text-3xl {
-            font-size: 1.875rem;
-        }
-
-        .print\:text-xl {
-            font-size: 1.25rem;
-        }
-
-        .print\:text-lg {
-            font-size: 1.125rem;
-        }
-
-        .print\:mb-6 {
-            margin-bottom: 1.5rem;
-        }
-
-        .print\:gap-2 {
-            gap: 0.5rem;
-        }
-
-        .print\:grid-cols-2 {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .print\:gap-4 {
-            gap: 1rem;
-        }
-
-        .print\:px-2 {
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-        }
-
-        .print\:py-1 {
-            padding-top: 0.25rem;
-            padding-bottom: 0.25rem;
-        }
-
-        .print\:p-6 {
-            padding: 1.5rem;
-        }
-
-        /* Ensure page breaks work well */
-        section {
-            break-inside: avoid;
-        }
-
-        /* Optimize colors for printing */
-        .bg-gradient-to-r {
-            background: transparent !important;
-            border: 1px solid #ccc !important;
-        }
-    }
-</style>
