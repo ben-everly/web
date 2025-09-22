@@ -98,10 +98,10 @@
                             <h3 class="text-lg font-semibold text-gray-900">
                                 Missouri University of Science and Technology
                             </h3>
-                            <p class="text-gray-600">Computer Science</p>
+                            <p class="text-gray-600">B.S. Computer Science</p>
                         </div>
                         <span class="text-sm font-medium text-gray-500">
-                            Rolla, MO
+                            2010 • Rolla, MO
                         </span>
                     </div>
                 </div>
