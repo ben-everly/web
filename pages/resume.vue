@@ -12,14 +12,30 @@
                 <p class="mb-4 text-xl text-gray-600 print:text-lg">
                     Software Engineer & Problem Solver
                 </p>
+                <div class="justify-center text-sm text-gray-600">
+                    Saint Charles, MO • benjamin.g.everly@gmail.com • (636)
+                    xxx-xxxx
+                </div>
                 <div
-                    class="flex flex-wrap justify-center gap-4 text-sm text-gray-600 print:gap-2"
+                    class="flex flex-wrap items-center justify-center gap-1 text-sm text-gray-600"
                 >
-                    <span>
-                        Saint Charles, MO • benjamin.g.everly@gmail.com • (636)
-                        xxx-xxxx <br />
-                        github.com/ben-everly • beneverly.com
-                    </span>
+                    <div class="flex align-middle">
+                        <Icon
+                            name="uil:linkedin"
+                            class="size-5 transition-transform duration-300"
+                        />
+                        ben-everly
+                    </div>
+                    •
+                    <div class="flex align-middle">
+                        <Icon
+                            name="uil:github"
+                            class="size-5 transition-transform duration-300"
+                        />
+                        ben-everly
+                    </div>
+                    •
+                    <div class="flex align-middle">beneverly.com</div>
                 </div>
             </header>
 

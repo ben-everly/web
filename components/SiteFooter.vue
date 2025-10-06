@@ -34,7 +34,7 @@
                         <span class="font-medium">GitHub</span>
                     </NuxtLink>
                     <NuxtLink
-                        to="https://www.linkedin.com/in/ben-everly-950552101"
+                        to="https://www.linkedin.com/in/ben-everly"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="LinkedIn Profile"
