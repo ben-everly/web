@@ -99,7 +99,7 @@
                                 class="text-right text-sm font-medium text-gray-500"
                             >
                                 Columbia, MO <br />
-                                July 2015 - May 2022
+                                Jan 2014 - May 2022
                             </span>
                         </div>
                         <ul
