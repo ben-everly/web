@@ -41,7 +41,7 @@
                 </p>
             </section>
 
-            <!-- Experience -->
+            <!-- Professional Experience -->
             <section class="mb-8 break-inside-avoid print:mb-6">
                 <h2
                     class="mb-4 border-b-2 border-gray-200 pb-2 text-2xl font-bold text-gray-900 print:text-xl"
@@ -50,42 +50,101 @@
                 </h2>
 
                 <div class="mb-6">
-                    <div class="mb-2 flex items-start justify-between">
-                        <div>
-                            <h3 class="text-lg font-semibold text-gray-900">
-                                Software Developer
-                            </h3>
-                            <p class="text-gray-600">
-                                Universal Research Solutions
-                            </p>
+                    <div class="mb-6">
+                        <div class="mb-2 flex items-start justify-between">
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">
+                                    Lead Software Engineer
+                                </h3>
+                                <p class="text-gray-600">
+                                    Universal Research Solutions
+                                </p>
+                            </div>
+                            <span
+                                class="text-right text-sm font-medium text-gray-500"
+                            >
+                                Columbia, MO <br />
+                                May 2022 - Present
+                            </span>
                         </div>
-                        <span
-                            class="text-right text-sm font-medium text-gray-500"
+                        <ul
+                            class="ml-4 list-inside list-disc space-y-1 text-gray-700"
                         >
-                            Columbia, MO <br />
-                            July 2010 - Present
-                        </span>
+                            <li>
+                                Architect and implement scalable web
+                                applications using Laravel and Livewire
+                            </li>
+                            <li>
+                                Lead cross-functional team to deliver
+                                high-quality applications on time
+                            </li>
+                            <li>
+                                Collaborate with stakeholders to gather
+                                requirements and translate them into technical
+                                Solutions
+                            </li>
+                        </ul>
                     </div>
-                    <ul
-                        class="ml-4 list-inside list-disc space-y-1 text-gray-700"
-                    >
-                        <li>
-                            Develop and maintain software solutions for research
-                            and data analysis
-                        </li>
-                        <li>
-                            Collaborate with cross-functional teams to deliver
-                            high-quality applications
-                        </li>
-                        <li>
-                            Implement best practices in software development and
-                            code architecture
-                        </li>
-                        <li>
-                            Contribute to system design and technical
-                            decision-making processes
-                        </li>
-                    </ul>
+                    <div class="mb-6">
+                        <div class="mb-2 flex items-start justify-between">
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">
+                                    Senior Software Engineer
+                                </h3>
+                                <p class="text-gray-600">
+                                    Universal Research Solutions
+                                </p>
+                            </div>
+                            <span
+                                class="text-right text-sm font-medium text-gray-500"
+                            >
+                                Columbia, MO <br />
+                                July 2015 - May 2022
+                            </span>
+                        </div>
+                        <ul
+                            class="ml-4 list-inside list-disc space-y-1 text-gray-700"
+                        >
+                            <li>
+                                Contribute to system design and technical
+                                decision-making processes
+                            </li>
+                            <li>
+                                Mentor junior developers and enforce best
+                                practices
+                            </li>
+                            <li>Ensure security best practices</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-6">
+                        <div class="mb-2 flex items-start justify-between">
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">
+                                    Software Engineer
+                                </h3>
+                                <p class="text-gray-600">
+                                    Universal Research Solutions
+                                </p>
+                            </div>
+                            <span
+                                class="text-right text-sm font-medium text-gray-500"
+                            >
+                                Columbia, MO <br />
+                                July 2010 - Jan 2014
+                            </span>
+                        </div>
+                        <ul
+                            class="ml-4 list-inside list-disc space-y-1 text-gray-700"
+                        >
+                            <li>Develop and maintain software solutions</li>
+                            <li>
+                                Collaborate with teammates to improve user
+                                experience
+                            </li>
+                            <li>Debug and optimize legacy code</li>
+                        </ul>
+                    </div>
                 </div>
             </section>
 
