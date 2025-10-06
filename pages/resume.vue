@@ -129,7 +129,10 @@
                                 Mentor junior developers and enforce best
                                 practices
                             </li>
-                            <li>Ensure security best practices</li>
+                            <li>
+                                Ensure security best practices and HIPAA
+                                compliance
+                            </li>
                         </ul>
                     </div>
 
