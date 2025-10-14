@@ -87,17 +87,24 @@
                             class="ml-4 list-inside list-disc space-y-1 text-gray-700"
                         >
                             <li>
-                                Architect and implement scalable web
-                                applications using Laravel and Livewire
+                                Delivered 100% of projects on schedule while
+                                leading a cross-functional team of 5-6
+                                developers in an Agile environment.
                             </li>
                             <li>
-                                Lead cross-functional team to deliver
-                                high-quality applications on time
+                                Implemented processes to measure and improve
+                                team performance, including metrics for code
+                                quality, bug rates, and deployment frequency.
                             </li>
                             <li>
-                                Collaborate with stakeholders to gather
-                                requirements and translate them into technical
-                                Solutions
+                                Spearheaded an initiative that increased test
+                                coverage from 25.9% to 70.1%, significantly
+                                reducing production bugs.
+                            </li>
+                            <li>
+                                Introduced a code review checklist, improving
+                                code quality and reducing post-deployment
+                                issues.
                             </li>
                         </ul>
                     </div>
@@ -122,16 +129,29 @@
                             class="ml-4 list-inside list-disc space-y-1 text-gray-700"
                         >
                             <li>
-                                Contribute to system design and technical
-                                decision-making processes
+                                Worked in a team to migrate legacy monolithic
+                                applications to a microservices architecture,
+                                boosting scalability and maintainability.
                             </li>
                             <li>
-                                Mentor junior developers and enforce best
-                                practices
+                                Mentored junior developers, enhancing overall
+                                code quality and leading to measurable
+                                improvements in team velocity.
                             </li>
                             <li>
-                                Ensure security best practices and HIPAA
-                                compliance
+                                Contributed to development of data integration
+                                pipelines for healthcare standards (HL7) as well
+                                as custom integration with Epic.
+                            </li>
+                            <li>
+                                Led development of a graphical data
+                                visualization platform for patient data with
+                                optimized database queries.
+                            </li>
+                            <li>
+                                Led development of a PDF report generation
+                                system supporting scheduled and on-demand
+                                reports, satisfying the clients needs.
                             </li>
                         </ul>
                     </div>
@@ -156,12 +176,31 @@
                         <ul
                             class="ml-4 list-inside list-disc space-y-1 text-gray-700"
                         >
-                            <li>Develop and maintain software solutions</li>
                             <li>
-                                Collaborate with teammates to improve user
-                                experience
+                                Contributed to the development of a patient
+                                portal, implementing features such as
+                                authentication, appointment request systems, and
+                                form access.
                             </li>
-                            <li>Debug and optimize legacy code</li>
+                            <li>
+                                Enhanced patient notifications by integrating
+                                Twilio API for SMS and VoIP, including an
+                                interactive VoIP system for form completion.
+                            </li>
+                            <li>
+                                Implemented clinical scoring systems, including
+                                integration with external services.
+                            </li>
+                            <li>
+                                Contributed to security systems complying with
+                                HIPAA, passing all audits with zero violations
+                                over a 15-year period.
+                            </li>
+                            <li>
+                                Provided on-call support for critical production
+                                bugs, resolving issues in legacy systems to
+                                ensure reliability and uptime.
+                            </li>
                         </ul>
                     </div>
                 </div>
