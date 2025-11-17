@@ -66,143 +66,144 @@
                 </h2>
 
                 <div class="mb-6">
-                    <div class="mb-6">
-                        <div class="mb-2 flex items-start justify-between">
-                            <div>
-                                <h3 class="text-lg font-semibold text-gray-900">
-                                    Lead Software Engineer
-                                </h3>
-                                <p class="text-gray-600">
-                                    Universal Research Solutions
-                                </p>
-                            </div>
-                            <span
-                                class="text-right text-sm font-medium text-gray-500"
-                            >
-                                Columbia, MO <br />
-                                May 2022 - Present
-                            </span>
-                        </div>
-                        <ul
-                            class="ml-4 list-inside list-disc space-y-1 text-gray-700"
+                    <div class="flex justify-between">
+                        <h3
+                            class="mb-1 text-xl font-bold text-gray-900 print:text-lg"
                         >
-                            <li>
-                                Delivered projects on schedule while leading a
-                                cross-functional team of 5-6 developers in an
-                                Agile environment.
-                            </li>
-                            <li>
-                                Implemented processes to measure and improve
-                                team performance, including metrics for code
-                                quality, and deployment frequency.
-                            </li>
-                            <li>
-                                Spearheaded an initiative that increased test
-                                coverage from 25.9% to 70.1%, significantly
-                                reducing production bugs.
-                            </li>
-                            <li>
-                                Introduced a code review checklist, improving
-                                code quality and reducing post-deployment
-                                issues.
-                            </li>
-                        </ul>
+                            Universal Research Solutions
+                        </h3>
+                        <div
+                            class="text-right text-sm font-medium text-gray-500"
+                        >
+                            Columbia, MO
+                        </div>
                     </div>
-                    <div class="mb-6">
-                        <div class="mb-2 flex items-start justify-between">
-                            <div>
-                                <h3 class="text-lg font-semibold text-gray-900">
+                    <div class="ml-4">
+                        <div class="mb-6">
+                            <div class="mb-2 flex items-start justify-between">
+                                <h4 class="text-lg font-semibold text-gray-900">
                                     Senior Software Engineer
-                                </h3>
-                                <p class="text-gray-600">
-                                    Universal Research Solutions
-                                </p>
+                                </h4>
+                                <div
+                                    class="text-right text-sm font-medium text-gray-500"
+                                >
+                                    May 2022 - Present
+                                </div>
                             </div>
-                            <span
-                                class="text-right text-sm font-medium text-gray-500"
+                            <ul
+                                class="ml-4 list-inside list-disc space-y-1 text-gray-700"
                             >
-                                Columbia, MO <br />
-                                Jan 2014 - May 2022
-                            </span>
+                                <li>
+                                    Delivered projects on schedule while leading
+                                    a cross-functional team of 5-6 developers in
+                                    an Agile environment.
+                                </li>
+                                <li>
+                                    Implemented processes to measure and improve
+                                    team performance, including metrics for code
+                                    quality, and deployment frequency.
+                                </li>
+                                <li>
+                                    Spearheaded an initiative that increased
+                                    test coverage from 25.9% to 70.1%,
+                                    significantly reducing production bugs.
+                                </li>
+                                <li>
+                                    Introduced a code review checklist,
+                                    improving code quality and reducing
+                                    post-deployment issues.
+                                </li>
+                            </ul>
                         </div>
-                        <ul
-                            class="ml-4 list-inside list-disc space-y-1 text-gray-700"
-                        >
-                            <li>
-                                Worked in a team to migrate legacy monolithic
-                                applications to a microservices architecture,
-                                boosting scalability and maintainability.
-                            </li>
-                            <li>
-                                Mentored junior developers, enhancing overall
-                                code quality and leading to measurable
-                                improvements in team velocity.
-                            </li>
-                            <li>
-                                Contributed to development of data integration
-                                pipelines using healthcare standards (HL7) as
-                                well as custom integrations with Epic.
-                            </li>
-                            <li>
-                                Led development of a graphical data
-                                visualization platform for patient data handling
-                                tens of thousands of data points at a time and
-                                including complex filtering options.
-                            </li>
-                            <li>
-                                Led development of a PDF report generation
-                                system supporting scheduled and on-demand
-                                reports, satisfying time sensitive client needs.
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="mb-6">
-                        <div class="mb-2 flex items-start justify-between">
-                            <div>
-                                <h3 class="text-lg font-semibold text-gray-900">
-                                    Software Engineer
-                                </h3>
-                                <p class="text-gray-600">
-                                    Universal Research Solutions
-                                </p>
+                        <div class="mb-6">
+                            <div class="mb-2 flex items-start justify-between">
+                                <h4 class="text-lg font-semibold text-gray-900">
+                                    Systems Engineer Expert
+                                </h4>
+                                <div
+                                    class="text-right text-sm font-medium text-gray-500"
+                                >
+                                    Jan 2014 - May 2022
+                                </div>
                             </div>
-                            <span
-                                class="text-right text-sm font-medium text-gray-500"
+                            <ul
+                                class="ml-4 list-inside list-disc space-y-1 text-gray-700"
                             >
-                                Columbia, MO <br />
-                                July 2010 - Jan 2014
-                            </span>
+                                <li>
+                                    Worked in a team to migrate legacy
+                                    monolithic applications to a microservices
+                                    architecture, boosting scalability and
+                                    maintainability.
+                                </li>
+                                <li>
+                                    Mentored junior developers, enhancing
+                                    overall code quality and leading to
+                                    measurable improvements in team velocity.
+                                </li>
+                                <li>
+                                    Contributed to development of data
+                                    integration pipelines using healthcare
+                                    standards (HL7) as well as custom
+                                    integrations with Epic.
+                                </li>
+                                <li>
+                                    Led development of a graphical data
+                                    visualization platform for patient data
+                                    handling tens of thousands of data points at
+                                    a time and including complex filtering
+                                    options.
+                                </li>
+                                <li>
+                                    Led development of a PDF report generation
+                                    system supporting scheduled and on-demand
+                                    reports, satisfying time sensitive client
+                                    needs.
+                                </li>
+                            </ul>
                         </div>
-                        <ul
-                            class="ml-4 list-inside list-disc space-y-1 text-gray-700"
-                        >
-                            <li>
-                                Contributed to the development of a patient
-                                portal, implementing features such as
-                                authentication, appointment request systems, and
-                                form access.
-                            </li>
-                            <li>
-                                Enhanced patient notifications by integrating
-                                Twilio API for SMS and VoIP, including
-                                interactive systems for form completion.
-                            </li>
-                            <li>
-                                Implemented clinical scoring systems, including
-                                integrations with external services.
-                            </li>
-                            <li>
-                                Contributed to security systems complying with
-                                HIPAA, passing all audits with zero violations
-                                over a 15-year period.
-                            </li>
-                            <li>
-                                Provided on-call support for critical production
-                                bugs, resolving issues in legacy systems to
-                                ensure reliability and uptime.
-                            </li>
-                        </ul>
+                        <div class="mb-6">
+                            <div class="mb-2 flex items-start justify-between">
+                                <h4 class="text-lg font-semibold text-gray-900">
+                                    Junior Software Engineer
+                                </h4>
+                                <div
+                                    class="text-right text-sm font-medium text-gray-500"
+                                >
+                                    July 2010 - Jan 2014
+                                </div>
+                            </div>
+                            <ul
+                                class="ml-4 list-inside list-disc space-y-1 text-gray-700"
+                            >
+                                <li>
+                                    Contributed to the development of a patient
+                                    portal, implementing features such as
+                                    authentication, appointment request systems,
+                                    and form access.
+                                </li>
+                                <li>
+                                    Enhanced patient notifications by
+                                    integrating Twilio API for SMS and VoIP,
+                                    including interactive systems for form
+                                    completion.
+                                </li>
+                                <li>
+                                    Implemented clinical scoring systems,
+                                    including integrations with external
+                                    services.
+                                </li>
+                                <li>
+                                    Contributed to security systems complying
+                                    with HIPAA, passing all audits with zero
+                                    violations over a 15-year period.
+                                </li>
+                                <li>
+                                    Provided on-call support for critical
+                                    production bugs, resolving issues in legacy
+                                    systems to ensure reliability and uptime.
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </section>
