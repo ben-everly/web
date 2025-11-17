@@ -87,14 +87,14 @@
                             class="ml-4 list-inside list-disc space-y-1 text-gray-700"
                         >
                             <li>
-                                Delivered 100% of projects on schedule while
-                                leading a cross-functional team of 5-6
-                                developers in an Agile environment.
+                                Delivered projects on schedule while leading a
+                                cross-functional team of 5-6 developers in an
+                                Agile environment.
                             </li>
                             <li>
                                 Implemented processes to measure and improve
                                 team performance, including metrics for code
-                                quality, bug rates, and deployment frequency.
+                                quality, and deployment frequency.
                             </li>
                             <li>
                                 Spearheaded an initiative that increased test
@@ -140,18 +140,19 @@
                             </li>
                             <li>
                                 Contributed to development of data integration
-                                pipelines for healthcare standards (HL7) as well
-                                as custom integration with Epic.
+                                pipelines using healthcare standards (HL7) as
+                                well as custom integrations with Epic.
                             </li>
                             <li>
                                 Led development of a graphical data
-                                visualization platform for patient data with
-                                optimized database queries.
+                                visualization platform for patient data handling
+                                tens of thousands of data points at a time and
+                                including complex filtering options.
                             </li>
                             <li>
                                 Led development of a PDF report generation
                                 system supporting scheduled and on-demand
-                                reports, satisfying the clients needs.
+                                reports, satisfying time sensitive client needs.
                             </li>
                         </ul>
                     </div>
@@ -184,12 +185,12 @@
                             </li>
                             <li>
                                 Enhanced patient notifications by integrating
-                                Twilio API for SMS and VoIP, including an
-                                interactive VoIP system for form completion.
+                                Twilio API for SMS and VoIP, including
+                                interactive systems for form completion.
                             </li>
                             <li>
                                 Implemented clinical scoring systems, including
-                                integration with external services.
+                                integrations with external services.
                             </li>
                             <li>
                                 Contributed to security systems complying with
