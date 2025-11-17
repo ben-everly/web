@@ -1,7 +1,7 @@
 ---
-published_at:
+published_at: 2025-09-10
 image: /images/infinite-scroll-with-mysql-tree-structures-in-livewire.png
-title: Infinite Scroll with MySql Tree Structures in Livewire
+title: Infinite Scroll with MySQL Tree Structures in Livewire
 ---
 
 ## The Challenge
@@ -417,7 +417,7 @@ class Nodes extends Component
 </div>
 ```
 
-## That's It
+## That's It! <!-- markdownlint-disable-line -->
 
 While this implementation serves as a starting point, there are opportunities
 for further refinement. For instance, we could implement safeguards to prevent
