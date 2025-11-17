@@ -3,13 +3,13 @@
         <!-- Print-optimized resume -->
         <div class="mx-auto max-w-4xl p-8 print:p-6">
             <!-- Header -->
-            <header class="mb-8 text-center print:mb-6">
+            <header class="mb-8 text-center print:mb-4">
                 <h1
-                    class="mb-2 text-4xl font-bold text-gray-900 print:text-3xl"
+                    class="mb-2 text-4xl font-bold text-gray-900 print:mb-1 print:text-2xl"
                 >
                     Ben Everly
                 </h1>
-                <p class="mb-4 text-xl text-gray-600 print:text-lg">
+                <p class="mb-4 text-xl text-gray-600 print:mb-2 print:text-lg">
                     Software Engineer & Problem Solver
                 </p>
                 <div class="justify-center text-sm text-gray-600">
@@ -40,9 +40,9 @@
             </header>
 
             <!-- Professional Summary -->
-            <section class="mb-8 break-inside-avoid print:mb-6">
+            <section class="mb-8 break-inside-avoid print:mb-4">
                 <h2
-                    class="mb-4 border-b-2 border-gray-200 pb-2 text-2xl font-bold text-gray-900 print:text-xl"
+                    class="mb-4 border-b-2 border-gray-200 pb-2 text-2xl font-bold text-gray-900 print:mb-2 print:pb-1 print:text-xl"
                 >
                     Professional Summary
                 </h2>
@@ -58,9 +58,9 @@
             </section>
 
             <!-- Professional Experience -->
-            <section class="mb-8 break-inside-avoid print:mb-6">
+            <section class="mb-8 print:mb-4">
                 <h2
-                    class="mb-4 border-b-2 border-gray-200 pb-2 text-2xl font-bold text-gray-900 print:text-xl"
+                    class="mb-4 border-b-2 border-gray-200 pb-2 text-2xl font-bold text-gray-900 print:mb-2 print:pb-1 print:text-xl"
                 >
                     Professional Experience
                 </h2>
@@ -79,7 +79,7 @@
                         </div>
                     </div>
                     <div class="ml-4">
-                        <div class="mb-6">
+                        <div class="mb-6 break-inside-avoid">
                             <div class="mb-2 flex items-start justify-between">
                                 <h4 class="text-lg font-semibold text-gray-900">
                                     Senior Software Engineer
@@ -115,7 +115,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="mb-6">
+                        <div class="mb-6 break-inside-avoid">
                             <div class="mb-2 flex items-start justify-between">
                                 <h4 class="text-lg font-semibold text-gray-900">
                                     Systems Engineer Expert
@@ -161,7 +161,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="mb-6">
+                        <div class="mb-6 break-inside-avoid">
                             <div class="mb-2 flex items-start justify-between">
                                 <h4 class="text-lg font-semibold text-gray-900">
                                     Junior Software Engineer
@@ -209,9 +209,9 @@
             </section>
 
             <!-- Education -->
-            <section class="mb-8 break-inside-avoid print:mb-6">
+            <section class="mb-8 break-inside-avoid print:mb-4">
                 <h2
-                    class="mb-4 border-b-2 border-gray-200 pb-2 text-2xl font-bold text-gray-900 print:text-xl"
+                    class="mb-4 border-b-2 border-gray-200 pb-2 text-2xl font-bold text-gray-900 print:mb-2 print:pb-1 print:text-xl"
                 >
                     Education
                 </h2>
@@ -237,9 +237,9 @@
             </section>
 
             <!-- Technical Skills -->
-            <section class="mb-8 break-inside-avoid print:mb-6">
+            <section class="mb-8 break-inside-avoid print:mb-4">
                 <h2
-                    class="mb-4 border-b-2 border-gray-200 pb-2 text-2xl font-bold text-gray-900 print:text-xl"
+                    class="mb-4 border-b-2 border-gray-200 pb-2 text-2xl font-bold text-gray-900 print:mb-2 print:pb-1 print:text-xl"
                 >
                     Technical Skills
                 </h2>
