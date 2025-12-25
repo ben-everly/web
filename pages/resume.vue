@@ -83,32 +83,101 @@
                                 <div
                                     class="text-right text-sm font-medium text-gray-500"
                                 >
-                                    May 2022 - Present
+                                    Apr 2022 - Present
                                 </div>
                             </div>
                             <ul
                                 class="ml-4 list-inside list-disc space-y-1 text-gray-700"
                             >
                                 <li>
-                                    Delivered projects on schedule while leading
-                                    a cross-functional team of 5-6 developers in
-                                    an Agile environment.
+                                    Led a cross-functional Agile team of 6-8
+                                    engineers, successfully delivering 100% of
+                                    all assigned projects on schedule.
                                 </li>
                                 <li>
-                                    Implemented processes to measure and improve
-                                    team performance, including metrics for code
-                                    quality, and deployment frequency.
+                                    Established comprehensive team-wide Key
+                                    Performance Indicators (KPIs) focused
+                                    strictly on code quality, maintainability,
+                                    and delivery (e.g., Cyclomatic Complexity,
+                                    Technical Debt Ratio (TDR)), successfully
+                                    driving a transparent, data-driven culture
+                                    across the engineering team.
                                 </li>
                                 <li>
-                                    Spearheaded an initiative that increased
-                                    test coverage from 25.9% to 70.1%,
-                                    significantly reducing production bugs.
+                                    Spearheaded an initiative to prioritize
+                                    testing and delivery metrics, boosting
+                                    automated test coverage from 26% to 70% and
+                                    subsequently increasing successful
+                                    deployment frequency by
+                                    <span class="text-red-300">40%</span>.
                                 </li>
                                 <li>
-                                    Introduced a code review checklist,
-                                    improving code quality and reducing
-                                    post-deployment issues.
+                                    Collaborated with Product and Design
+                                    stakeholders to translate high-level
+                                    business objectives into actionable
+                                    technical roadmaps, ensuring engineering
+                                    efforts remained consistently aligned with
+                                    core company priorities.
                                 </li>
+                            </ul>
+                        </div>
+                        <div class="mb-6 break-inside-avoid">
+                            <div class="mb-2 flex items-start justify-between">
+                                <h4 class="text-lg font-semibold text-gray-900">
+                                    Software Developer Expert
+                                </h4>
+                                <div
+                                    class="text-right text-sm font-medium text-gray-500"
+                                >
+                                    Jan 2016 - Apr 2022
+                                </div>
+                            </div>
+                            <ul
+                                class="ml-4 list-inside list-disc space-y-1 text-gray-700"
+                            >
+                                <li>
+                                    Collaborated on the migration of a legacy
+                                    monolithic application to a microservices
+                                    architecture using Docker and AWS ECS,
+                                    eliminating environment-specific bugs by
+                                    standardizing the application runtime and
+                                    significantly accelerating deployment cycle
+                                    times.
+                                </li>
+                                <li>
+                                    Upskilled junior developers through rigorous
+                                    peer code reviews and pair programming,
+                                    focusing on pragmatic coding principles and
+                                    the application of standard design patterns
+                                    to ensure maintainable, high-quality code.
+                                </li>
+                                <li>
+                                    Developed integration features to
+                                    synchronize data between internal platforms
+                                    and Epic EHR, utilizing HL7 standards to
+                                    ensure the seamless, automated ingestion of
+                                    <span class="text-red-300">
+                                        [Number] or "large-scale patient
+                                        datasets"
+                                    </span>
+                                    + patient records while maintaining strict
+                                    data integrity.
+                                </li>
+                                <!-- 2014-2017 -->
+                                <li>
+                                    Designed and Implemented a data
+                                    visualization platform using Highcharts,
+                                    implementing server-side data aggregation to
+                                    maintain high-speed performance for complex
+                                    cascading filters across
+                                    <span class="text-red-300">
+                                        tens of thousands
+                                    </span>
+                                    of data points.
+                                </li>
+                                <!-- any operational ownership or security/complicance? -->
+                                <!-- something with hipaa compliance? -->
+                                <!-- observability, logging, monitoring, alerting? -->
                             </ul>
                         </div>
                         <div class="mb-6 break-inside-avoid">
@@ -119,84 +188,55 @@
                                 <div
                                     class="text-right text-sm font-medium text-gray-500"
                                 >
-                                    Jan 2014 - May 2022
+                                    July 2010 - Jan 2016
                                 </div>
                             </div>
                             <ul
                                 class="ml-4 list-inside list-disc space-y-1 text-gray-700"
                             >
+                                <!-- 2014 -->
                                 <li>
-                                    Worked in a team to migrate legacy
-                                    monolithic applications to a microservices
-                                    architecture, boosting scalability and
-                                    maintainability.
+                                    Designed and developed an interactive SMS
+                                    messaging system via the Twilio API,
+                                    building automated workflows for appointment
+                                    reminders and conversational data collection
+                                    to allow patients to complete health forms
+                                    via text.
                                 </li>
+                                <!-- 2012 -->
                                 <li>
-                                    Mentored junior developers, enhancing
-                                    overall code quality and leading to
-                                    measurable improvements in team velocity.
+                                    Engineered a longitudinal Patient Reported
+                                    Outcome (PRO) reporting system using TCPDF
+                                    and Cron-based scheduling that has remained
+                                    in continuous production for 12+ years,
+                                    reliably delivering thousands of reports to
+                                    clients
                                 </li>
-                                <li>
-                                    Contributed to development of data
-                                    integration pipelines using healthcare
-                                    standards (HL7) as well as custom
-                                    integrations with Epic.
-                                </li>
-                                <li>
-                                    Led development of a graphical data
-                                    visualization platform for patient data
-                                    handling tens of thousands of data points at
-                                    a time and including complex filtering
-                                    options.
-                                </li>
-                                <li>
-                                    Led development of a PDF report generation
-                                    system supporting scheduled and on-demand
-                                    reports, satisfying time sensitive client
-                                    needs.
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="mb-6 break-inside-avoid">
-                            <div class="mb-2 flex items-start justify-between">
-                                <h4 class="text-lg font-semibold text-gray-900">
-                                    Junior Software Engineer
-                                </h4>
-                                <div
-                                    class="text-right text-sm font-medium text-gray-500"
-                                >
-                                    July 2010 - Jan 2014
-                                </div>
-                            </div>
-                            <ul
-                                class="ml-4 list-inside list-disc space-y-1 text-gray-700"
-                            >
-                                <li>
+                                <!-- 2012-2015 implenented patient login flow, econsent filling, triggering automatic form export via hl7 -->
+                                <!-- <li>
                                     Contributed to the development of a patient
                                     portal, implementing features such as
                                     authentication, appointment request systems,
                                     and form access.
-                                </li>
-                                <li>
-                                    Enhanced patient notifications by
-                                    integrating Twilio API for SMS and VoIP,
-                                    including interactive systems for form
-                                    completion.
-                                </li>
-                                <li>
+                                </li> -->
+                                <!-- <li>
                                     Implemented clinical scoring systems,
                                     including integrations with external
                                     services.
+                                </li> -->
+                                <!-- 2014 -->
+                                <li>
+                                    Ensured HIPAA compliance across new feature
+                                    sets by implementing secure patient
+                                    authentication flows, contributing to the
+                                    company’s 15-year record of zero audit
+                                    violations.
                                 </li>
                                 <li>
-                                    Contributed to security systems complying
-                                    with HIPAA, passing all audits with zero
-                                    violations over a 15-year period.
-                                </li>
-                                <li>
-                                    Provided on-call support for critical
-                                    production bugs, resolving issues in legacy
-                                    systems to ensure reliability and uptime.
+                                    Ensured system high availability by
+                                    providing 24/7 on-call support, identifying
+                                    and resolving critical production bugs
+                                    within legacy PHP codebases.
                                 </li>
                             </ul>
                         </div>
