@@ -1,8 +1,6 @@
 <template>
     <div class="min-h-screen bg-white">
-        <!-- Print-optimized resume -->
         <div class="mx-auto max-w-4xl p-8 print:p-6">
-            <!-- Header -->
             <header class="mb-8 text-center print:mb-4">
                 <h1
                     class="mb-2 text-4xl font-bold text-gray-900 print:mb-1 print:text-2xl"
@@ -39,7 +37,6 @@
                 </div>
             </header>
 
-            <!-- Professional Summary -->
             <section class="mb-8 break-inside-avoid print:mb-4">
                 <h2
                     class="mb-4 border-b-2 border-gray-200 pb-2 text-2xl font-bold text-gray-900 print:mb-2 print:pb-1 print:text-xl"
@@ -57,7 +54,6 @@
                 </p>
             </section>
 
-            <!-- Professional Experience -->
             <section class="mb-8 print:mb-4">
                 <h2
                     class="mb-4 border-b-2 border-gray-200 pb-2 text-2xl font-bold text-gray-900 print:mb-2 print:pb-1 print:text-xl"
@@ -208,7 +204,6 @@
                 </div>
             </section>
 
-            <!-- Education -->
             <section class="mb-8 break-inside-avoid print:mb-4">
                 <h2
                     class="mb-4 border-b-2 border-gray-200 pb-2 text-2xl font-bold text-gray-900 print:mb-2 print:pb-1 print:text-xl"
@@ -236,7 +231,6 @@
                 </div>
             </section>
 
-            <!-- Technical Skills -->
             <section class="mb-8 break-inside-avoid print:mb-4">
                 <h2
                     class="mb-4 border-b-2 border-gray-200 pb-2 text-2xl font-bold text-gray-900 print:mb-2 print:pb-1 print:text-xl"
@@ -247,7 +241,6 @@
                 <div
                     class="grid grid-cols-1 gap-6 md:grid-cols-2 print:grid-cols-2 print:gap-4"
                 >
-                    <!-- Languages -->
                     <div>
                         <h3 class="mb-2 text-lg font-semibold text-gray-900">
                             Languages
@@ -257,7 +250,6 @@
                         </p>
                     </div>
 
-                    <!-- Frameworks -->
                     <div>
                         <h3 class="mb-2 text-lg font-semibold text-gray-900">
                             Frameworks
@@ -268,7 +260,6 @@
                         <p class="mt-1 text-gray-600">Vue, Nuxt, React, Next</p>
                     </div>
 
-                    <!-- Frontend & Styling -->
                     <div>
                         <h3 class="mb-2 text-lg font-semibold text-gray-900">
                             Frontend & Styling
@@ -278,7 +269,6 @@
                         </p>
                     </div>
 
-                    <!-- Database & Infrastructure -->
                     <div>
                         <h3 class="mb-2 text-lg font-semibold text-gray-900">
                             Database & Infrastructure
@@ -289,7 +279,6 @@
                         </p>
                     </div>
 
-                    <!-- Compliance & Standards -->
                     <div>
                         <h3 class="mb-2 text-lg font-semibold text-gray-900">
                             Compliance & Standards
@@ -299,7 +288,6 @@
                         </p>
                     </div>
 
-                    <!-- Tools -->
                     <div>
                         <h3 class="mb-2 text-lg font-semibold text-gray-900">
                             Tools
