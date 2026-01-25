@@ -10,7 +10,7 @@
                 <p class="mb-4 text-xl text-gray-600 print:mb-2 print:text-lg">
                     Software Engineer & Problem Solver
                 </p>
-                <div class="justify-center text-sm text-gray-600">
+                <div class="text-sm text-gray-600">
                     Saint Charles, MO • benjamin.g.everly@gmail.com • (636)
                     xxx-xxxx
                 </div>
@@ -33,7 +33,13 @@
                         ben-everly
                     </div>
                     •
-                    <div class="flex align-middle">beneverly.com</div>
+                    <div class="flex align-middle">
+                        <Icon
+                            name="uil:globe"
+                            class="size-5 transition-transform duration-300"
+                        />
+                        beneverly.com
+                    </div>
                 </div>
             </header>
 
@@ -46,7 +52,7 @@
                 <p class="leading-relaxed text-gray-700">
                     Adaptable software engineer with over 15 years of expertise
                     in developing innovative solutions and solving complex
-                    problems. Currently specializing in medical software
+                    problems. Specializing in high-reliability medical software
                     development with a focus on patient-reported outcomes data.
                     Passionate about building scalable applications and
                     exploring emerging technologies while thriving in dynamic,
@@ -78,7 +84,7 @@
                         <div class="mb-6 break-inside-avoid">
                             <div class="mb-2 flex items-start justify-between">
                                 <h4 class="text-lg font-semibold text-gray-900">
-                                    Senior Software Engineer
+                                    Lead Software Engineer
                                 </h4>
                                 <div
                                     class="text-right text-sm font-medium text-gray-500"
@@ -90,9 +96,12 @@
                                 class="ml-4 list-inside list-disc space-y-1 text-gray-700"
                             >
                                 <li>
-                                    Led a cross-functional Agile team of 6-8
-                                    engineers, successfully delivering 100% of
-                                    all assigned projects on schedule.
+                                    Led a cross-functional Agile team of 4-6
+                                    engineers to reduce lead time for changes by
+                                    58% and increase deployment frequency by 19%
+                                    through the optimization of team workflows
+                                    and improved automated test coverage (26% to
+                                    70%).
                                 </li>
                                 <li>
                                     Established comprehensive team-wide Key
@@ -102,14 +111,6 @@
                                     Technical Debt Ratio (TDR)), successfully
                                     driving a transparent, data-driven culture
                                     across the engineering team.
-                                </li>
-                                <li>
-                                    Spearheaded an initiative to prioritize
-                                    testing and delivery metrics, boosting
-                                    automated test coverage from 26% to 70% and
-                                    subsequently increasing successful
-                                    deployment frequency by
-                                    <span class="text-red-300">40%</span>.
                                 </li>
                                 <li>
                                     Collaborated with Product and Design
@@ -124,7 +125,7 @@
                         <div class="mb-6 break-inside-avoid">
                             <div class="mb-2 flex items-start justify-between">
                                 <h4 class="text-lg font-semibold text-gray-900">
-                                    Software Developer Expert
+                                    Senior Software Engineer
                                 </h4>
                                 <div
                                     class="text-right text-sm font-medium text-gray-500"
@@ -152,16 +153,12 @@
                                     to ensure maintainable, high-quality code.
                                 </li>
                                 <li>
-                                    Developed integration features to
-                                    synchronize data between internal platforms
-                                    and Epic EHR, utilizing HL7 standards to
-                                    ensure the seamless, automated ingestion of
-                                    <span class="text-red-300">
-                                        [Number] or "large-scale patient
-                                        datasets"
-                                    </span>
-                                    + patient records while maintaining strict
-                                    data integrity.
+                                    Contributed to the enhancement and
+                                    maintenance of integration features to
+                                    synchronize data with external systems,
+                                    including Epic EHR, utilizing HL7 standards
+                                    for the automated transmission of over 22
+                                    million clinical messages.
                                 </li>
                                 <!-- 2014-2017 -->
                                 <li>
@@ -169,11 +166,8 @@
                                     visualization platform using Highcharts,
                                     implementing server-side data aggregation to
                                     maintain high-speed performance for complex
-                                    cascading filters across
-                                    <span class="text-red-300">
-                                        tens of thousands
-                                    </span>
-                                    of data points.
+                                    cascading filters across hundreds of
+                                    thousands of data points.
                                 </li>
                                 <!-- any operational ownership or security/complicance? -->
                                 <!-- something with hipaa compliance? -->
@@ -183,12 +177,12 @@
                         <div class="mb-6 break-inside-avoid">
                             <div class="mb-2 flex items-start justify-between">
                                 <h4 class="text-lg font-semibold text-gray-900">
-                                    Systems Engineer Expert
+                                    Software Engineer
                                 </h4>
                                 <div
                                     class="text-right text-sm font-medium text-gray-500"
                                 >
-                                    July 2010 - Jan 2016
+                                    Jul 2010 - Jan 2016
                                 </div>
                             </div>
                             <ul
@@ -295,9 +289,9 @@
                             Frameworks
                         </h3>
                         <p class="text-gray-700">
-                            Laravel, Livewire, PHPUnit, Alpine
+                            Laravel, Livewire, PHPUnit, Alpine, Vue, Nuxt,
+                            React, Next
                         </p>
-                        <p class="mt-1 text-gray-600">Vue, Nuxt, React, Next</p>
                     </div>
 
                     <div>
