@@ -327,7 +327,8 @@
                             Tools
                         </h3>
                         <p class="text-gray-700">
-                            Neovim, Git, GitHub, Jira, Linear, Composer, npm
+                            Neovim, Git, GitHub, Jira, Linear, Composer, npm,
+                            OpenCode, Claude Code
                         </p>
                     </div>
                 </div>
