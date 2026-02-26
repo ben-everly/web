@@ -23,6 +23,7 @@
         "vue-router": "^4.5.1"
     },
     "devDependencies": {
+        "@iconify-json/uil": "^1.2.3",
         "@tailwindcss/vite": "^4.1.8",
         "prettier-plugin-tailwindcss": "^0.6.12",
         "tailwindcss": "^4.1.8"
