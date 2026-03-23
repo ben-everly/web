@@ -327,7 +327,7 @@
                             Frameworks
                         </h3>
                         <p class="text-gray-700 print:text-black">
-                            Laravel, React, Livewire, PHPUnit, Pest, Alpine,
+                            Laravel, Livewire, PHPUnit, Pest, Alpine, React,
                             Vue, Next, Nuxt
                         </p>
                     </div>
