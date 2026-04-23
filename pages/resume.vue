@@ -8,7 +8,7 @@
                     Ben Everly
                 </h1>
                 <p class="mb-4 text-xl text-gray-600 print:text-black print:mb-2 print:text-lg">
-                    Software Engineer & Problem Solver
+                    Full-stack Engineer & Technical Lead
                 </p>
                 <div class="text-sm text-gray-600 print:text-black">
                     Saint Charles, MO •
@@ -18,14 +18,14 @@
                         class="hover:underline"
                     >
                         ben.g.everly@gmail.com
-                    </a> •
-                    <a
+                    </a>
+                    <!-- • <a
                         href="tel:+"
                         target="_blank"
                         class="hover:underline"
                     >
-                        (636) xxx-xxxx
-                    </a>
+                        (xxx) xxx-xxxx
+                    </a> -->
                 </div>
                 <div
                     class="flex flex-wrap items-center justify-center gap-1 text-sm text-gray-600 print:text-black"
@@ -77,14 +77,14 @@
                 >
                     Professional Summary
                 </h2>
-                <p class="leading-relaxed text-gray-700 print:text-black print:text-sm">
-                    Adaptable full-stack software engineer with over 15 years of
-                    expertise in developing innovative solutions and solving
-                    complex problems. Specializing in high-reliability software
-                    development with a focus on large-scale, secure data
-                    processing. Passionate about building scalable applications
-                    and exploring emerging technologies while thriving in
-                    dynamic, fast-paced settings.
+                <p class="leading-relaxed text-gray-700 print:text-black print:text-[0.9375rem]">
+                    Full-stack software engineer and technical lead with 15+
+                    years building regulated healthcare software in dynamic,
+                    fast-paced environments. Equally comfortable as a hands-on
+                    engineer &mdash; shipping modern-stack rewrites,
+                    high-volume data integrations, and compliance-critical
+                    systems &mdash; and as a team lead establishing data-driven
+                    engineering standards.
                 </p>
             </section>
 
@@ -121,42 +121,60 @@
                                 </div>
                             </div>
                             <ul
-                                class="ml-4 list-inside list-disc space-y-1 text-gray-700 print:text-black print:text-sm"
+                                class="ml-4 list-inside list-disc space-y-1 text-gray-700 print:space-y-1.5 print:text-black print:text-[0.9375rem]"
                             >
                                 <li>
-                                    Served as Lead Software Engineer for a
-                                    cross-functional Agile team of 4-6
-                                    engineers, reducing lead time for changes by
-                                    58% and increasing deployment frequency by
-                                    19% through the optimization of team
-                                    workflows and improved automated test
-                                    coverage (26% to over 77%).
+                                    Served as team lead for a cross-functional
+                                    Agile team of 4-6 engineers, reducing lead
+                                    time for changes by 58% and increasing
+                                    deployment frequency by 19% through the
+                                    optimization of team workflows and
+                                    improved automated test coverage (26% to
+                                    over 77%).
                                 </li>
                                 <li>
-                                    Established comprehensive team-wide Key
-                                    Performance Indicators (KPIs) focused
-                                    strictly on code quality, maintainability,
-                                    and delivery (e.g., DORA, Cyclomatic
-                                    Complexity), successfully driving a
-                                    transparent, data-driven culture across the
-                                    engineering team.
+                                    Established team-wide engineering KPIs
+                                    (DORA, Cyclomatic Complexity, and related
+                                    code-quality and delivery metrics) and
+                                    built an automated weekly collection
+                                    system with a Grafana dashboard, driving a
+                                    transparent, data-driven engineering
+                                    culture.
                                 </li>
                                 <li>
-                                    Collaborated with Product and Design
-                                    stakeholders to translate high-level
-                                    business objectives into actionable
-                                    technical roadmaps, ensuring engineering
-                                    efforts remained consistently aligned with
-                                    core company priorities.
+                                    Collaborated with product, design, and
+                                    client support stakeholders to translate
+                                    business objectives into shipped
+                                    deliverables, including an FDA 21 CFR
+                                    Part 11&ndash;compliant eConsent system
+                                    that unlocked a key clinical studies
+                                    partnership.
                                 </li>
+                                <!-- <li>
+                                    Led end-to-end rewrites of legacy systems
+                                    onto a modern TALL stack (Tailwind, Alpine,
+                                    Laravel, Livewire), improving
+                                    maintainability and performance while
+                                    delivering redesigned UIs that have earned
+                                    positive feedback from migrated clients.
+                                </li> -->
                                 <li>
+                                    Architected a CSV import system for files
+                                    of 100k+ rows, using SQLite as an
+                                    intermediate processing layer for
+                                    performance and supporting user-configurable
+                                    column and value mapping, validation, and
+                                    duplicate detection via database key
+                                    conflicts.
+                                </li>
+                                <!-- <li>
                                     Authored comprehensive technical
                                     documentation and system architecture
                                     Mermaid diagrams, capturing complex design
                                     decisions and technical roadmaps within
                                     GitHub and Jira to align the engineering
                                     team.
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                         <div class="mb-6 print:mb-2 break-inside-avoid">
@@ -171,16 +189,16 @@
                                 </div>
                             </div>
                             <ul
-                                class="ml-4 list-inside list-disc space-y-1 text-gray-700 print:text-black print:text-sm"
+                                class="ml-4 list-inside list-disc space-y-1 text-gray-700 print:space-y-1.5 print:text-black print:text-[0.9375rem]"
                             >
                                 <li>
                                     Collaborated on the migration of a legacy
-                                    monolithic application to a microservices
-                                    architecture using Docker and AWS ECS,
+                                    application to containerized cloud
+                                    infrastructure using Docker and AWS ECS,
                                     eliminating environment-specific bugs by
                                     standardizing the application runtime and
-                                    significantly accelerating deployment cycle
-                                    times.
+                                    significantly accelerating deployment
+                                    cycles.
                                 </li>
                                 <li>
                                     Upskilled junior developers through rigorous
@@ -190,22 +208,19 @@
                                     to ensure maintainable, high-quality code.
                                 </li>
                                 <li>
-                                    Contributed to the enhancement and
-                                    maintenance of integration features to
-                                    synchronize data with external systems,
-                                    including Epic EHR, utilizing HL7 standards
-                                    for the automated transmission of over 22
-                                    million clinical messages.
+                                    Enhanced HL7-based integrations with
+                                    external systems including Epic EHR on a
+                                    platform that has automated transmission of
+                                    over 22 million clinical messages.
                                 </li>
                                 <!-- 2014-2017 -->
-                                <li>
-                                    Designed and implemented a data
-                                    visualization platform using Highcharts,
-                                    leveraging server-side data aggregation to
-                                    maintain high-speed performance for complex
-                                    cascading filters across hundreds of
-                                    thousands of data points.
-                                </li>
+                                <!-- <li>
+                                    Implemented a data visualization tool using
+                                    Highcharts, leveraging server-side data
+                                    aggregation to maintain high-speed
+                                    performance for complex cascading filters
+                                    across hundreds of thousands of data points.
+                                </li> -->
                                 <!-- any operational ownership or security/complicance? -->
                                 <!-- something with hipaa compliance? -->
                                 <!-- observability, logging, monitoring, alerting? -->
@@ -223,7 +238,7 @@
                                 </div>
                             </div>
                             <ul
-                                class="ml-4 list-inside list-disc space-y-1 text-gray-700 print:text-black print:text-sm"
+                                class="ml-4 list-inside list-disc space-y-1 text-gray-700 print:space-y-1.5 print:text-black print:text-[0.9375rem]"
                             >
                                 <!-- 2014 -->
                                 <li>
@@ -235,7 +250,7 @@
                                     via text.
                                 </li>
                                 <!-- 2012 -->
-                                <li>
+                                <!-- <li>
                                     Engineered an automated reporting system
                                     using TCPDF and Cron-based scheduling to
                                     track individual patient progress over
@@ -243,7 +258,7 @@
                                     continuous production for 12+ years,
                                     reliably delivering thousands of reports to
                                     clients.
-                                </li>
+                                </li> -->
                                 <!-- 2012-2015 implenented patient login flow, econsent filling, triggering automatic form export via hl7 -->
                                 <!-- <li>
                                     Contributed to the development of a patient
@@ -265,10 +280,11 @@
                                     PHI/PII data.
                                 </li>
                                 <li>
-                                    Ensured system high availability by
-                                    providing 24/7 on-call support, identifying
-                                    and resolving critical production bugs
-                                    within legacy PHP codebases.
+                                    Maintained and extended legacy PHP
+                                    codebases while providing 24/7 on-call
+                                    support, rapidly diagnosing and resolving
+                                    incidents to minimize downtime for critical
+                                    healthcare workflows.
                                 </li>
                             </ul>
                         </div>
@@ -347,7 +363,7 @@
                         </h3>
                         <p class="text-gray-700 print:text-black">
                             SQL (MySQL, PostgreSQL), Redis, Meilisearch,
-                            RabbitMQ, Linux, Docker, AWS, CI/CD (Github Actions,
+                            RabbitMQ, Linux, Docker, AWS, CI/CD (GitHub Actions,
                             Codeship), Ansible, Pulumi
                         </p>
                     </div>
