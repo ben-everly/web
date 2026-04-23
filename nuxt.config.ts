@@ -8,6 +8,11 @@ export default defineNuxtConfig({
         plugins: [tailwindcss()],
     },
     css: ["@/assets/css/main.css"],
+    runtimeConfig: {
+        public: {
+            phone: "",
+        },
+    },
     content: {
         build: {
             markdown: {

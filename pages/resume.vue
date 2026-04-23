@@ -19,13 +19,15 @@
                     >
                         ben.g.everly@gmail.com
                     </a>
-                    <!-- • <a
-                        href="tel:+"
-                        target="_blank"
-                        class="hover:underline"
-                    >
-                        (xxx) xxx-xxxx
-                    </a> -->
+                    <template v-if="phone">
+                        •
+                        <a
+                            :href="phoneHref"
+                            class="hover:underline"
+                        >
+                            {{ phone }}
+                        </a>
+                    </template>
                 </div>
                 <div
                     class="flex flex-wrap items-center justify-center gap-1 text-sm text-gray-600 print:text-black"
@@ -393,7 +395,12 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+    const phone = useRuntimeConfig().public.phone;
+    const phoneHref = phone
+        ? `tel:+1${phone.replace(/\D/g, "")}`
+        : "";
+
     useHead({
         title: "Resume - Ben Everly",
         meta: [
