@@ -1,13 +1,13 @@
 <template>
     <div class="min-h-screen bg-white">
         <div class="mx-auto max-w-4xl p-8 print:p-6">
-            <header class="mb-8 text-center print:mb-2">
+            <header class="mb-8 text-center">
                 <h1
-                    class="mb-2 text-4xl font-bold text-gray-900 print:text-black print:mb-1 print:text-2xl"
+                    class="mb-2 text-4xl font-bold text-gray-900 print:text-black print:text-2xl"
                 >
                     Ben Everly
                 </h1>
-                <p class="mb-4 text-xl text-gray-600 print:text-black print:mb-2 print:text-lg">
+                <p class="mb-4 text-xl text-gray-600 print:text-black print:text-lg">
                     Full-stack Engineer & Technical Lead
                 </p>
                 <div class="text-sm text-gray-600 print:text-black">
@@ -73,13 +73,13 @@
                 </div>
             </header>
 
-            <section class="mb-8 break-inside-avoid print:mb-2">
+            <section class="mb-8 break-inside-avoid">
                 <h2
-                    class="mb-4 border-b-2 border-gray-200 pb-2 text-2xl font-bold text-gray-900 print:text-black print:mb-2 print:pb-1 print:text-xl"
+                    class="mb-4 border-b-2 border-gray-200 pb-2 text-2xl font-bold text-gray-900 print:text-black print:pb-1 print:text-xl"
                 >
                     Professional Summary
                 </h2>
-                <p class="leading-relaxed text-gray-700 print:text-black print:text-[0.9375rem]">
+                <p class="leading-relaxed text-gray-700 print:text-black">
                     Full-stack software engineer and technical lead with 15+
                     years building regulated healthcare software in dynamic,
                     fast-paced environments. Equally comfortable as a hands-on
@@ -90,14 +90,14 @@
                 </p>
             </section>
 
-            <section class="mb-8 print:mb-2">
+            <section class="mb-8">
                 <h2
-                    class="mb-4 border-b-2 border-gray-200 pb-2 text-2xl font-bold text-gray-900 print:text-black print:mb-2 print:pb-1 print:text-xl"
+                    class="mb-4 border-b-2 border-gray-200 pb-2 text-2xl font-bold text-gray-900 print:text-black print:pb-1 print:text-xl"
                 >
                     Professional Experience
                 </h2>
 
-                <div class="mb-6 print:mb-2">
+                <div class="mb-6">
                     <div class="flex justify-between">
                         <h3
                             class="mb-1 text-xl font-bold text-gray-900 print:text-black print:text-lg"
@@ -111,7 +111,7 @@
                         </div>
                     </div>
                     <div class="ml-4">
-                        <div class="mb-6 print:mb-2 break-inside-avoid">
+                        <div class="mb-6 break-inside-avoid">
                             <div class="mb-2 flex items-start justify-between">
                                 <h4 class="text-lg font-semibold text-gray-900 print:text-black">
                                     Senior Software Engineer
@@ -123,7 +123,7 @@
                                 </div>
                             </div>
                             <ul
-                                class="ml-4 list-inside list-disc space-y-1 text-gray-700 print:space-y-1.5 print:text-black print:text-[0.9375rem]"
+                                class="ml-4 list-inside list-disc space-y-2 text-gray-700 print:text-black"
                             >
                                 <li>
                                     Served as team lead for a cross-functional
@@ -179,7 +179,7 @@
                                 </li> -->
                             </ul>
                         </div>
-                        <div class="mb-6 print:mb-2 break-inside-avoid">
+                        <div class="mb-6 break-inside-avoid">
                             <div class="mb-2 flex items-start justify-between">
                                 <h4 class="text-lg font-semibold text-gray-900 print:text-black">
                                     Software Developer Expert
@@ -191,7 +191,7 @@
                                 </div>
                             </div>
                             <ul
-                                class="ml-4 list-inside list-disc space-y-1 text-gray-700 print:space-y-1.5 print:text-black print:text-[0.9375rem]"
+                                class="ml-4 list-inside list-disc space-y-2 text-gray-700 print:text-black"
                             >
                                 <li>
                                     Collaborated on the migration of a legacy
@@ -228,7 +228,7 @@
                                 <!-- observability, logging, monitoring, alerting? -->
                             </ul>
                         </div>
-                        <div class="mb-6 print:mb-2 break-inside-avoid">
+                        <div class="mb-6 break-inside-avoid">
                             <div class="mb-2 flex items-start justify-between">
                                 <h4 class="text-lg font-semibold text-gray-900 print:text-black">
                                     Systems Engineer Expert
@@ -240,7 +240,7 @@
                                 </div>
                             </div>
                             <ul
-                                class="ml-4 list-inside list-disc space-y-1 text-gray-700 print:space-y-1.5 print:text-black print:text-[0.9375rem]"
+                                class="ml-4 list-inside list-disc space-y-2 text-gray-700 print:text-black"
                             >
                                 <!-- 2014 -->
                                 <li>
@@ -294,9 +294,9 @@
                 </div>
             </section>
 
-            <section class="mb-8 break-inside-avoid print:mb-2">
+            <section class="mb-8 break-inside-avoid">
                 <h2
-                    class="mb-4 border-b-2 border-gray-200 pb-2 text-2xl font-bold text-gray-900 print:text-black print:mb-2 print:pb-1 print:text-xl"
+                    class="mb-4 border-b-2 border-gray-200 pb-2 text-2xl font-bold text-gray-900 print:text-black print:pb-1 print:text-xl"
                 >
                     Education
                 </h2>
@@ -321,9 +321,9 @@
                 </div>
             </section>
 
-            <section class="mb-8 break-inside-avoid print:mb-2">
+            <section class="mb-8 break-inside-avoid">
                 <h2
-                    class="mb-4 border-b-2 border-gray-200 pb-2 text-2xl font-bold text-gray-900 print:text-black print:mb-2 print:pb-1 print:text-xl"
+                    class="mb-4 border-b-2 border-gray-200 pb-2 text-2xl font-bold text-gray-900 print:text-black print:pb-1 print:text-xl"
                 >
                     Technical Skills
                 </h2>
