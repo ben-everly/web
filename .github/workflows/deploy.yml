@@ -1,0 +1,55 @@
+name: Deploy
+
+on:
+    push:
+        branches: [main]
+    workflow_dispatch:
+
+permissions:
+    id-token: write
+    contents: read
+
+env:
+    AWS_REGION: us-west-2
+    PULUMI_STACK: prod
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "20"
+                  cache: "npm"
+
+            - name: Install site dependencies
+              run: npm ci
+
+            - name: Generate static site
+              run: npm run generate
+
+            - name: Install infra dependencies
+              run: npm ci
+              working-directory: infra
+
+            - name: Configure AWS credentials via OIDC
+              uses: aws-actions/configure-aws-credentials@v4
+              with:
+                  role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+                  aws-region: ${{ env.AWS_REGION }}
+
+            - name: Install Pulumi CLI
+              uses: pulumi/actions@v6
+
+            - name: Login to Pulumi S3 backend
+              run: pulumi login "s3://${{ vars.PULUMI_STATE_BUCKET }}?region=${{ env.AWS_REGION }}&awssdk=v2"
+
+            - name: Deploy with Pulumi
+              run: pulumi up --yes --stack ${{ env.PULUMI_STACK }}
+              working-directory: infra
+              env:
+                  PULUMI_CONFIG_PASSPHRASE: ${{ secrets.PULUMI_CONFIG_PASSPHRASE }}
