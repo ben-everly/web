@@ -85,8 +85,8 @@
                     fast-paced environments. Equally comfortable as a hands-on
                     engineer &mdash; shipping modern-stack rewrites,
                     high-volume data integrations, and compliance-critical
-                    systems &mdash; and as a team lead establishing data-driven
-                    engineering standards.
+                    systems &mdash; and as a team lead focused on software
+                    architecture and data-driven engineering standards.
                 </p>
             </section>
 
@@ -126,48 +126,38 @@
                                 class="ml-4 list-inside list-disc space-y-2 text-gray-700 print:text-black"
                             >
                                 <li>
-                                    Served as team lead for a cross-functional
-                                    Agile team of 4-6 engineers, reducing lead
-                                    time for changes by 58% and increasing
-                                    deployment frequency by 19% through the
-                                    optimization of team workflows and
-                                    improved automated test coverage (26% to
-                                    over 77%).
+                                    Built a DORA metrics dashboard in Grafana,
+                                    sourced from GitHub/Jira APIs and
+                                    PHPMetrics via GitHub Actions, and used it
+                                    to anchor team performance discussions,
+                                    driving a 58% reduction in lead time and a
+                                    19% increase in deployment frequency.
                                 </li>
                                 <li>
-                                    Established team-wide engineering KPIs
-                                    (DORA, Cyclomatic Complexity, and related
-                                    code-quality and delivery metrics) and
-                                    built an automated weekly collection
-                                    system with a Grafana dashboard, driving a
-                                    transparent, data-driven engineering
-                                    culture.
+                                    Served as Team Lead, driving a 3x increase
+                                    in test coverage (from 26% to over 80%) on
+                                    our ground-up TALL-stack rewrite by
+                                    establishing PR review standards and
+                                    personally enforcing them as a code owner
+                                    alongside the CTO and CIO.
                                 </li>
                                 <li>
-                                    Collaborated with product, design, and
-                                    client support stakeholders to translate
-                                    business objectives into shipped
-                                    deliverables, including an FDA 21 CFR
-                                    Part 11&ndash;compliant eConsent system
-                                    that unlocked a key clinical studies
-                                    partnership.
+                                    Partnered with product, design, and
+                                    client strategy to translate compliance
+                                    and clinical workflow requirements into
+                                    an FDA 21 CFR Part 11&ndash;compliant
+                                    eConsent system, delivering a major
+                                    contract requirement for our AO Foundation
+                                    research partnership.
                                 </li>
-                                <!-- <li>
-                                    Led end-to-end rewrites of legacy systems
-                                    onto a modern TALL stack (Tailwind, Alpine,
-                                    Laravel, Livewire), improving
-                                    maintainability and performance while
-                                    delivering redesigned UIs that have earned
-                                    positive feedback from migrated clients.
-                                </li> -->
                                 <li>
-                                    Architected a CSV import system for files
-                                    of 100k+ rows, using SQLite as an
-                                    intermediate processing layer for
-                                    performance and supporting user-configurable
-                                    column and value mapping, validation, and
-                                    duplicate detection via database key
-                                    conflicts.
+                                    Architected a CSV ingestion system that
+                                    enabled customer migrations from competitor
+                                    platforms, using user-configurable column
+                                    mapping to bridge disparate source schemas
+                                    and partitioned MySQL staging tables to
+                                    drive parallel processing of 100k+ row
+                                    imports.
                                 </li>
                                 <!-- <li>
                                     Authored comprehensive technical
@@ -194,13 +184,12 @@
                                 class="ml-4 list-inside list-disc space-y-2 text-gray-700 print:text-black"
                             >
                                 <li>
-                                    Collaborated on the migration of a legacy
-                                    application to containerized cloud
-                                    infrastructure using Docker and AWS ECS,
-                                    eliminating environment-specific bugs by
-                                    standardizing the application runtime and
-                                    significantly accelerating deployment
-                                    cycles.
+                                    Built ECS service configurations, S3
+                                    storage, and security group rules for new
+                                    microservices that gradually replaced
+                                    parts of our legacy monolith, enabling
+                                    independent deployment of new
+                                    functionality.
                                 </li>
                                 <li>
                                     Upskilled junior developers through rigorous
@@ -252,7 +241,7 @@
                                     via text.
                                 </li>
                                 <!-- 2012 -->
-                                <!-- <li>
+                                <li>
                                     Engineered an automated reporting system
                                     using TCPDF and Cron-based scheduling to
                                     track individual patient progress over
@@ -260,7 +249,7 @@
                                     continuous production for 12+ years,
                                     reliably delivering thousands of reports to
                                     clients.
-                                </li> -->
+                                </li>
                                 <!-- 2012-2015 implenented patient login flow, econsent filling, triggering automatic form export via hl7 -->
                                 <!-- <li>
                                     Contributed to the development of a patient
@@ -281,13 +270,13 @@
                                     access controls, safeguarding sensitive
                                     PHI/PII data.
                                 </li>
-                                <li>
+                                <!-- <li>
                                     Maintained and extended legacy PHP
                                     codebases while providing 24/7 on-call
                                     support, rapidly diagnosing and resolving
                                     incidents to minimize downtime for critical
                                     healthcare workflows.
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                     </div>
@@ -328,67 +317,31 @@
                     Technical Skills
                 </h2>
 
-                <div
-                    class="grid grid-cols-1 gap-6 md:grid-cols-2 print:grid-cols-3 print:gap-4"
-                >
-                    <div>
-                        <h3 class="mb-2 text-lg font-semibold text-gray-900 print:text-black">
-                            Languages
-                        </h3>
-                        <p class="text-gray-700 print:text-black">
-                            PHP, JavaScript, TypeScript, SQL, Bash
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 class="mb-2 text-lg font-semibold text-gray-900 print:text-black">
-                            Frameworks
-                        </h3>
-                        <p class="text-gray-700 print:text-black">
-                            Laravel, Livewire, PHPUnit, Pest, Alpine, React,
-                            Vue, Next, Nuxt
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 class="mb-2 text-lg font-semibold text-gray-900 print:text-black">
-                            Frontend & Styling
-                        </h3>
-                        <p class="text-gray-700 print:text-black">
-                            HTML5, CSS3, TailwindCSS, Responsive Design
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 class="mb-2 text-lg font-semibold text-gray-900 print:text-black">
-                            Database & Infrastructure
-                        </h3>
-                        <p class="text-gray-700 print:text-black">
-                            SQL (MySQL, PostgreSQL), Redis, Meilisearch,
-                            RabbitMQ, Linux, Docker, AWS, CI/CD (GitHub Actions,
-                            Codeship), Ansible, Pulumi
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 class="mb-2 text-lg font-semibold text-gray-900 print:text-black">
-                            Security & Data Privacy
-                        </h3>
-                        <p class="text-gray-700 print:text-black">
-                            Regulatory Compliance (HIPAA, FDA), PII/PHI
-                            Handling, Secure Authentication
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 class="mb-2 text-lg font-semibold text-gray-900 print:text-black">
-                            Tools
-                        </h3>
-                        <p class="text-gray-700 print:text-black">
-                            Neovim, Git, GitHub, Jira, Linear, Composer, npm,
-                            OpenCode, Claude Code, GitHub Copilot
-                        </p>
-                    </div>
+                <div class="space-y-2">
+                    <p class="text-gray-700 print:text-black">
+                        <strong class="font-semibold text-gray-900 print:text-black">Languages:</strong>
+                        PHP, JavaScript, TypeScript
+                    </p>
+                    <p class="text-gray-700 print:text-black">
+                        <strong class="font-semibold text-gray-900 print:text-black">Primary Stack:</strong>
+                        Laravel, Livewire, Alpine.js, Tailwind CSS, PHPUnit/Pest
+                    </p>
+                    <p class="text-gray-700 print:text-black">
+                        <strong class="font-semibold text-gray-900 print:text-black">Other Experience:</strong>
+                        Node, React, Next, Vue, Nuxt
+                    </p>
+                    <p class="text-gray-700 print:text-black">
+                        <strong class="font-semibold text-gray-900 print:text-black">Data:</strong>
+                        MySQL, SQLite, PostgreSQL, Redis, Elasticsearch
+                    </p>
+                    <p class="text-gray-700 print:text-black">
+                        <strong class="font-semibold text-gray-900 print:text-black">Infrastructure & DevOps:</strong>
+                        AWS (ECS, S3, CloudFront), Docker, GitHub Actions
+                    </p>
+                    <p class="text-gray-700 print:text-black">
+                        <strong class="font-semibold text-gray-900 print:text-black">AI-Assisted Development:</strong>
+                        Claude Code, GitHub Copilot, OpenCode
+                    </p>
                 </div>
             </section>
         </div>
