@@ -81,12 +81,12 @@
                 </h2>
                 <p class="leading-relaxed text-gray-700 print:text-black">
                     Full-stack software engineer and technical lead with 15+
-                    years building regulated healthcare software in dynamic,
-                    fast-paced environments. Equally comfortable as a hands-on
-                    engineer &mdash; shipping modern-stack rewrites,
-                    high-volume data integrations, and compliance-critical
-                    systems &mdash; and as a team lead focused on software
-                    architecture and data-driven engineering standards.
+                    years building regulated healthcare software. Equally
+                    comfortable as a hands-on engineer &mdash; shipping
+                    modern-stack rewrites, high-volume data integrations, and
+                    compliance-critical systems &mdash; and as a team lead
+                    focused on software architecture and data-driven
+                    engineering standards.
                 </p>
             </section>
 
@@ -183,6 +183,14 @@
                             <ul
                                 class="ml-4 list-inside list-disc space-y-2 text-gray-700 print:text-black"
                             >
+                                <!-- 2014-2017 -->
+                                <li>
+                                    Designed and developed an SMS messaging
+                                    system via the Twilio API for appointment
+                                    reminders and conversational medical form
+                                    completion, delivering over 900,000 patient
+                                    messages since launch.
+                                </li>
                                 <li>
                                     Built ECS service configurations, S3
                                     storage, and security group rules for new
@@ -191,18 +199,18 @@
                                     independent deployment of new
                                     functionality.
                                 </li>
-                                <li>
+                                <!-- <li>
                                     Upskilled junior developers through rigorous
                                     peer code reviews and pair programming,
                                     focusing on pragmatic coding principles and
                                     the application of standard design patterns
                                     to ensure maintainable, high-quality code.
-                                </li>
+                                </li> -->
                                 <li>
-                                    Enhanced HL7-based integrations with
-                                    external systems including Epic EHR on a
-                                    platform that has automated transmission of
-                                    over 22 million clinical messages.
+                                    Maintained and extended HL7-based
+                                    integrations with external clinical systems
+                                    including Epic EHR, supporting
+                                    bi-directional patient data exchange.
                                 </li>
                                 <!-- 2014-2017 -->
                                 <!-- <li>
@@ -231,15 +239,6 @@
                             <ul
                                 class="ml-4 list-inside list-disc space-y-2 text-gray-700 print:text-black"
                             >
-                                <!-- 2014 -->
-                                <li>
-                                    Designed and developed an interactive SMS
-                                    messaging system via the Twilio API,
-                                    building automated workflows for appointment
-                                    reminders and conversational data collection
-                                    to allow patients to complete health forms
-                                    via text.
-                                </li>
                                 <!-- 2012 -->
                                 <li>
                                     Engineered an automated reporting system
@@ -263,13 +262,13 @@
                                     services.
                                 </li> -->
                                 <!-- 2014 -->
-                                <li>
+                                <!-- <li>
                                     Ensured regulatory compliance (HIPAA) across
                                     new feature sets by implementing secure
                                     patient authentication flows and robust
                                     access controls, safeguarding sensitive
                                     PHI/PII data.
-                                </li>
+                                </li> -->
                                 <!-- <li>
                                     Maintained and extended legacy PHP
                                     codebases while providing 24/7 on-call
@@ -314,10 +313,32 @@
                 <h2
                     class="mb-4 border-b-2 border-gray-200 pb-2 text-2xl font-bold text-gray-900 print:text-black print:pb-1 print:text-xl"
                 >
+                    Personal Projects
+                </h2>
+
+                <ul
+                    class="ml-4 list-inside list-disc space-y-2 text-gray-700 print:text-black"
+                >
+                    <li>
+                        <strong class="font-semibold text-gray-900 print:text-black">
+                            beneverly.com
+                        </strong>
+                        &mdash; Static-generated Vue/Nuxt site with
+                        infrastructure-as-code in Pulumi and automated
+                        deployment via GitHub Actions on AWS S3, CloudFront,
+                        ACM (Certificate Manager), and Route 53.
+                    </li>
+                </ul>
+            </section>
+
+            <section class="mb-8 break-inside-avoid">
+                <h2
+                    class="mb-4 border-b-2 border-gray-200 pb-2 text-2xl font-bold text-gray-900 print:text-black print:pb-1 print:text-xl"
+                >
                     Technical Skills
                 </h2>
 
-                <div class="space-y-2">
+                <div class="space-y-1">
                     <p class="text-gray-700 print:text-black">
                         <strong class="font-semibold text-gray-900 print:text-black">Languages:</strong>
                         PHP, JavaScript, TypeScript
@@ -327,8 +348,8 @@
                         Laravel, Livewire, Alpine.js, Tailwind CSS, PHPUnit/Pest
                     </p>
                     <p class="text-gray-700 print:text-black">
-                        <strong class="font-semibold text-gray-900 print:text-black">Other Experience:</strong>
-                        Node, React, Next, Vue, Nuxt
+                        <strong class="font-semibold text-gray-900 print:text-black">Other Frameworks:</strong>
+                        React, Next, Vue, Nuxt
                     </p>
                     <p class="text-gray-700 print:text-black">
                         <strong class="font-semibold text-gray-900 print:text-black">Data:</strong>
@@ -336,7 +357,7 @@
                     </p>
                     <p class="text-gray-700 print:text-black">
                         <strong class="font-semibold text-gray-900 print:text-black">Infrastructure & DevOps:</strong>
-                        AWS (ECS, S3, CloudFront), Docker, GitHub Actions
+                        AWS (ECS, S3, CloudFront), Docker, GitHub Actions, Pulumi
                     </p>
                     <p class="text-gray-700 print:text-black">
                         <strong class="font-semibold text-gray-900 print:text-black">AI-Assisted Development:</strong>
