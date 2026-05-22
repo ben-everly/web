@@ -8,7 +8,7 @@
                     Ben Everly
                 </h1>
                 <p class="mb-4 text-xl text-gray-600 print:text-black print:text-lg">
-                    Full-stack Engineer & Technical Lead
+                    Full-stack Engineer & Team Lead
                 </p>
                 <div class="text-sm text-gray-600 print:text-black">
                     Saint Charles, MO •
@@ -80,13 +80,11 @@
                     Professional Summary
                 </h2>
                 <p class="leading-relaxed text-gray-700 print:text-black">
-                    Full-stack software engineer and technical lead with 15+
-                    years building regulated healthcare software. Equally
-                    comfortable as a hands-on engineer &mdash; shipping
-                    modern-stack rewrites, high-volume data integrations, and
-                    compliance-critical systems &mdash; and as a team lead
-                    focused on software architecture and data-driven
-                    engineering standards.
+                    Full-stack software engineer with 15+ years building
+                    regulated healthcare software including eConsent, EHR
+                    integrations, and patient messaging. I've also led
+                    engineering teams, focusing on software architecture and
+                    team metrics.
                 </p>
             </section>
 
@@ -127,37 +125,33 @@
                             >
                                 <li>
                                     Built a DORA metrics dashboard in Grafana,
-                                    sourced from GitHub/Jira APIs and
+                                    pulling from GitHub/Jira APIs and
                                     PHPMetrics via GitHub Actions, and used it
-                                    to anchor team performance discussions,
-                                    driving a 58% reduction in lead time and a
-                                    19% increase in deployment frequency.
+                                    to ground team retrospectives. In the first
+                                    three months, lead time dropped by 58% and
+                                    deployment frequency increased by 19%.
                                 </li>
                                 <li>
-                                    Served as Team Lead, driving a 3x increase
-                                    in test coverage (from 26% to over 80%) on
-                                    our ground-up TALL-stack rewrite by
-                                    establishing PR review standards and
-                                    personally enforcing them as a code owner
-                                    alongside the CTO and CIO.
+                                    Led a TALL stack rewrite of our core
+                                    application. Established PR review
+                                    standards and enforced them as a code
+                                    owner alongside the CTO and CIO, tripling
+                                    test coverage from 26% to over 80%.
                                 </li>
                                 <li>
-                                    Partnered with product, design, and
-                                    client strategy to translate compliance
-                                    and clinical workflow requirements into
-                                    an FDA 21 CFR Part 11&ndash;compliant
-                                    eConsent system, delivering a major
-                                    contract requirement for our AO Foundation
-                                    research partnership.
+                                    Collaborated with product, design, and
+                                    client strategy to ship an FDA 21 CFR Part
+                                    11&ndash;compliant eConsent system,
+                                    delivering a major contract requirement for
+                                    our AO Foundation research partnership.
                                 </li>
                                 <li>
-                                    Architected a CSV ingestion system that
+                                    Designed a CSV ingestion system that
                                     enabled customer migrations from competitor
-                                    platforms, using user-configurable column
-                                    mapping to bridge disparate source schemas
-                                    and partitioned MySQL staging tables to
-                                    drive parallel processing of 100k+ row
-                                    imports.
+                                    platforms, using MySQL staging tables to
+                                    support user-configurable column mappings,
+                                    schema validation, and parallel processing
+                                    of 100k+ row imports.
                                 </li>
                                 <!-- <li>
                                     Authored comprehensive technical
@@ -185,19 +179,17 @@
                             >
                                 <!-- 2014-2017 -->
                                 <li>
-                                    Designed and developed an SMS messaging
-                                    system via the Twilio API for appointment
-                                    reminders and conversational medical form
-                                    completion, delivering over 900,000 patient
-                                    messages since launch.
+                                    Created an SMS messaging system using the
+                                    Twilio API for appointment reminders and
+                                    conversational medical form completion.
+                                    Delivered 900k+ patient messages to date.
                                 </li>
                                 <li>
-                                    Built ECS service configurations, S3
+                                    Set up ECS service configurations, S3
                                     storage, and security group rules for new
                                     microservices that gradually replaced
                                     parts of our legacy monolith, enabling
-                                    independent deployment of new
-                                    functionality.
+                                    independent deployment of new functionality.
                                 </li>
                                 <!-- <li>
                                     Upskilled junior developers through rigorous
@@ -241,7 +233,7 @@
                             >
                                 <!-- 2012 -->
                                 <li>
-                                    Engineered an automated reporting system
+                                    Built an automated reporting system
                                     using TCPDF and Cron-based scheduling to
                                     track individual patient progress over
                                     time. This system has remained in
@@ -323,10 +315,10 @@
                         <strong class="font-semibold text-gray-900 print:text-black">
                             beneverly.com
                         </strong>
-                        &mdash; Static-generated Vue/Nuxt site with
-                        infrastructure-as-code in Pulumi and automated
-                        deployment via GitHub Actions on AWS S3, CloudFront,
-                        ACM (Certificate Manager), and Route 53.
+                        &mdash; Statically generated Vue/Nuxt site with
+                        infrastructure as code (IaC) in Pulumi and CI/CD
+                        via GitHub Actions on AWS S3, CloudFront, ACM
+                        (Certificate Manager), and Route 53.
                     </li>
                 </ul>
             </section>
@@ -353,15 +345,15 @@
                     </p>
                     <p class="text-gray-700 print:text-black">
                         <strong class="font-semibold text-gray-900 print:text-black">Data:</strong>
-                        MySQL, SQLite, PostgreSQL, Redis, Elasticsearch
+                        MySQL, SQLite, PostgreSQL, Redis, Meilisearch
                     </p>
                     <p class="text-gray-700 print:text-black">
                         <strong class="font-semibold text-gray-900 print:text-black">Infrastructure & DevOps:</strong>
-                        AWS (ECS, S3, CloudFront), Docker, GitHub Actions, Pulumi
+                        AWS (ECS, S3, CloudFront), GitHub Actions, Pulumi
                     </p>
                     <p class="text-gray-700 print:text-black">
-                        <strong class="font-semibold text-gray-900 print:text-black">AI-Assisted Development:</strong>
-                        Claude Code, GitHub Copilot, OpenCode
+                        <strong class="font-semibold text-gray-900 print:text-black">Tools:</strong>
+                        Docker, Neovim, GitHub CLI, Claude Code, GitHub Copilot
                     </p>
                 </div>
             </section>
