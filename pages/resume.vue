@@ -81,8 +81,9 @@
                 </h2>
                 <p class="leading-relaxed text-gray-700 print:text-black">
                     Full-stack software engineer with 15+ years building
-                    regulated healthcare software including eConsent, EHR
-                    integrations, and patient messaging. I've also led
+                    regulated, HIPAA-compliant healthcare software including
+                    eConsent, EHR integrations, and patient messaging. I've
+                    also led
                     engineering teams, focusing on software architecture and
                     team metrics.
                 </p>
@@ -124,15 +125,17 @@
                                 class="ml-4 list-inside list-disc space-y-2 text-gray-700 print:text-black"
                             >
                                 <li>
-                                    Built a DORA metrics dashboard in Grafana,
-                                    pulling from GitHub/Jira APIs and
-                                    PHPMetrics via GitHub Actions, and used it
-                                    to ground team retrospectives. In the first
-                                    three months, lead time dropped by 58% and
-                                    deployment frequency increased by 19%.
+                                    Built a Grafana dashboard with DORA and
+                                    other engineering metrics, pulled from
+                                    GitHub/Jira APIs and PHPMetrics via GitHub
+                                    Actions. Used it to ground team
+                                    retrospectives. In the first three months,
+                                    lead time dropped by 58% and deployment
+                                    frequency increased by 19%.
                                 </li>
                                 <li>
-                                    Led a TALL stack rewrite of our core
+                                    Led one of two engineering teams on a
+                                    TALL stack rewrite of our core
                                     application. Established PR review
                                     standards and enforced them as a code
                                     owner alongside the CTO and CIO, tripling
@@ -185,9 +188,9 @@
                                     Delivered 900k+ patient messages to date.
                                 </li>
                                 <li>
-                                    Set up ECS service configurations, S3
-                                    storage, and security group rules for new
-                                    microservices that gradually replaced
+                                    Set up ECS services, S3
+                                    storage, and security groups for
+                                    microservices that replaced
                                     parts of our legacy monolith, enabling
                                     independent deployment of new functionality.
                                 </li>
@@ -199,10 +202,10 @@
                                     to ensure maintainable, high-quality code.
                                 </li> -->
                                 <li>
-                                    Maintained and extended HL7-based
-                                    integrations with external clinical systems
-                                    including Epic EHR, supporting
-                                    bi-directional patient data exchange.
+                                    Maintained and extended HL7 integrations
+                                    with external clinical systems including
+                                    Epic EHR, enabling bi-directional patient data
+                                    exchange.
                                 </li>
                                 <!-- 2014-2017 -->
                                 <!-- <li>
@@ -236,10 +239,9 @@
                                     Built an automated reporting system
                                     using TCPDF and Cron-based scheduling to
                                     track individual patient progress over
-                                    time. This system has remained in
-                                    continuous production for 12+ years,
-                                    reliably delivering thousands of reports to
-                                    clients.
+                                    time. This code has remained in
+                                    production for 12+ years and delivered
+                                    thousands of reports to clients.
                                 </li>
                                 <!-- 2012-2015 implenented patient login flow, econsent filling, triggering automatic form export via hl7 -->
                                 <!-- <li>
@@ -315,10 +317,9 @@
                         <strong class="font-semibold text-gray-900 print:text-black">
                             beneverly.com
                         </strong>
-                        &mdash; Statically generated Vue/Nuxt site with
-                        infrastructure as code (IaC) in Pulumi and CI/CD
-                        via GitHub Actions on AWS S3, CloudFront, ACM
-                        (Certificate Manager), and Route 53.
+                        &mdash; Statically generated Vue/Nuxt site deployed with
+                        Pulumi (IaC) and GitHub Actions (CI/CD) on AWS S3,
+                        CloudFront, ACM (Certificate Manager), and Route 53.
                     </li>
                 </ul>
             </section>
