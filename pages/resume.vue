@@ -1,77 +1,7 @@
 <template>
     <div class="min-h-screen bg-white">
         <div class="mx-auto max-w-4xl p-8 print:p-6">
-            <header class="mb-8 text-center">
-                <h1
-                    class="mb-2 text-4xl font-bold text-gray-900 print:text-black print:text-2xl"
-                >
-                    Ben Everly
-                </h1>
-                <p class="mb-4 text-xl text-gray-600 print:text-black print:text-lg">
-                    Full-stack Engineer & Team Lead
-                </p>
-                <div class="text-sm text-gray-600 print:text-black">
-                    Saint Charles, MO •
-                    <a
-                        href="mailto:ben.g.everly@gmail.com"
-                        target="_blank"
-                        class="hover:underline"
-                    >
-                        ben.g.everly@gmail.com
-                    </a>
-                    <template v-if="phone">
-                        •
-                        <a
-                            :href="phoneHref"
-                            class="hover:underline"
-                        >
-                            {{ phone }}
-                        </a>
-                    </template>
-                </div>
-                <div
-                    class="flex flex-wrap items-center justify-center gap-1 text-sm text-gray-600 print:text-black"
-                >
-                    <a
-                        href="https://linkedin.com/in/ben-everly"
-                        target="_blank"
-                        class="flex align-middle hover:underline"
-                    >
-                        <Icon
-                            name="uil:linkedin"
-                            class="size-5 transition-transform duration-300"
-                            mode="svg"
-                        />
-                        ben-everly
-                    </a>
-                    •
-                    <a
-                        href="https://github.com/ben-everly"
-                        target="_blank"
-                        class="flex align-middle hover:underline"
-                    >
-                        <Icon
-                            name="uil:github"
-                            class="size-5 transition-transform duration-300"
-                            mode="svg"
-                        />
-                        ben-everly
-                    </a>
-                    •
-                    <a
-                        href="https://beneverly.com"
-                        target="_blank"
-                        class="flex align-middle hover:underline"
-                    >
-                        <Icon
-                            name="uil:globe"
-                            class="size-5 transition-transform duration-300"
-                            mode="svg"
-                        />
-                        beneverly.com
-                    </a>
-                </div>
-            </header>
+            <DocumentHeader subtitle="Full-stack Engineer & Team Lead" />
 
             <section class="mb-8 break-inside-avoid">
                 <h2
@@ -363,11 +293,6 @@
 </template>
 
 <script setup lang="ts">
-    const phone = useRuntimeConfig().public.phone;
-    const phoneHref = phone
-        ? `tel:+1${phone.replace(/\D/g, "")}`
-        : "";
-
     useHead({
         title: "Resume - Ben Everly",
         meta: [
