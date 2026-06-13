@@ -10,12 +10,8 @@
         eager: true,
     }) as Record<string, string>;
 
-    function slugOf(path: string): string {
-        return path.split("/").pop()!.replace(/\.md$/, "");
-    }
-
     const entry = Object.entries(files).find(
-        ([path]) => slugOf(path) === company,
+        ([path]) => coverLetterSlug(path) === company,
     );
 
     if (!entry) {
@@ -27,31 +23,14 @@
 
     const raw = entry[1];
 
-    // Split the leading `---\n...\n---` frontmatter block from the body.
-    function parse(src: string): {
-        data: Record<string, string>;
-        body: string;
-    } {
-        const match = src.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
-        if (!match) return { data: {}, body: src };
-        const data: Record<string, string> = {};
-        for (const line of match[1].split("\n")) {
-            const idx = line.indexOf(":");
-            if (idx === -1) continue;
-            data[line.slice(0, idx).trim()] = line
-                .slice(idx + 1)
-                .trim()
-                .replace(/^["']|["']$/g, "");
-        }
-        return { data, body: match[2] };
-    }
-
-    const { data, body } = parse(raw);
+    const { data, body } = parseCoverLetter(raw);
     const companyName = data.company ?? company;
+    const salutation = data.salutation ?? "Dear Hiring Team,";
 
     const displayDate = computed(() => {
         if (!data.date) return "";
         const d = new Date(`${data.date}T00:00:00`);
+        if (isNaN(d.getTime())) return data.date;
         return new Intl.DateTimeFormat("en-US", {
             month: "long",
             day: "numeric",
@@ -80,6 +59,7 @@
 
             <section class="mb-8 print:mb-4">
                 <p
+                    v-if="displayDate"
                     class="mb-6 text-gray-700 print:mb-4 print:text-sm print:text-black"
                 >
                     {{ displayDate }}
@@ -88,7 +68,7 @@
                 <p
                     class="mb-6 text-gray-700 print:mb-4 print:text-sm print:text-black"
                 >
-                    Dear Hiring Team,
+                    {{ salutation }}
                 </p>
 
                 <MDC

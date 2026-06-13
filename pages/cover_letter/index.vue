@@ -5,25 +5,10 @@
         eager: true,
     }) as Record<string, string>;
 
-    function frontmatter(src: string): Record<string, string> {
-        const match = src.match(/^---\n([\s\S]*?)\n---/);
-        if (!match) return {};
-        const data: Record<string, string> = {};
-        for (const line of match[1].split("\n")) {
-            const idx = line.indexOf(":");
-            if (idx === -1) continue;
-            data[line.slice(0, idx).trim()] = line
-                .slice(idx + 1)
-                .trim()
-                .replace(/^["']|["']$/g, "");
-        }
-        return data;
-    }
-
     const letters = Object.entries(files)
         .map(([path, src]) => {
-            const slug = path.split("/").pop()!.replace(/\.md$/, "");
-            const fm = frontmatter(src);
+            const slug = coverLetterSlug(path);
+            const fm = parseCoverLetter(src).data;
             return { slug, company: fm.company ?? slug, date: fm.date ?? "" };
         })
         .sort((a, b) => b.date.localeCompare(a.date));
