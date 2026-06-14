@@ -1,36 +1,22 @@
 <script setup lang="ts">
-    const route = useRoute();
-    const company = route.params.company as string;
-
-    // Eagerly load all letter sources as raw strings (dev only — these routes
-    // are stripped from the production build).
-    const files = import.meta.glob("~/cover_letters/*.md", {
-        query: "?raw",
-        import: "default",
-        eager: true,
-    }) as Record<string, string>;
-
-    const entry = Object.entries(files).find(
-        ([path]) => coverLetterSlug(path) === company,
+    const path = useRoute().path as string;
+    const { data: letter } = await useAsyncData(path, () =>
+        queryCollection("coverLetters").path(path).first(),
     );
 
-    if (!entry) {
+    if (!letter.value) {
         throw createError({
             statusCode: 404,
-            statusMessage: `No cover letter for "${company}"`,
+            statusMessage: `No cover letter at ${path}`,
         });
     }
 
-    const raw = entry[1];
-
-    const { data, body } = parseCoverLetter(raw);
-    const companyName = data.company ?? company;
-    const salutation = data.salutation ?? "Dear Hiring Team,";
+    const salutation = letter.value.salutation ?? "Dear Hiring Team,";
 
     const displayDate = computed(() => {
-        if (!data.date) return "";
-        const d = new Date(`${data.date}T00:00:00`);
-        if (isNaN(d.getTime())) return data.date;
+        if (!letter.value?.date) return "";
+        const d = new Date(`${letter.value.date}T00:00:00`);
+        if (isNaN(d.getTime())) return letter.value.date;
         return new Intl.DateTimeFormat("en-US", {
             month: "long",
             day: "numeric",
@@ -39,11 +25,11 @@
     });
 
     useHead({
-        title: `Cover Letter — ${companyName} — Ben Everly`,
+        title: `Cover Letter — ${letter.value.company} — Ben Everly`,
         meta: [
             {
                 name: "description",
-                content: `Ben Everly — Cover letter for ${companyName}`,
+                content: `Ben Everly — Cover letter for ${letter.value.company}`,
             },
         ],
     });
@@ -71,9 +57,9 @@
                     {{ salutation }}
                 </p>
 
-                <MDC
-                    :value="body"
-                    class="cover-letter-body space-y-4 leading-relaxed text-gray-700 print:text-sm print:text-black"
+                <ContentRenderer
+                    :value="letter"
+                    class="cover-letter-body leading-relaxed text-gray-700 print:text-sm print:text-black"
                 />
 
                 <p class="mt-8 text-gray-700 print:text-sm print:text-black">

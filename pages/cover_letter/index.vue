@@ -1,17 +1,7 @@
 <script setup lang="ts">
-    const files = import.meta.glob("~/cover_letters/*.md", {
-        query: "?raw",
-        import: "default",
-        eager: true,
-    }) as Record<string, string>;
-
-    const letters = Object.entries(files)
-        .map(([path, src]) => {
-            const slug = coverLetterSlug(path);
-            const fm = parseCoverLetter(src).data;
-            return { slug, company: fm.company ?? slug, date: fm.date ?? "" };
-        })
-        .sort((a, b) => b.date.localeCompare(a.date));
+    const { data: letters } = await useAsyncData("cover-letters", () =>
+        queryCollection("coverLetters").order("date", "DESC").all(),
+    );
 
     useHead({ title: "Cover Letters — Ben Everly" });
 </script>
@@ -23,10 +13,10 @@
             <ul class="space-y-2">
                 <li
                     v-for="letter in letters"
-                    :key="letter.slug"
+                    :key="letter.path"
                 >
                     <NuxtLink
-                        :to="`/cover_letter/${letter.slug}`"
+                        :to="letter.path"
                         class="text-blue-700 hover:underline"
                     >
                         {{ letter.company }}

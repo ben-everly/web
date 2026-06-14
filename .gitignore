@@ -24,4 +24,4 @@ logs
 !.env.example
 
 # Cover letters — local only, never committed or deployed
-cover_letters/
+content/cover_letter/
