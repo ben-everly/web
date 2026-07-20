@@ -23,5 +23,5 @@ logs
 .env.*
 !.env.example
 
-# Cover letters — local only, never committed or deployed
+# Cover letters — private, kept untracked
 content/cover_letter/
