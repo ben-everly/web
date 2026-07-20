@@ -254,7 +254,7 @@
                         </a>
                         &mdash; Meal-planning web app on Next.js and Supabase,
                         with domain rules enforced in Postgres via row-level
-                        security and covered by unit, end-to-end, and database
+                        security and covered by Vitest, Playwright, and pgTAP
                         tests.
                     </li>
                     <li>
