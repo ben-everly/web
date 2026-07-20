@@ -15,14 +15,12 @@ export default defineContentConfig({
         }),
         coverLetters: defineCollection({
             type: "page",
-            // In production the source matches nothing, so cover letters are
-            // never compiled into the shipped content DB. Combined with the
-            // gitignored content/cover_letter/ dir (absent in CI) and the
-            // route-strip hook in nuxt.config.ts, the letters never reach prod.
+            // Cover letters are private: included only in dev; every other env
+            // gets a no-match source. Also stripped in nuxt.config.ts.
             source:
-                process.env.NODE_ENV === "production"
-                    ? { include: "cover_letter/**", exclude: ["**"] }
-                    : "cover_letter/**",
+                process.env.NODE_ENV === "development"
+                    ? "cover_letter/**"
+                    : { include: "cover_letter/**", exclude: ["**"] },
             schema: z.object({
                 company: z.string(),
                 date: z.string(),

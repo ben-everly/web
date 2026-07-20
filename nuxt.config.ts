@@ -5,10 +5,9 @@ export default defineNuxtConfig({
     modules: ["@nuxt/content", "@nuxt/icon", "@nuxt/fonts", "@nuxt/image"],
     hooks: {
         "pages:extend"(pages) {
-            // Strip all /cover_letter routes from the production build. Removing the
-            // routes also lets Vite tree-shake the page components, so the raw letter
-            // content loaded via import.meta.glob never reaches the production bundle.
-            if (process.env.NODE_ENV !== "production") return;
+            // Cover letters are private: keep their routes only in dev, strip
+            // them otherwise. Also excluded from the source in content.config.ts.
+            if (process.env.NODE_ENV === "development") return;
             const strip = (list: typeof pages) => {
                 for (let i = list.length - 1; i >= 0; i--) {
                     if (
