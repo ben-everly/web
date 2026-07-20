@@ -244,13 +244,42 @@
                     class="ml-4 list-inside list-disc space-y-2 text-gray-700 print:text-black"
                 >
                     <li>
-                        <strong class="font-semibold text-gray-900 print:text-black">
-                            beneverly.com
-                        </strong>
-                        &mdash; Statically generated Vue/Nuxt site deployed with
-                        Pulumi (IaC) and GitHub Actions (CI/CD) on AWS S3,
-                        CloudFront, ACM (Certificate Manager), and Route 53.
+                        <a
+                            href="https://github.com/ben-everly/sous"
+                            target="_blank"
+                            rel="noopener"
+                            class="font-semibold text-gray-900 underline decoration-gray-300 underline-offset-2 transition-colors hover:decoration-gray-900 print:text-black"
+                        >
+                            Sous
+                        </a>
+                        &mdash; Meal-planning web app on Next.js and Supabase,
+                        with domain rules enforced in Postgres via row-level
+                        security and covered by unit, end-to-end, and database
+                        tests.
                     </li>
+                    <li>
+                        <a
+                            href="https://github.com/ben-everly/claude-plugins"
+                            target="_blank"
+                            rel="noopener"
+                            class="font-semibold text-gray-900 underline decoration-gray-300 underline-offset-2 transition-colors hover:decoration-gray-900 print:text-black"
+                        >
+                            claude-plugins
+                        </a>
+                        &mdash; Plugins for planning, review, and delivery workflows.
+                    </li>
+                    <!-- <li>
+                        <a
+                            href="https://github.com/ben-everly/dotfiles"
+                            target="_blank"
+                            rel="noopener"
+                            class="font-semibold text-gray-900 underline decoration-gray-300 underline-offset-2 transition-colors hover:decoration-gray-900 print:text-black"
+                        >
+                            Dotfiles &amp; provisioning
+                        </a>
+                        &mdash; Neovim (Lua) configuration and Ansible playbooks
+                        for reproducible, one-command machine setup.
+                    </li> -->
                 </ul>
             </section>
 
