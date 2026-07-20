@@ -11,7 +11,7 @@
         });
     }
 
-    const salutation = letter.value.salutation ?? "Dear Hiring Team,";
+    const salutation = letter.value.salutation ?? "Dear Hiring Team";
 
     const displayDate = computed(() => formatLetterDate(letter.value?.date));
 
@@ -45,7 +45,7 @@
                 <p
                     class="mb-6 text-gray-700 print:mb-4 print:text-sm print:text-black"
                 >
-                    {{ salutation }}
+                    {{ salutation }},
                 </p>
 
                 <ContentRenderer
