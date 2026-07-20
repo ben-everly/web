@@ -1,10 +1,7 @@
 <template>
     <div class="min-h-screen bg-white">
         <div class="mx-auto max-w-4xl p-8 print:p-6">
-            <DocumentHeader
-                subtitle="Full-stack Engineer & Team Lead"
-                header-class="mb-8 text-center print:mb-6"
-            />
+            <DocumentHeader header-class="mb-8 text-center print:mb-6" />
 
             <section class="mb-8 break-inside-avoid print:mb-6">
                 <h2
