@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    const path = useRoute().path as string;
+    const path = useRoute().path;
     const { data: letter } = await useAsyncData(path, () =>
         queryCollection("coverLetters").path(path).first(),
     );

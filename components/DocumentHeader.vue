@@ -26,7 +26,6 @@
             Saint Charles, MO •
             <a
                 href="mailto:ben.g.everly@gmail.com"
-                target="_blank"
                 class="hover:underline"
             >
                 ben.g.everly@gmail.com
@@ -47,6 +46,7 @@
             <a
                 href="https://linkedin.com/in/ben-everly"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="flex align-middle hover:underline"
             >
                 <Icon
@@ -60,6 +60,7 @@
             <a
                 href="https://github.com/ben-everly"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="flex align-middle hover:underline"
             >
                 <Icon
@@ -73,6 +74,7 @@
             <a
                 href="https://beneverly.com"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="flex align-middle hover:underline"
             >
                 <Icon
