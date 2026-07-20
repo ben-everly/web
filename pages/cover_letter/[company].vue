@@ -13,16 +13,7 @@
 
     const salutation = letter.value.salutation ?? "Dear Hiring Team,";
 
-    const displayDate = computed(() => {
-        if (!letter.value?.date) return "";
-        const d = new Date(`${letter.value.date}T00:00:00`);
-        if (isNaN(d.getTime())) return letter.value.date;
-        return new Intl.DateTimeFormat("en-US", {
-            month: "long",
-            day: "numeric",
-            year: "numeric",
-        }).format(d);
-    });
+    const displayDate = computed(() => formatLetterDate(letter.value?.date));
 
     useHead({
         title: `Cover Letter — ${letter.value.company} — Ben Everly`,

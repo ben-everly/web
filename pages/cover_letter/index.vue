@@ -25,7 +25,7 @@
                         v-if="letter.date"
                         class="text-sm text-gray-500"
                     >
-                        — {{ letter.date }}
+                        — {{ formatLetterDate(letter.date) }}
                     </span>
                 </li>
             </ul>
