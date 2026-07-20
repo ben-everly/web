@@ -22,3 +22,6 @@ logs
 .env
 .env.*
 !.env.example
+
+# Cover letters — private, kept untracked
+content/cover_letter/
