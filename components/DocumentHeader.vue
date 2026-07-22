@@ -1,6 +1,5 @@
 <script setup lang="ts">
     interface Props {
-        subtitle: string;
         headerClass?: string;
     }
 
@@ -15,27 +14,21 @@
 <template>
     <header :class="headerClass">
         <h1
-            class="mb-2 text-4xl font-bold text-gray-900 print:text-black print:text-2xl"
+            class="mb-2 text-4xl font-bold text-gray-900 print:text-2xl print:text-black"
         >
             Ben Everly
         </h1>
-        <p class="mb-4 text-xl text-gray-600 print:text-black print:text-lg">
-            {{ subtitle }}
+        <p class="mb-4 text-xl text-gray-600 print:text-lg print:text-black">
+            Full-stack Engineer & Team Lead
         </p>
         <div class="text-sm text-gray-600 print:text-black">
             Saint Charles, MO •
-            <a
-                href="mailto:ben.g.everly@gmail.com"
-                class="hover:underline"
-            >
+            <a href="mailto:ben.g.everly@gmail.com" class="hover:underline">
                 ben.g.everly@gmail.com
             </a>
             <template v-if="phone">
                 •
-                <a
-                    :href="phoneHref"
-                    class="hover:underline"
-                >
+                <a :href="phoneHref" class="hover:underline">
                     {{ phone }}
                 </a>
             </template>

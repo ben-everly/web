@@ -29,10 +29,7 @@
 <template>
     <div class="min-h-screen bg-white">
         <div class="mx-auto max-w-4xl p-8 print:p-2">
-            <DocumentHeader
-                subtitle="Full-stack Engineer & Technical Lead"
-                header-class="mb-12 text-center print:mb-4"
-            />
+            <DocumentHeader header-class="mb-12 text-center print:mb-4" />
 
             <section class="mb-8 print:mb-4">
                 <p
