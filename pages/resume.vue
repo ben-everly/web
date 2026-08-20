@@ -10,7 +10,7 @@
                     Professional Summary
                 </h2>
                 <p class="leading-relaxed text-gray-700 print:text-black">
-                    Full-stack software engineer with 15+ years building
+                    Full-stack software engineer with 16+ years building
                     regulated, HIPAA-compliant healthcare software including
                     eConsent, EHR integrations, and patient messaging. I've also
                     led engineering teams, focusing on software architecture and
@@ -56,13 +56,15 @@
                                 class="ml-4 list-inside list-disc space-y-2 text-gray-700 print:text-black"
                             >
                                 <li>
-                                    Built a Grafana dashboard with DORA and
-                                    other engineering metrics, pulled from
-                                    GitHub/Jira APIs and PHPMetrics via GitHub
-                                    Actions. Used it to ground team
-                                    retrospectives. In the first three months,
-                                    lead time dropped by 58% and deployment
-                                    frequency increased by 19%.
+                                    Built a Grafana dashboard tracking DORA and
+                                    other engineering metrics, sourced from the
+                                    GitHub and Jira APIs plus PHPMetrics via
+                                    GitHub Actions. Presented it in a
+                                    retrospective to open a team discussion on
+                                    delivery bottlenecks; over the next three
+                                    months, lead time dropped 58% and deployment
+                                    frequency rose 19% compared to the prior
+                                    three.
                                 </li>
                                 <li>
                                     Led one of two engineering teams on a TALL
