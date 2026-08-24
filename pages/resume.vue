@@ -263,10 +263,10 @@
                         >
                             Sous
                         </a>
-                        &mdash; Meal-planning web app on Next.js and Supabase,
-                        with domain rules enforced in Postgres via row-level
-                        security and covered by Vitest, Playwright, and pgTAP
-                        tests.
+                        &mdash; Next.js and Supabase app where authorization
+                        lives in Postgres row-level security, verified by pgTAP
+                        tests alongside Vitest and Playwright suites in a
+                        five-job GitHub Actions pipeline.
                     </li>
                     <li>
                         <a
