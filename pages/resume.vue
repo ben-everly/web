@@ -53,7 +53,7 @@
                                 </div>
                             </div>
                             <ul
-                                class="ml-4 list-inside list-disc space-y-2 text-gray-700 print:text-black"
+                                class="ml-4 list-inside list-disc space-y-2 text-gray-700 print:text-black [&>li]:break-inside-avoid"
                             >
                                 <li>
                                     Built a Grafana dashboard tracking DORA and
@@ -113,7 +113,7 @@
                                 </div>
                             </div>
                             <ul
-                                class="ml-4 list-inside list-disc space-y-2 text-gray-700 print:text-black"
+                                class="ml-4 list-inside list-disc space-y-2 text-gray-700 print:text-black [&>li]:break-inside-avoid"
                             >
                                 <!-- 2014-2017 -->
                                 <li>
@@ -163,7 +163,7 @@
                                 </div>
                             </div>
                             <ul
-                                class="ml-4 list-inside list-disc space-y-2 text-gray-700 print:text-black"
+                                class="ml-4 list-inside list-disc space-y-2 text-gray-700 print:text-black [&>li]:break-inside-avoid"
                             >
                                 <!-- 2012 -->
                                 <li>
@@ -252,7 +252,7 @@
                 </h2>
 
                 <ul
-                    class="ml-4 list-inside list-disc space-y-2 text-gray-700 print:text-black"
+                    class="ml-4 list-inside list-disc space-y-2 text-gray-700 print:text-black [&>li]:break-inside-avoid"
                 >
                     <li>
                         <a
