@@ -30,7 +30,7 @@
                         <h3
                             class="mb-1 text-xl font-bold text-gray-900 print:text-lg print:text-black"
                         >
-                            Universal Research Solutions
+                            OBERD (Universal Research Solutions, LLC)
                         </h3>
                         <div
                             class="text-right text-sm font-medium text-gray-500 print:text-black"
