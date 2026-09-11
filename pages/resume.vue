@@ -58,10 +58,10 @@
                                 <li>
                                     Led one of two engineering teams rewriting
                                     our core application off legacy
-                                    infrastructure that was becoming too costly
-                                    to run, establishing PR review standards
-                                    enforced as a code owner and tripling test
-                                    coverage from 26% to over 80%.
+                                    infrastructure that was becoming too costly,
+                                    establishing PR review standards enforced as
+                                    a code owner and tripling test coverage from
+                                    26% to over 80%.
                                 </li>
                                 <li>
                                     Collaborated with product, design, and
@@ -81,7 +81,7 @@
                                 </li>
                                 <li>
                                     Proactively identified and remediated a
-                                    broken-access-control vulnerability that
+                                    broken access control vulnerability that
                                     risked exposing one patient's protected
                                     health data to another, with no prior bug
                                     report. Drove the investigation, fix, and
@@ -126,9 +126,9 @@
                                 <li>
                                     Created an SMS messaging system using the
                                     Twilio API, including automated appointment
-                                    reminders (900K+ messages delivered to date)
-                                    and a conversational SMS flow for patients
-                                    to complete medical forms by text.
+                                    reminders with 900K+ messages delivered to
+                                    date and a conversational SMS flow for
+                                    patients to complete medical forms by text.
                                 </li>
                                 <!-- <li>
                                     Set up ECS services, S3 storage, and
