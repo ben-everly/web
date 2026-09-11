@@ -23,8 +23,11 @@
         </p>
         <div class="text-sm text-gray-600 print:text-black">
             Saint Charles, MO •
-            <a href="mailto:ben.g.everly@gmail.com" class="hover:underline">
-                ben.g.everly@gmail.com
+            <a
+                href="mailto:benjamin.g.everly@gmail.com"
+                class="hover:underline"
+            >
+                benjamin.g.everly@gmail.com
             </a>
             <template v-if="phone">
                 •
