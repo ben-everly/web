@@ -56,23 +56,12 @@
                                 class="ml-4 list-inside list-disc space-y-2 text-gray-700 print:text-black [&>li]:break-inside-avoid"
                             >
                                 <li>
-                                    Built a Grafana dashboard tracking DORA and
-                                    other engineering metrics, sourced from the
-                                    GitHub and Jira APIs plus PHPMetrics via
-                                    GitHub Actions. Presented it in a
-                                    retrospective to open a team discussion on
-                                    delivery bottlenecks; over the next three
-                                    months, lead time dropped 58% and deployment
-                                    frequency rose 19% compared to the prior
-                                    three.
-                                </li>
-                                <li>
-                                    Led one of two engineering teams on a TALL
-                                    stack rewrite of our core application.
-                                    Established PR review standards and enforced
-                                    them as a code owner alongside the CTO and
-                                    CIO, tripling test coverage from 26% to over
-                                    80%.
+                                    Led one of two engineering teams rewriting
+                                    our core application off legacy
+                                    infrastructure that was becoming too costly
+                                    to run, establishing PR review standards
+                                    enforced as a code owner and tripling test
+                                    coverage from 26% to over 80%.
                                 </li>
                                 <li>
                                     Collaborated with product, design, and
@@ -82,13 +71,31 @@
                                     our AO Foundation research partnership.
                                 </li>
                                 <li>
-                                    Designed a CSV ingestion system that enabled
-                                    customer migrations from competitor
-                                    platforms, using MySQL staging tables to
-                                    support user-configurable column mappings,
-                                    schema validation, and parallel processing
-                                    of 100k+ row imports.
+                                    Built a dashboard tracking DORA and other
+                                    engineering metrics from GitHub and Jira.
+                                    Presented it in a retrospective discussion
+                                    on delivery bottlenecks, and over the next
+                                    three months lead time dropped 58% and
+                                    deployment frequency rose 19% compared to
+                                    the prior three.
                                 </li>
+                                <li>
+                                    Proactively identified and remediated a
+                                    broken-access-control vulnerability that
+                                    risked exposing one patient's protected
+                                    health data to another, with no prior bug
+                                    report. Drove the investigation, fix, and
+                                    regression tests.
+                                </li>
+                                <!-- <li>
+                                    Replaced manual, row-by-row CSV data entry
+                                    for client onboarding &mdash; previously
+                                    copied and pasted record by record &mdash;
+                                    with a self-service import (auto-mapped
+                                    columns, schema validation, MySQL staging
+                                    tables) processing 100k+ rows in a single
+                                    upload.
+                                </li> -->
                                 <!-- <li>
                                     Authored comprehensive technical
                                     documentation and system architecture
@@ -118,16 +125,25 @@
                                 <!-- 2014-2017 -->
                                 <li>
                                     Created an SMS messaging system using the
-                                    Twilio API for appointment reminders and
-                                    conversational medical form completion.
-                                    Delivered 900k+ patient messages to date.
+                                    Twilio API, including automated appointment
+                                    reminders (900K+ messages delivered to date)
+                                    and a conversational SMS flow for patients
+                                    to complete medical forms by text.
                                 </li>
-                                <li>
+                                <!-- <li>
                                     Set up ECS services, S3 storage, and
                                     security groups for microservices that
                                     replaced parts of our legacy monolith,
                                     enabling independent deployment of new
                                     functionality.
+                                </li> -->
+                                <li>
+                                    Automated linking of incoming surgeries to
+                                    their pre-op visit, replacing manual
+                                    matching by clinic staff. Matches on CPT
+                                    codes and defers to manual review when
+                                    ambiguous, rather than risk an incorrect
+                                    patient-record link.
                                 </li>
                                 <li>
                                     Mentored junior developers through code
@@ -175,10 +191,11 @@
                                     clients.
                                 </li>
                                 <li>
-                                    Maintained and extended HL7 integrations
-                                    with external clinical systems including
-                                    Epic EHR, enabling bi-directional patient
-                                    data exchange.
+                                    Built the patient appointment-request and
+                                    registration system from the ground up, with
+                                    automated outbound HL7 messaging syncing new
+                                    patients to a clinic's EHR the moment they
+                                    registered.
                                 </li>
                                 <!-- 2012-2015 implenented patient login flow, econsent filling, triggering automatic form export via hl7 -->
                                 <!-- <li>
@@ -332,7 +349,7 @@
                             class="font-semibold text-gray-900 print:text-black"
                             >Data:</strong
                         >
-                        MySQL, SQLite, PostgreSQL, Redis, Meilisearch
+                        MySQL, SQLite, PostgreSQL, Redis, Meilisearch, HL7
                     </p>
                     <p class="text-gray-700 print:text-black">
                         <strong
@@ -346,7 +363,8 @@
                             class="font-semibold text-gray-900 print:text-black"
                             >Tools:</strong
                         >
-                        Docker, Neovim, GitHub CLI, Claude Code, GitHub Copilot
+                        Docker, Neovim, GitHub CLI, Claude Code, GitHub Copilot,
+                        Grafana
                     </p>
                 </div>
             </section>
